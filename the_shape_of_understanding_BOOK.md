@@ -62,7 +62,9 @@ closer to any other dot; everybody is the same distance apart. Call that a *fair
 That is the first big secret of the whole book: *to keep adding dots that are all the same
 distance apart, you have to keep rising into a new direction.* Same-length lines push
 shapes upward into new space. (Grown-ups call "the same distance apart" **equidistant**,
-and they call these fair shapes **simplexes** — you'll meet those words in Chapter 1.)
+and they call these fair shapes **simplexes** — you'll meet those words in Chapter 1.) And
+watch closely when that fourth gumdrop lifts: something surprising happens to the *number*
+of connections at the very same moment. That's Chapter 1's payoff.
 
 ## Picture 2 — The full middle
 
@@ -242,6 +244,37 @@ dimension.
 *Figure 1 — The ladder of simultaneous equality. Each dimension is the room for one more
 mutually-equidistant point; three is the last count that stays flat, and the fourth point
 is forced up into the tetrahedron.*
+
+**1.1b The lift is a doubling — one gumdrop does two things at once.** Here is the payoff of
+the gumdrop experiment, and it is one of the deepest simple facts in the book. When you
+added the fourth gumdrop, *two* things happened in the same instant:
+
+- **The shape rose off the table** into a new dimension — the geometric lift you could see
+  and feel (the fourth point escaping upward to stay equally far from the other three).
+- **The number of pieces doubled** — the counting lift. Ask of every part the triangle
+  already had — each dot, each stick, the triangle itself — one yes/no question: *does it
+  join the new gumdrop, or not?* Every old piece becomes two (joins / doesn't), so the total
+  number of pieces of every size at once **doubles.**
+
+These are the *same event* seen two ways: **binary choice below, dimensional rise above.**
+And the doubling is exact and forever — each point you add doubles the total (1, 2, 4, 8,
+16, …), because each new point offers one fresh yes/no to everything already there (verified:
+the number of sub-pieces of *N* points is 2ᴺ, and 2ᴺ → 2ᴺ⁺¹ every single time you add one).
+*One added point = one yes/no = one doubling = one new dimension.*
+
+> **An honest caution, because the hand-count can fool you.** At *this first* step the sticks
+> happen to double too (3 → 6) and the faces happen to quadruple (1 → 4) — but those exact
+> multipliers are luck of a small step; add another point and the sticks grow by only about
+> ×1⅔, not ×2. The count that doubles *every* time is the **total** number of pieces, 2ᴺ —
+> the yes/no on the new point. That is the real law; the edges are just where you first spot
+> it by hand.
+
+This is why, much later, the deep algebras of mathematics have sizes that are always powers
+of two — the cube is 2³ (Picture 5), and the Clifford algebra of *n* directions has 2ⁿ
+pieces (Chapter 14) — for exactly this reason: *each new direction is one more in-or-out
+choice, and one more choice doubles everything.* Counting shapes and climbing dimensions
+turn out to be the same act, and a ten-year-old can hold both in one hand: **add a gumdrop,
+everything doubles, the shape climbs.**
 
 **1.2 The break, and the round.** At five points the picture changes character. The
 regular pentagon has five-fold symmetry, and five-fold symmetry **cannot tile the
@@ -669,7 +702,10 @@ from two sides.
 **The plain idea.** Every time you add one new independent direction to build with, the
 number of pieces the algebra needs *doubles* — 1, then 2, then 4, 8, 16, … — because each
 new direction can be either included or not, on top of every combination you already had
-(the same reason two coins give 4 outcomes and three coins give 8). Doubling over and over
+(the same reason two coins give 4 outcomes and three coins give 8). This is the *counting
+lift* of §1.1b grown up into algebra: adding one gumdrop doubled the pieces because it
+offered a yes/no to everything, and adding one Clifford generator doubles the dimension for
+the very same reason — one more in-or-out choice. Doubling over and over
 is why these sizes are always powers of two. In symbols:
 
 The dimension of the n-fold tensor of a four-dimensional space is 4ⁿ = 2^{2n}, which is
@@ -733,6 +769,11 @@ Kept so the vocabulary stays trustworthy:
   Fibonacci recursion. Many celebrated sightings (the Parthenon, the "ideal" face, most
   spirals labelled "golden") are retrofitted or simply wrong [Markowsky 1992]. The picture
   is kept for the mechanism, not the mystique.
+- **"Adding a point doubles the edges (or the faces)."** False in general, and a tempting
+  trap from the very first lift (§1.1b), where the sticks *do* double (3 → 6) and the faces
+  quadruple (1 → 4). Those multipliers shrink at every later step (edges next go ×1⅔). The
+  count that doubles *every* time is the **total** number of sub-pieces, 2ᴺ — the yes/no on
+  the new point. Taught correctly as *the whole doubles, not any one slice of it.*
 - **"Every physical or computational structure is literally the same geometry."** Not a
   teaching claim. The convergence of structure across domains — for instance, the
   observed alignment of representations in independently trained neural networks [Huh et

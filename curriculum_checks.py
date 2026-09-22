@@ -49,6 +49,21 @@ show("the forced lift angle", f"cos = {cos_lift:.4f} = -1/3 = -1/(N-1) at N=4 (t
 assert ok3 and (not ok4) and okt and abs(cos_lift + 1/3) < 1e-9
 print("  -> 3 is the last count that is all-equal AND flat. The ladder is equality, not counting.")
 
+banner("Ch.1.1b -- the lift is a DOUBLING (one added point = one yes/no = x2 of the whole)")
+from math import comb as _comb
+for N in range(3, 8):
+    assert 2**(N + 1) == 2 * 2**N                       # adding one point doubles the total
+show("adding one point doubles the total sub-pieces", "2^N -> 2^(N+1): each old piece joins the new point, or not")
+show("hand-count at the FIRST lift (triangle -> tetrahedron)",
+     f"verts {_comb(3,1)}->{_comb(4,1)}, edges {_comb(3,2)}->{_comb(4,2)} (x2 here), faces {_comb(3,3)}->{_comb(4,3)} (x4 here), TOTAL {2**3}->{2**4} (x2)")
+show("honest caution: edges do NOT keep doubling",
+     f"next step edges {_comb(4,2)}->{_comb(5,2)} = x{_comb(5,2)/_comb(4,2):.2f}; only the TOTAL stays x2 every time")
+assert _comb(4,2) == 6 and _comb(5,2) == 10 and _comb(5,2) != 12
+show("dim Cl(n) = 2^n = subsets of n generators", "each direction = one in/out choice -> powers of two (Ch.14)")
+for n in range(1, 8):
+    assert 2**n == sum(_comb(n, k) for k in range(n + 1))
+print("  -> add a point: the whole doubles AND the shape lifts -- counting and climbing are one act.")
+
 banner("Ch.1.2 -- the break at five: the crystallographic restriction")
 # A lattice may rotate only by orders n with 2cos(2pi/n) an integer: 1,2,3,4,6.
 def integer_trace(n):
