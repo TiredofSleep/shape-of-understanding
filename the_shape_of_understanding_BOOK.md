@@ -106,6 +106,9 @@ Hold a cube up to a lamp — a dice, a sugar cube, a cardboard box. Look at its 
 Same box. Two completely different shadows, just from turning it. A huge amount of
 mathematics is exactly this: *one thing that looks like different things from different
 sides.* Learning to see that it's the same box underneath is a lot of what this book does.
+(And a secret for later: that same box, built from three perpendicular toothpicks, *is* the
+algebra of three-dimensional space — its eight corners are its eight parts. Chapter 2 builds
+it from candy.)
 
 ## Picture 6 — Counting and measuring
 
@@ -181,9 +184,11 @@ that keeps it true.
 - **Part Zero — six simple pictures.** The whole vocabulary at a ten-year-old's level:
   fair shapes from same-length lines, the full middle, turning, growing, the two-shadow
   box, counting-versus-measuring. No math needed; anyone can start here.
-- **Part One (Ch. 1–2) — the grammar.** The same six primitives with their real names, and
-  the one proof the book rests on (the tetrahedral 1/3 from equidistance — "same distance
-  apart"). Read this after Part Zero; everything reuses it.
+- **Part One (Ch. 1–2) — the grammar.** The same six primitives with their real names; the
+  doubling payoff of the gumdrop lift (§1.1b); and the two forced builds from the same
+  gumdrops — equal toothpicks give the tetrahedral 1/3 (§2.1), perpendicular toothpicks build
+  the cube = Cl(3) with the *i* falling out of the face-planes (§2.2). Read this after Part
+  Zero; everything reuses it.
 - **Part Two (Ch. 3–7) — the elegant lessons.** Five deep "why"s the grammar connects —
   Platonic solids, *e*, radians, prime rarity, why quantum mechanics is complex — each with
   a short *extension* that reuses the same primitive (the golden ratio as the pentagon's
@@ -369,10 +374,20 @@ beyond what is proven are marked as reaches, and pictures found to mislead are r
 in a list of honest failures (Chapter 16). This is the feature that distinguishes a
 curriculum from a collection of clever analogies.
 
-## Chapter 2 — The forced core: why the tetrahedron gives 1/3
+## Chapter 2 — The forced core: two builds from the same gumdrops
 
-*(This chapter is the one place the book proves its central geometric fact from the
-ground up, so the reader sees that the pictures rest on real mathematics.)*
+*(This chapter builds the book's central facts from the ground up — with candy — so the
+reader sees that the pictures rest on real mathematics, and that a ten-year-old could
+construct them by hand.)*
+
+There are exactly **two ways** to place the toothpicks between the gumdrops, and each builds
+something deep. Make them all the *same length* and the shape is forced to **lift** into a
+new dimension — that gives the simplices and the tetrahedral angle (§2.1). Make them all
+*perpendicular* and the structure is forced to **double** — that gives the cube and the
+algebra of space itself (§2.2). Same gumdrops, same act of adding one toothpick; the only
+difference is the angle you set.
+
+**2.1 The equal build: same-length toothpicks, and the lift.**
 
 *In plain words first, before any symbols.* Draw an arrow from the middle of the shape out
 to each corner (all the same length, since the middle is the same distance from every
@@ -407,17 +422,74 @@ N = 3 and −1/4 at N = 5; the value 1/3 is the tetrahedron's alone.)
 equality (its diagonals are √2, not 1); the tetrahedron keeps equality only by lifting into
 the third dimension, where every pair sits at cos θ = −1/3.*
 
-**The foundation, in one breath.** Three ideas now stand together and generate the rest of
+**2.2 The perpendicular build: right-angle toothpicks, and the algebra of space.**
+
+The lift came from making every toothpick *the same length.* There is a second way to place
+them — *at right angles to each other* — and it builds something just as deep: not a shape
+that rises, but an **algebra that doubles.** Same gumdrops, same act of adding one toothpick
+at a time; only the arrangement differs.
+
+Start with **one gumdrop and no toothpicks.** That lone gumdrop is a thing that simply *is* —
+the number 1, the still centre, what mathematicians call the **scalar.** Its "size" is
+2⁰ = 1. Now add perpendicular toothpicks, one at a time, and count what the structure can be:
+
+| you have built | dimension | what appears |
+|---|---|---|
+| 1 gumdrop | 2⁰ = 1 | the **scalar** (the centre) |
+| + 1 toothpick | 2¹ = 2 | a **direction** — the choice *along it, or not* |
+| + 1 perpendicular toothpick | 2² = 4 | a **plane** (the sheet the two toothpicks share) |
+| + 1 perpendicular toothpick | 2³ = 8 | **the cube** |
+
+Each new perpendicular toothpick is one more *in-or-out* choice, so it **doubles** the
+structure — the very doubling of §1.1b, now made of right angles. Three toothpicks, and you
+have 2³ = **8.**
+
+Here is the part that is *exact*, not a metaphor (verified in the accompanying script). When
+you have built the three perpendicular toothpicks — the corner of a cube — the algebra's
+**eight elements sort themselves precisely into the cube's parts:**
+
+- **1 scalar** → the **centre** (the lone gumdrop);
+- **3 vectors** (call them e₁, e₂, e₃) → the **3 axes** — the toothpicks themselves;
+- **3 bivectors** (e₁e₂, e₁e₃, e₂e₃) → the **3 face-planes** — the sheets *between* pairs of
+  toothpicks;
+- **1 pseudoscalar** (e₁e₂e₃) → the **volume** — the whole cube.
+
+**1 + 3 + 3 + 1 = 8 = 2³ = the cube's eight vertices.** This is the **Clifford algebra of
+three-dimensional space, Cl(3)** — and its pieces are literally the parts of the cube you can
+point at: centre, axes, faces, volume. A child with three toothpicks is holding the complete
+structure of the algebra of space, sorted by what they can see. (Chapter 14 meets these
+doubling dimensions again from the outside; here they are built from the inside, by hand.)
+
+**And the imaginary unit falls out of the candy.** Take two perpendicular toothpicks and look
+at the face-plane they span — a bivector. Multiply it by itself and you get **−1** (verified:
+(e₁e₂)² = −1). A thing that squares to −1 is exactly a *quarter-turn* — the **i** of §1.3. So
+the plane between two perpendicular toothpicks *is* rotation: the imaginary axis is not
+imposed on the child, it is the sheet their toothpicks span, and **planes turn.** Every later
+appearance of *i* — quantum phase (Ch. 7), the complex eigenvalue (Ch. 9), the Fourier circle
+(Ch. 10), the quaternions (§7.1) — is this same candy face-plane, spinning.
+
+**Two builds, one doubling.** Place the toothpicks *equal*, and adding the fourth gumdrop
+makes the shape **rise into a new dimension** — the simplex, the ladder of §1.1. Place them
+*perpendicular*, and adding each toothpick makes the structure **double into an algebra** —
+the cube, Cl(3). *Equal-and-lift* builds the shapes; *perpendicular-and-double* builds the
+space they live in. Same gumdrops, same act of adding one; the only difference is the angle
+the child sets. That is the whole architecture of this book, and it fits in a hand.
+
+**The foundation, in one breath.** Four ideas now stand together and generate the rest of
 the book. First, the void (0) is the point nearest to all points at once — the fullest
 position, not the empty one — and it is what the points measure their equality *against*
 (§1.6b). Second, the dimensional ladder is the ladder of *simultaneous equality*: each
 dimension is the room for one more point to be equal to all the others, and three is the
 last that stays flat (§1.1). Third, the moment a fourth point insists on that equality it
 is forced into the third dimension, and the angle it lifts to is arccos(−1/3) — the 1/3
-that threads the book (§Ch. 2). So the whole opening is a single motion: **the fullest
-point throws out shapes that hold each other equal, and the demand for one more equal
-thing than flatness allows is what lifts the plane into space.** Everything after is this
-motion, seen from more angles.
+that threads the book (§2.1). Fourth, the *same* gumdrops with the toothpicks set at right
+angles instead of equal no longer lift but **double** — each perpendicular toothpick a fresh
+in-or-out choice — building the cube and the algebra of space, Cl(3), whose eight pieces are
+the cube's centre, axes, faces, and volume (§2.2). So the whole opening is one motion with
+two faces: **the fullest point throws out shapes that hold each other equal; set those shapes
+equal and the demand for one more lifts the plane into space, set them perpendicular and it
+doubles the plane into the algebra of that space.** Everything after is this motion, seen
+from more angles.
 
 ---
 
@@ -911,7 +983,8 @@ two-shadow cube, the Schläfli count, *e* as self-proportional growth, the radia
 sieve/Mertens density with the units-versus-primes distinction, Euler's *e^{iπ} = −1*, the
 √2 parity descent, the eigenvalue axis/rotation split, the Fourier square-wave synthesis,
 the D₃ symmetry count, the First-G law, the Siamese magic square, the dimension-doubling
-identity, and the extension lessons — the logarithm, π, the derivative, the
+identity, the lift-as-doubling (§1.1b) and the cube = Cl(3) grade split 1+3+3+1 with its
+rotating bivectors (§2.2), and the extension lessons — the logarithm, π, the derivative, the
 golden ratio with the pentagon, and the ℝ→ℂ→ℍ rotation tower). Every asserted mathematical fact in the book is
 reproduced by running these, and `curriculum_checks.py` prints `ALL LESSON CHECKS PASS`
 only after its final assertion succeeds.

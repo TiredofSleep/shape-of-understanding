@@ -64,6 +64,25 @@ for n in range(1, 8):
     assert 2**n == sum(_comb(n, k) for k in range(n + 1))
 print("  -> add a point: the whole doubles AND the shape lifts -- counting and climbing are one act.")
 
+banner("Ch.2.2 -- three perpendicular toothpicks build Cl(3): grades = the cube's parts")
+_e1 = np.array([[0, 1], [1, 0]], complex); _e2 = np.array([[0, -1j], [1j, 0]], complex); _e3 = np.array([[1, 0], [0, -1]], complex)
+_I2 = np.eye(2, complex)
+for _e in (_e1, _e2, _e3):                       # generators square to +1 (Euclidean Cl(3))
+    assert np.allclose(_e @ _e, _I2)
+for _a, _b in ((_e1, _e2), (_e1, _e3), (_e2, _e3)):    # and anticommute
+    assert np.allclose(_a @ _b, -_b @ _a)
+_biv = [_e1 @ _e2, _e1 @ _e3, _e2 @ _e3]; _ps = _e1 @ _e2 @ _e3
+_basis = [_I2, _e1, _e2, _e3] + _biv + [_ps]
+_flat = np.array([b.flatten() for b in _basis])
+_rank = int(np.linalg.matrix_rank(np.hstack([_flat.real, _flat.imag])))
+show("grades scalar + vectors + bivectors + pseudoscalar", "1 + 3 + 3 + 1 = 8 = 2^3 = the cube's vertices (centre, axes, faces, volume)")
+show("the 8 elements are a real basis of Cl(3)", f"real rank = {_rank} (real dimension 8)")
+assert _rank == 8
+show("bivectors (the face-planes) square to -1 -> the i", "the plane between two perpendicular toothpicks rotates")
+for _b in _biv:
+    assert np.allclose(_b @ _b, -_I2)
+print("  -> the cube IS Cl(3); its face-planes ARE the imaginary unit. Exact, not metaphor.")
+
 banner("Ch.1.2 -- the break at five: the crystallographic restriction")
 # A lattice may rotate only by orders n with 2cos(2pi/n) an integer: 1,2,3,4,6.
 def integer_trace(n):
