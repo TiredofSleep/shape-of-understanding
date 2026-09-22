@@ -66,7 +66,7 @@ print("  -> add a point: the whole doubles AND the shape lifts -- counting and c
 
 banner("Ch.2.2 -- three perpendicular toothpicks build Cl(3): grades = the cube's parts")
 _e1 = np.array([[0, 1], [1, 0]], complex); _e2 = np.array([[0, -1j], [1j, 0]], complex); _e3 = np.array([[1, 0], [0, -1]], complex)
-_I2 = np.eye(2, complex)
+_I2 = np.eye(2, dtype=complex)
 for _e in (_e1, _e2, _e3):                       # generators square to +1 (Euclidean Cl(3))
     assert np.allclose(_e @ _e, _I2)
 for _a, _b in ((_e1, _e2), (_e1, _e3), (_e2, _e3)):    # and anticommute
