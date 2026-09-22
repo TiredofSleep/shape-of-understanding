@@ -83,6 +83,15 @@ for _b in _biv:
     assert np.allclose(_b @ _b, -_I2)
 print("  -> the cube IS Cl(3); its face-planes ARE the imaginary unit. Exact, not metaphor.")
 
+banner("Ch.2.3 -- Pascal's triangle: the doubling sorted by size (row sum 2^n; row 3 = Cl(3) grades)")
+for n in range(0, 8):
+    assert sum(_comb(n, k) for k in range(n + 1)) == 2**n          # each row sums to 2^n
+show("each Pascal row sums to a power of two", "row n = [C(n,k)]; sum = 2^n -- the doubling as a total")
+show("row 3 = the grades of Cl(3)", f"{[_comb(3,k) for k in range(4)]} = 1,3,3,1 = scalar, vectors, bivectors, pseudoscalar")
+show("row 4 = the tetrahedron's parts", f"{[_comb(4,k) for k in range(5)]} = empty, verts, edges, faces, cell")
+assert [_comb(3, k) for k in range(4)] == [1, 3, 3, 1] and [_comb(4, k) for k in range(5)] == [1, 4, 6, 4, 1]
+print("  -> simplex sub-pieces and Clifford grades are the SAME binomials -- Pascal; the doubling is the row sum.")
+
 banner("Ch.1.2 -- the break at five: the crystallographic restriction")
 # A lattice may rotate only by orders n with 2cos(2pi/n) an integer: 1,2,3,4,6.
 def integer_trace(n):

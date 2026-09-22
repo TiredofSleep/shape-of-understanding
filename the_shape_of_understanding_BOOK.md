@@ -490,6 +490,35 @@ the cube, Cl(3). *Equal-and-lift* builds the shapes; *perpendicular-and-double* 
 space they live in. Same gumdrops, same act of adding one; the only difference is the angle
 the child sets. That is the whole architecture of this book, and it fits in a hand.
 
+**2.3 Pascal's triangle: the doubling, sorted by size.** Both builds are counted by the
+*same* famous triangle. Write the numbers so each is the sum of the two just above it —
+**Pascal's triangle:**
+
+```
+         1
+        1 1
+       1 2 1
+      1 3 3 1
+     1 4 6 4 1
+```
+
+Two facts, and together they are the whole story of §1.1b and §2.2:
+
+- **Each row adds up to a power of two.** Row *n* sums to 2ⁿ (1, 2, 4, 8, 16, …) — that is
+  the **doubling**, the yes/no on each new thing, seen as a total.
+- **Each entry counts the pieces of one size.** Row *n*, place *k*, is the number of ways to
+  choose *k* things from *n*, written C(*n*, *k*). So a row *is* the doubling **sorted by size.**
+
+Read the fourth row, **1 3 3 1**: those are exactly the grades of Cl(3) — 1 scalar, 3
+vectors, 3 bivectors, 1 pseudoscalar (§2.2) — because a Clifford algebra of *n* directions
+has C(*n*, *k*) pieces of grade *k*. Read the next row, **1 4 6 4 1**, for the tetrahedron's
+four points: 1 (the empty choice), 4 vertices, 6 edges, 4 faces, 1 whole cell — exactly the
+parts you can count on the gumdrop model. *The simplex's sub-pieces and the Clifford
+algebra's grades are the same binomial numbers* — Pascal's triangle — one indexed by points,
+the other by dimensions. The doubling is the row's sum; the grades are the row itself. A
+child who builds Pascal's triangle holds, in one pattern, the count behind **both** builds
+(verified).
+
 **The foundation, in one breath.** Four ideas now stand together and generate the rest of
 the book. First, the void (0) is the point nearest to all points at once — the fullest
 position, not the empty one — and it is what the points measure their equality *against*
@@ -999,7 +1028,8 @@ sieve/Mertens density with the units-versus-primes distinction, Euler's *e^{iπ}
 √2 parity descent, the eigenvalue axis/rotation split, the Fourier square-wave synthesis,
 the D₃ symmetry count, the First-G law, the Siamese magic square, the dimension-doubling
 identity, the lift-as-doubling (§1.1b) and the cube = Cl(3) grade split 1+3+3+1 with its
-rotating bivectors (§2.2), and the extension lessons — the logarithm, π, the derivative, the
+rotating bivectors (§2.2), Pascal's triangle (row sums = the doublings, row 3 = the Cl(3)
+grades; §2.3), and the extension lessons — the logarithm, π, the derivative, the
 golden ratio with the pentagon, and the ℝ→ℂ→ℍ rotation tower). Every asserted mathematical fact in the book is
 reproduced by running these, and `curriculum_checks.py` prints `ALL LESSON CHECKS PASS`
 only after its final assertion succeeds.
