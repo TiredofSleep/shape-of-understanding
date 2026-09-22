@@ -78,7 +78,8 @@ that keeps it true.
   Platonic solids, *e*, radians, prime rarity, why quantum mechanics is complex — each with
   a short *extension* that reuses the same primitive (the golden ratio as the pentagon's
   number, the logarithm and the derivative as further faces of the breath, π as the
-  half-turn), plus exercises and a misconception box.
+  half-turn, and rotation deepening ℝ→ℂ→ℍ into the quaternions), plus exercises and a
+  misconception box.
 - **Part Three (Ch. 8–11) — the hard lessons.** The four that break students: √2's
   irrationality, eigenvalues, the Fourier transform, groups. The real test of the pedagogy.
 - **Part Four (Ch. 12–14) — the combinatorial frontier.** Three further lessons drawn from
@@ -399,6 +400,19 @@ formal trick but the natural language of a thing that turns [Feynman 1965 makes 
 point pictorially, "the arrow that rotates"]. The imaginary part is the flow, the phase;
 the real part is the observable.
 
+**7.1 The first rung of a tower (extension).** The imaginary axis is not the end of the
+story but the *first rung* of a short tower. One plane of rotation gives the **complex
+numbers** ℂ — a single imaginary unit, *i*² = −1. Add a second, *independent* plane of
+rotation and the algebra is forced to grow: you reach the **quaternions** ℍ, with three
+imaginary units *i, j, k*, each squaring to −1 and cycling by *ij = k* (verified). They
+**anticommute** — *ji* = −*k* — and this is exactly *why* rotations in three-dimensional
+space do not commute: turn an object about two different axes in the two possible orders
+and it lands in two different places. Quantum spin lives in this richer, non-commutative
+ℍ, which is the source of much of its strangeness. So ℝ → ℂ → ℍ is the *deepening* of
+rotation as the number of independent rotation-planes climbs, and the imaginary axis of
+§1.3 is the bottom rung. (This book teaches only the bottom of the tower; the deep
+periodic structure above it is research, not curriculum.)
+
 ---
 
 > **Exercises.** (1) Show that |*e^{−iEt/ħ}*| = 1 — the phase turns while the probability is
@@ -443,7 +457,10 @@ a rotation by 0.5 has eigenvalues 0.878 ± 0.479i, no real axis). This is precis
 rotation-and-axis picture of §1.3: the eigenvector is the still axis, the complex
 eigenvalue is the spin. Eigenvalues cease to be an opaque computation and become *the
 axes a transformation spins around, and how hard it pulls along them* [the geometric
-reading is standard; Strang 2016 teaches it this way].
+reading is standard; Strang 2016 teaches it this way]. (A complex eigenvalue is rotation
+in *one* plane — the world of ℂ; a transformation that rotates in several independent
+planes at once lives in the richer, non-commutative world of the quaternions ℍ, where the
+order of the rotations matters. See §7.1.)
 
 ![A stretch keeps real axes; a rotation has none.](figures/fig_eigen_axis_vs_rotation.svg)
 *Figure 7 — What an eigenvalue is. A stretch (left) has real eigenvalues — genuine axes it
@@ -707,8 +724,8 @@ two-shadow cube, the Schläfli count, *e* as self-proportional growth, the radia
 sieve/Mertens density with the units-versus-primes distinction, Euler's *e^{iπ} = −1*, the
 √2 parity descent, the eigenvalue axis/rotation split, the Fourier square-wave synthesis,
 the D₃ symmetry count, the First-G law, the Siamese magic square, the dimension-doubling
-identity, and the four extension lessons — the logarithm, π, the derivative, and the
-golden ratio with the pentagon). Every asserted mathematical fact in the book is
+identity, and the extension lessons — the logarithm, π, the derivative, the
+golden ratio with the pentagon, and the ℝ→ℂ→ℍ rotation tower). Every asserted mathematical fact in the book is
 reproduced by running these, and `curriculum_checks.py` prints `ALL LESSON CHECKS PASS`
 only after its final assertion succeeds.
 

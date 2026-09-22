@@ -235,6 +235,17 @@ show("the pentagon's own number", f"diagonal/side = 2 cos 36deg = {2*np.cos(np.p
 assert abs(b/a - phi) < 1e-6 and abs(phi**2 - phi - 1) < 1e-12 and abs(2*np.cos(np.pi/5) - phi) < 1e-12
 
 # ======================================================================
+banner("Extension -- rotation deepens: the tower R -> C -> H (the quaternions)")
+qI = np.array([[1j, 0], [0, -1j]]); qJ = np.array([[0, 1], [-1, 0]]); qK = np.array([[0, 1j], [1j, 0]])
+show("each imaginary unit is a rotation plane", "i^2 = j^2 = k^2 = -1")
+show("they cycle", "ij = k, jk = i, ki = j, and ijk = -1")
+show("they ANTICOMMUTE", "ji = -k  ->  rotations in different planes do not commute (3D rotation is non-abelian)")
+assert np.allclose(qI@qI, -np.eye(2)) and np.allclose(qJ@qJ, -np.eye(2)) and np.allclose(qK@qK, -np.eye(2))
+assert np.allclose(qI@qJ, qK) and np.allclose(qJ@qK, qI) and np.allclose(qK@qI, qJ)
+assert np.allclose(qI@qJ@qK, -np.eye(2)) and np.allclose(qJ@qI, -qK)
+print("  -> R (still), C (one rotation plane), H (three) -- the imaginary axis is the tower's first rung.")
+
+# ======================================================================
 banner("ALL LESSON CHECKS PASS -- every picture matches the mathematics.")
 print("Parts One-Four plus the extension lessons are each reproduced above.")
 print("Rejected pictures (the honest-failures chapter) are NOT asserted true here:")
