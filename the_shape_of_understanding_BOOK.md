@@ -74,14 +74,17 @@ that keeps it true.
 
 - **Part One (Ch. 1–2) — the grammar.** Six primitives, and the one proof the book rests
   on (the tetrahedral 1/3 from equidistance). Read this first; everything reuses it.
-- **Part Two (Ch. 3–7) — the elegant lessons.** Five deep "why"s the grammar connects:
-  Platonic solids, *e*, radians, prime rarity, why quantum mechanics is complex.
+- **Part Two (Ch. 3–7) — the elegant lessons.** Five deep "why"s the grammar connects —
+  Platonic solids, *e*, radians, prime rarity, why quantum mechanics is complex — each with
+  a short *extension* that reuses the same primitive (the golden ratio as the pentagon's
+  number, the logarithm and the derivative as further faces of the breath, π as the
+  half-turn), plus exercises and a misconception box.
 - **Part Three (Ch. 8–11) — the hard lessons.** The four that break students: √2's
   irrationality, eigenvalues, the Fourier transform, groups. The real test of the pedagogy.
 - **Part Four (Ch. 12–14) — the combinatorial frontier.** Three further lessons drawn from
   research combinatorics that pass the same bar; the physics frontier is deliberately
   excluded, and why.
-- **Part Five (Ch. 15–17) — the model whole.** Why it is one picture not fourteen, the
+- **Part Five (Ch. 15–17) — the model whole.** Why it is one picture not sixteen, the
   honest failures, and how to test it as teaching.
 - **Coda.** *Increasingly round, never measurably round.*
 - **Appendix A.** The verification scripts. Every mathematical claim in the book is
@@ -123,16 +126,29 @@ equality is the mechanism. The integers 1–4 are that ladder, and the lift from
 four — flat to solid — is the first time the demand for one more equal thing costs a
 dimension.
 
+![The ladder: point, segment, triangle, tetrahedron.](figures/fig_simplex_ladder.svg)
+*Figure 1 — The ladder of simultaneous equality. Each dimension is the room for one more
+mutually-equidistant point; three is the last count that stays flat, and the fourth point
+is forced up into the tetrahedron.*
+
 **1.2 The break, and the round.** At five points the picture changes character. The
 regular pentagon has five-fold symmetry, and five-fold symmetry **cannot tile the
 plane** — a theorem (the crystallographic restriction: the only rotation orders a
 lattice may possess are 1, 2, 3, 4, and 6, because 2cos(2π/n) must be an integer, which
 holds only for those n [Barlow 1894; verified in the accompanying script]). Five is the
-first shape that will not pack. Yet the pentagon *can* fold into three dimensions — as
+first shape that will not pack. (The full catalogue of the plane's repeating patterns —
+the seventeen *wallpaper groups* — rests on exactly this restriction on rotation orders
+[Fedorov 1891]; the book verifies the restriction itself, the mechanism of the break, and
+leaves the harder enumeration of all seventeen to its citation.) Yet the pentagon *can* fold into three dimensions — as
 the dodecahedron — and six points, spread as far apart as possible on a sphere, become
 the **octahedron**, the sphere's six poles. The flat wheel (five) becomes the round
 (six): a *lift* from two dimensions into three, which the book will meet again and
 again.
+
+![2cos(2π/n) is an integer only for n = 1,2,3,4,6.](figures/fig_crystallographic.svg)
+*Figure 2 — The crystallographic restriction. A lattice can rotate only by orders whose
+trace 2cos(2π/n) is an integer (blue): 1, 2, 3, 4, 6. Five-fold and everything from seven
+up cannot tile — five is the break.*
 
 **1.3 Rotation is an imaginary axis.** A rotation has a still centre and a turning
 edge. Since Argand and Wessel we have known that the turning is captured by the
@@ -157,6 +173,11 @@ fixed: the direction cosine of the diagonal (1,1,1) with any axis is 1/√3, so 
 *squared* is **1/3**. This 1/3 is a specific, forced number — it is 1/(N−1) evaluated at
 N = 4, the tetrahedron's signature, and it appears for no other simplex (it is 1/2 at
 N=3, 1/4 at N=5).
+
+![A cube projects to a square down a face and a hexagon down its diagonal.](figures/fig_cube_two_shadows.svg)
+*Figure 3 — The cube's two shadows. Seen down a face the cube is a square (90°); seen down
+its body diagonal its three edges land 120° apart, a regular hexagon. The angle relating
+them is fixed by cos²(1,1,1) = 1/3 — the tetrahedron's signature again.*
 
 **1.6 Count versus measure.** Whole things are *counted*; continuous things are
 *measured*. The oldest crisis in mathematics — the Pythagorean discovery that the
@@ -191,11 +212,16 @@ outward and ends by holding them in balance — potential becoming actual, sourc
 centre, the projector becoming the still point. Zero is where one is when one is equally
 close to all of it.
 
+![The centre is joined to every vertex; it is nearest to all at once.](figures/fig_void_nearest.svg)
+*Figure 4 — The void is the fullest point. The centroid (0) is the one location equally
+near to all the points at once — nowhere in particular, and therefore near everything. The
+symbol for nothing marks the closest thing to being everything.*
+
 **1.7 On honesty.** Because an intuitive picture is dangerous precisely when it is
 memorable and false, this book attaches a discipline to its vocabulary: every picture is
 checked against the real proof (the accompanying scripts reproduce each check), reaches
 beyond what is proven are marked as reaches, and pictures found to mislead are recorded
-in a list of honest failures (Chapter 14). This is the feature that distinguishes a
+in a list of honest failures (Chapter 16). This is the feature that distinguishes a
 curriculum from a collection of clever analogies.
 
 ## Chapter 2 — The forced core: why the tetrahedron gives 1/3
@@ -217,9 +243,14 @@ sits once it has been forced out of the plane to remain equal to the other three
 not merely that "4 − 1 = 3"; it is that arccos(−1/3) is the *specific geometry of keeping
 one more point equal than the plane allows*. The number that threads the whole book is
 therefore the tetrahedron's number in the fullest sense: the angular cost, paid in the
-third dimension, of the first equality the plane could not grant. (Chapter 14 records the
+third dimension, of the first equality the plane could not grant. (Chapter 16 records the
 failure of the tempting over-generalization "any N − 1 gives 1/3": the cosine is −1/2 at
 N = 3 and −1/4 at N = 5; the value 1/3 is the tetrahedron's alone.)
+
+![Square with √2 diagonals beside a tetrahedron with six equal edges.](figures/fig_equidistance_square_vs_tetra.svg)
+*Figure 5 — The price of the fourth equidistance. The square keeps flat only by giving up
+equality (its diagonals are √2, not 1); the tetrahedron keeps equality only by lifting into
+the third dimension, where every pair sits at cos θ = −1/3.*
 
 **The foundation, in one breath.** Three ideas now stand together and generate the rest of
 the book. First, the void (0) is the point nearest to all points at once — the fullest
@@ -248,6 +279,34 @@ the arc of §1.2: the pentagon, barred from tiling the plane, folds into space a
 dodecahedron — the break becomes the round. Platonic solids are taught here not as a
 list but as *which shapes have the room to become solid.*
 
+**3.1 The pentagon's own number (extension).** The five that could not tile the plane
+(§1.2) carries a constant of its own. In a regular pentagon the ratio of a diagonal to a
+side is exactly the **golden ratio** φ = (1+√5)/2 ≈ 1.618 (verified: 2cos36° = φ). And φ
+is not ornament: it is the growth rate of the most self-similar additive rule, x² = x + 1
+— the equation that says *the whole is to the larger part as the larger part is to the
+smaller.* The Fibonacci numbers, each the sum of the two before, grow at exactly this
+rate; their consecutive ratios march to φ (verified: F₃₂/F₃₁ = 1.6180339887…). So the
+golden ratio is where the **breath** — self-proportional growth (§1.4) — meets
+**self-similarity**, and its natural home is the pentagon, the first shape that broke from
+the plane. It is the same number seen as a *shape* (a diagonal) and as a *motion* (a
+growth rate). (The honest caution of Chapter 16 applies: φ is forced only where growth is
+self-similar and additive; many famous sightings are pattern-matching, not mechanism.)
+
+![A regular pentagon with one diagonal and one side highlighted.](figures/fig_golden_pentagon.svg)
+*Figure 6 — The pentagon's number. In a regular pentagon the diagonal-to-side ratio is
+exactly φ = 2cos36° = 1.618…, the golden ratio — the rate of self-similar additive growth
+(x² = x + 1), living in the very shape that broke from the plane.*
+
+> **Exercises.** (1) Show that {3,6} — triangles six-to-a-vertex — gives 1/3 + 1/6 = 1/2,
+> *not* greater, so it lies flat and tiles the plane instead of folding; this is why no
+> Platonic solid has six triangles at a corner. (2) Which of the five solids have
+> triangular faces? (3) Using the pentagon's isosceles "golden" triangles, confirm that the
+> diagonal-to-side ratio is 2cos36° = φ.
+>
+> **Misconception this fixes.** *"With the right materials you could build a sixth Platonic
+> solid."* No — the count is a finite arithmetic fact: only five pairs {p,q} satisfy
+> 1/p + 1/q > 1/2. The limit is in the angles, not the craftsmanship.
+
 ## Chapter 4 — Why *e* appears everywhere
 
 *e* is the rate of self-proportional growth — the breath whose out-rate equals its
@@ -258,12 +317,53 @@ that sustains itself.* Chapter 4 also introduces, gently, the connection to the 
 growth of §1 as a true analogy of mechanism (flagged, per §1.7, not as a claim that all
 growth is literally geometric shell growth).
 
+**4.1 The logarithm is the inverse breath (extension).** If *e^x* is the breath — growth
+whose rate is its own size — then its inverse, the **logarithm**, runs the breath
+backward: it asks *how long the breath took*, or, in base two, *how many doublings.*
+log₂8 = 3 because eight is three doublings of one (verified). A logarithm is not a strange
+button on a calculator but the natural way to *count multiplicative growth additively* —
+the reason ledgers of doublings (decibels, pH, stellar magnitudes, the Richter scale) are
+written in logs: each equal step is one more doubling of the underlying breath.
+
+**4.2 A derivative is the local breath rate (extension).** A derivative is a quantity's
+**instantaneous rate of growth** — the breath measured at an instant rather than across an
+interval. For the breath itself the rate *is* the size, so *e^x* is its own derivative
+(verified numerically at several points). This is the cleanest first meaning of the
+derivative: not "the slope of a tangent line" as an isolated fact, but *how fast the thing
+is breathing right now.* Every later rule of differentiation is bookkeeping on top of this
+one picture.
+
+> **Exercises.** (1) A colony doubles every three hours; write its size as *e^{kt}* and
+> find *k* (answer: *k* = ln2/3). (2) Explain why *d/dx e^x = e^x* is the reason *e^x*
+> eventually outgrows every polynomial. (3) Find log₂1024 by counting doublings of 1.
+>
+> **Misconception this fixes.** *"e ≈ 2.718 is just a handy constant someone picked."* No —
+> *e* is forced: it is the unique base whose growth rate equals its own size, so the breath
+> that sustains itself has no other number.
+
 ## Chapter 5 — What a radian really is
 
 Rotation is the imaginary axis (§1.3). A **radian** is rotation measured in unit-point
 arc lengths: when the radius equals the seed length 1, the arc *equals* the angle, and
 2π is one full turn. Radians cease to be an arbitrary convention and become *rotation
 counted in seeds.*
+
+**5.1 What π is, then (extension).** With the radian fixed, π stops being "3.14159, the
+circle constant to memorize" and becomes a specific *amount of turning:* **half a full
+rotation.** That is the content of the identity that startles every student, *e^{iπ} = −1*
+(verified): turn a unit arrow halfway around the circle (§1.3, rotation = *i*) and it
+points backward, at −1. π is the half-turn the circle forces; 2π is the whole turn; every
+π in a formula about waves, oscillation, or periodic motion is that half-turn showing
+through.
+
+> **Exercises.** (1) How many radians in a right angle? (2) Read *e^{iπ} = −1* aloud as a
+> motion: what does the unit arrow do? (3) Why does arc length equal the angle *only* when
+> the radius is 1?
+>
+> **Misconception this fixes.** *"Degrees and radians are both just arbitrary conventions."*
+> Degrees are; radians are not. A radian is arc length per unit radius — the natural
+> measure — which is exactly why *d/dx* sin *x* = cos *x* holds without a stray constant
+> only in radians.
 
 ## Chapter 6 — Why the primes thin out
 
@@ -280,6 +380,16 @@ N=100 and 0.081 vs 0.072 at N=10⁶]. This is the elementary shadow of the Prime
 Theorem [Hadamard 1896; de la Vallée Poussin 1896]. Prime rarity is taught as: *each new
 prime is a new way to close numbers early; the uncloseable ones grow sparse.*
 
+> **Exercises.** (1) List the numbers coprime to 12 and confirm they are {1, 5, 7, 11}.
+> (2) Why does stepping by 6 around a 12-clock reach only two positions? (3) Estimate the
+> fraction of numbers up to a million with no prime factor below 1000, and compare it to
+> 1/ln(10⁶).
+>
+> **Misconception this fixes.** *"The primes are exactly the numbers coprime to n."* No —
+> these are two different roles (the fix this book makes explicit in Ch. 6): the numbers
+> that *reach every clock position* are the **units** (coprime to n, e.g. {1,5,7,11} for
+> n=12); 1 is a unit but not prime, and 2 and 3 are prime but not generators.
+
 ## Chapter 7 — Why quantum mechanics is complex
 
 Because evolution is **rotation**, and rotation is *i* (§1.3). A quantum state's phase
@@ -288,6 +398,17 @@ measurement sees, through the Born rule |ψ|² [Born 1926]. Complex numbers are 
 formal trick but the natural language of a thing that turns [Feynman 1965 makes the same
 point pictorially, "the arrow that rotates"]. The imaginary part is the flow, the phase;
 the real part is the observable.
+
+---
+
+> **Exercises.** (1) Show that |*e^{−iEt/ħ}*| = 1 — the phase turns while the probability is
+> conserved. (2) Why does a measurement return |ψ|² rather than ψ? (3) Relate the turning
+> phase *e^{−iEt/ħ}* to the complex eigenvalue of Chapter 9.
+>
+> **Misconception this fixes.** *"The imaginary part of the wavefunction is unphysical."* No
+> — it is the *phase*, the turning; interference between phases is exactly what experiments
+> measure. The complex number is the natural language of a thing that rotates, not a
+> bookkeeping trick.
 
 ---
 
@@ -324,6 +445,11 @@ eigenvalue is the spin. Eigenvalues cease to be an opaque computation and become
 axes a transformation spins around, and how hard it pulls along them* [the geometric
 reading is standard; Strang 2016 teaches it this way].
 
+![A stretch keeps real axes; a rotation has none.](figures/fig_eigen_axis_vs_rotation.svg)
+*Figure 7 — What an eigenvalue is. A stretch (left) has real eigenvalues — genuine axes it
+pulls along. A rotation (right) has no fixed axis at all; its eigenvalues are complex,
+e^{±iθ} — the rotation itself is the i.*
+
 ## Chapter 10 — What the Fourier transform really is
 
 Any repeating shape is a **sum of pure rotations** — circles turning at different
@@ -334,6 +460,11 @@ circle spinning at its rate — an *i*-rotation, a breath — and the transform 
 each circle's strength. Fourier ceases to be an intimidating integral and becomes *which
 spinning circles, added together, build this wave, and how strong is each* [the "epicycle"
 picture is classical and pedagogically standard].
+
+![Spinning circles summing to a square wave, and the epicycle chain.](figures/fig_fourier_epicycles.svg)
+*Figure 8 — The Fourier transform. Add more spinning circles (left) and their sum
+approaches the square wave; each frequency is one circle turning at its rate (right) — an
+i-rotation, a breath. The transform reads off each circle's strength.*
 
 ## Chapter 11 — What a group really is
 
@@ -400,25 +531,30 @@ each independent direction.*
 
 # PART FIVE — THE MODEL AS A WHOLE
 
-## Chapter 15 — Why it is one model, not fourteen
+## Chapter 15 — Why it is one model, not sixteen
 
-The power of the vocabulary is that the **same six primitives taught all fourteen
+The power of the vocabulary is that the **same six primitives taught all sixteen
 lessons**, and that the lessons connect *through* the primitives:
 
 - The **count-versus-measure** seam is √2's irrationality (Ch. 8), *and* why the
   discrete integers cast continuous shadows (Ch. 1), *and* the deep reason the hardest
   open problems sit where whole structure meets continuous measure.
 - The **imaginary axis** *i* is quantum phase (Ch. 7), *and* the complex eigenvalue
-  (Ch. 9), *and* the Fourier rotation (Ch. 10) — one idea, three courses.
+  (Ch. 9), *and* the Fourier rotation (Ch. 10), *and* the half-turn π (Ch. 5.1) — one
+  idea, four courses.
 - The **shapes** are the Platonic solids (Ch. 3) *and* the groups (Ch. 11) — the same
   objects as forms and as their symmetries.
-- The **breath** is *e* (Ch. 4) *and* prime thinning (Ch. 6, the sieve as repeated
-  closing) — growth and decay as one motion.
+- The **breath** is *e* (Ch. 4), its inverse the logarithm and its instant the derivative
+  (Ch. 4.1–4.2), *and* prime thinning (Ch. 6, the sieve as repeated closing) — growth,
+  decay, and the measure of growth as one motion.
+- The **golden ratio** φ is the pentagon's diagonal (Ch. 3.1, the break of §1.2) *and* the
+  rate of self-similar growth (the breath once more) — the same number as a shape and as
+  a motion.
 - **Building by a rule** is magic squares (Ch. 13) *and* dimension-doubling (Ch. 14) —
   structure as generated, not found.
 
-A student who learns these lessons has not learned fourteen things but **one connected
-picture seen from fourteen angles** — which is the whole aim: a model that can be held in
+A student who learns these lessons has not learned sixteen things but **one connected
+picture seen from sixteen angles** — which is the whole aim: a model that can be held in
 one mind, so that mathematics is experienced as a structure rather than a stack.
 
 ## Chapter 16 — Honest failures (pictures tried and discarded)
@@ -429,6 +565,11 @@ Kept so the vocabulary stays trustworthy:
 - **"The breath produces physical energy or the fundamental constants."** False. The
   breath is *structural* growth; it is never energy from nothing and never a physical
   magnitude. The picture teaches the *shape* of self-proportional growth, nothing more.
+- **"The golden ratio is everywhere in nature and art."** Overstated. φ is forced only
+  where growth is *self-similar and additive* (§3.1) — phyllotaxis, the pentagon, the
+  Fibonacci recursion. Many celebrated sightings (the Parthenon, the "ideal" face, most
+  spirals labelled "golden") are retrofitted or simply wrong [Markowsky 1992]. The picture
+  is kept for the mechanism, not the mystique.
 - **"Every physical or computational structure is literally the same geometry."** Not a
   teaching claim. The convergence of structure across domains — for instance, the
   observed alignment of representations in independently trained neural networks [Huh et
@@ -438,23 +579,60 @@ Kept so the vocabulary stays trustworthy:
 
 ## Chapter 17 — How to test this book
 
-The claims are falsifiable as pedagogy:
-- **Faster connected models.** Compare comprehension and retention of (say) eigenvalues
-  or irrationality taught with the shape/rotation vocabulary against the standard
-  formalism-first sequence, in controlled instruction.
-- **Fewer later errors.** Track whether students taught the count-versus-measure picture
-  make fewer classic mistakes about the reals, limits, and the continuum.
-- **The honest edge.** Some advanced structure — high-dimensional phenomena, genuinely
-  non-geometric algebra — may have no faithful low-dimensional picture. Locating that edge
-  is part of the work, and its existence is not a defect but a boundary honestly drawn.
+The whole book rests on a claim about *teaching*, and a claim about teaching is
+falsifiable by teaching. This chapter states the test concretely enough to run.
+
+**17.1 The three predictions.**
+- **Faster connected models.** Students taught with the shape/rotation vocabulary build a
+  *connected* model — one where they can see that eigenvalues, Fourier, and quantum phase
+  are one idea — faster than students taught the standard formalism-first sequence.
+- **Fewer later errors.** Students taught the count-versus-measure picture make fewer of
+  the classic mistakes about the reals, limits, and the continuum.
+- **Better transfer.** Students who hold the vocabulary solve *novel* problems — ones not
+  drilled — more often, because they can reach for the right picture.
+
+**17.2 A concrete A/B protocol.** The cleanest single test isolates one lesson.
+- *Design.* Randomize a pool of students (ideally ≥ 60 per arm for a medium effect at
+  80% power; a classroom pilot of 20–30 per arm is worth running first) into two arms.
+  **Arm A (treatment)** is taught, say, the eigenvalue as *the axis a transformation spins
+  around, real when it stretches and complex when it turns* (Ch. 9, with Figure 7). **Arm
+  B (control)** is taught the same content in the standard order — characteristic
+  polynomial, roots, eigenvectors — by the same instructor, in the same time. Only the
+  *picture* differs, so the picture is what is under test.
+- *Blinding and fairness.* The two lessons are matched for length, worked examples, and
+  practice count; a second instructor delivers a replication to remove instructor effects;
+  graders of the outcome tests do not know which arm a script came from.
+- *Measures.* (1) An **immediate** comprehension quiz. (2) A **retention** quiz at two
+  weeks, un-announced. (3) A **transfer** item never taught in either arm — e.g. "here is a
+  shear matrix; does it have a real stretch-axis? explain" — scored for whether the student
+  reasons with axes/rotation at all. (4) A short **connection** prompt: "what, if anything,
+  does this have to do with the Fourier transform?", scored blind for whether the student
+  sees the shared rotation.
+- *Analysis.* Pre-register the primary outcome (transfer score at two weeks) and the
+  direction of effect before collecting data. Compare arms with a simple two-sample test;
+  report the effect size and its interval, not only a p-value; publish the null if it is
+  null. One clean null on the primary outcome falsifies the lesson's pedagogical claim —
+  and that is a result, not a failure of the study.
+- *Replication across lessons.* Repeat the design for √2 (Ch. 8), the group (Ch. 11), and
+  one *extension* lesson (the logarithm, Ch. 4.1). The book's stronger claim — that the
+  *vocabulary* transfers, not just one lucky picture — is tested only if several
+  independent lessons move the same way.
+
+**17.3 The honest edge.** Some advanced structure — high-dimensional phenomena, genuinely
+non-geometric algebra — may have *no* faithful low-dimensional picture, and the protocol
+above will find it as a lesson whose treatment arm does *not* beat control. Locating that
+edge is part of the work; its existence is not a defect but a boundary honestly drawn, and
+recorded (Chapter 16) rather than hidden. A pedagogy that cannot fail anywhere is not being
+tested; this one is built to say where it stops.
 
 ## Conclusion — The shape of understanding
 
-Fourteen of the deepest and hardest-to-teach ideas in mathematics — the Platonic solids,
-*e*, the radian, the rarity of primes, the complexity of quantum mechanics, the
-irrationality of √2, the eigenvalue, the Fourier transform, the group, the operational
-meaning of primality, the construction of magic squares, and the doubling of algebraic
-dimension — have been taught here with one small visual vocabulary: shapes that build by
+Sixteen of the deepest and hardest-to-teach ideas in mathematics — the Platonic solids,
+*e*, the logarithm, the derivative, the radian, π, the rarity of primes, the complexity of
+quantum mechanics, the irrationality of √2, the eigenvalue, the Fourier transform, the
+group, the operational meaning of primality, the construction of magic squares, the
+doubling of algebraic dimension, and the golden ratio — have been taught here with one
+small visual vocabulary: shapes that build by
 dimension, a rotation that is an imaginary axis, a growth that is a breath, a cube with
 two shadows, and the seam where counting fails to measure. Each picture was checked
 against the real mathematics; each is visual; each connects to the others, so that the
@@ -515,11 +693,16 @@ every genuine limit is. Always rounder; never round. That is what it is to under
 
 ## Appendix A — The verification scripts
 `verify_forced_chain.py` (the geometric core: simplices, the tetrahedral 1/3, the cube
-as Cl(3), the two shadows) and `curriculum_checks.py` (each lesson: the Schläfli count,
-the √2 parity descent, the sieve/Mertens density, the eigenvalue axis/rotation split, the
-Fourier square-wave synthesis, the D₃ symmetry count, the First-G law, the Siamese magic
-square, the dimension-doubling identity). Every asserted mathematical fact in the book is
-reproduced by running these.
+as Cl(3), the two shadows) and `curriculum_checks.py` (each lesson, in the book's order:
+the equidistance ladder and the omni-adjacent void, the crystallographic restriction, the
+two-shadow cube, the Schläfli count, *e* as self-proportional growth, the radian, the
+sieve/Mertens density with the units-versus-primes distinction, Euler's *e^{iπ} = −1*, the
+√2 parity descent, the eigenvalue axis/rotation split, the Fourier square-wave synthesis,
+the D₃ symmetry count, the First-G law, the Siamese magic square, the dimension-doubling
+identity, and the four extension lessons — the logarithm, π, the derivative, and the
+golden ratio with the pentagon). Every asserted mathematical fact in the book is
+reproduced by running these, and `curriculum_checks.py` prints `ALL LESSON CHECKS PASS`
+only after its final assertion succeeds.
 
 ## References
 
@@ -535,6 +718,7 @@ reproduced by running these.
 - R. Descartes, *La Géométrie* (1637).
 - Euclid, *Elements*, Book XIII (c. 300 BCE).
 - L. Euler, *Introductio in analysin infinitorum* (1748). [e]
+- E. S. Fedorov, "Symmetry of regular systems of figures" (1891). [the 17 plane groups]
 - R. P. Feynman, "Space-time approach to quantum electrodynamics," *Phys. Rev.* 76, 769
   (1949); *The Feynman Lectures on Physics* (Addison-Wesley, 1964); *QED* (Princeton,
   1985).
@@ -552,6 +736,7 @@ reproduced by running these.
 - F. Klein, "Vergleichende Betrachtungen über neuere geometrische Forschungen"
   (Erlangen program, 1872).
 - P. Lounesto, *Clifford Algebras and Spinors*, 2nd ed. (Cambridge, 2001).
+- G. Markowsky, "Misconceptions about the Golden Ratio," *College Math. J.* 23, 2 (1992).
 - F. Mertens, "Ein Beitrag zur analytischen Zahlentheorie," *J. reine angew. Math.* 78,
   46 (1874).
 - L. Pauling, *The Nature of the Chemical Bond*, 3rd ed. (Cornell, 1960). [tetrahedral
@@ -565,7 +750,10 @@ reproduced by running these.
 
 ---
 
-*Manuscript frame. The worked chapters (1–3, 8–14) contain the verified core; the
-elegant chapters (4–7) and the model/testing chapters (15–17) are drafted to the level of
-argument and citation and would be expanded with worked figures and classroom exercises
-in the full book. Every mathematical assertion is reproduced by the appendix scripts.*
+*Manuscript. Chapters 1–14 carry the verified core; Part Two's elegant chapters now include
+worked figures, extension lessons (the logarithm, the derivative, π, the golden ratio),
+exercises, and misconception boxes, and Part Five's testing chapter (17) gives a concrete
+A/B protocol. Every mathematical assertion is reproduced by the appendix scripts
+(`verify_forced_chain.py`, `curriculum_checks.py` — the latter prints ALL LESSON CHECKS
+PASS), and the load-bearing lessons are drawn in `figures/` by `make_figures.py`.
+Increasingly round; never measurably round.*

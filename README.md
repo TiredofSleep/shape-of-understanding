@@ -23,11 +23,14 @@ It is a work of **pedagogy**. Its claims are testable *as pedagogy* — whether 
 Every mathematical assertion in the book is reproduced by two scripts (NumPy/SymPy/SciPy):
 
 ```bash
-python curriculum_checks.py    # every lesson: Schläfli count, √2 parity descent, Mertens density,
-                               # eigenvalue axis-vs-rotation, Fourier synthesis, D₃, the equidistance
-                               # ladder, the omni-adjacent void, generators-vs-primes
+python curriculum_checks.py    # every lesson (46 checks): Schläfli count, √2 parity descent,
+                               # Mertens density, eigenvalue axis-vs-rotation, Fourier synthesis, D₃,
+                               # the equidistance ladder, the omni-adjacent void, the crystallographic
+                               # restriction, generators-vs-primes, First-G, Siamese magic squares,
+                               # dimension-doubling, and the extensions (log, π, derivative, golden ratio)
 python verify_forced_chain.py  # the geometric core: simplices, the tetrahedral 1/3, the cube = Cl(3),
                                # the two shadows
+python make_figures.py         # (re)generate the load-bearing figures into figures/*.svg
 ```
 
 ## Files
@@ -36,8 +39,10 @@ python verify_forced_chain.py  # the geometric core: simplices, the tetrahedral 
 |---|---|
 | [`the_shape_of_understanding_BOOK.md`](the_shape_of_understanding_BOOK.md) | the full manuscript frame — front matter, 5 parts, 17 chapters, coda, appendix, references |
 | [`the_shape_of_understanding.md`](the_shape_of_understanding.md) | the shorter companion paper (the 9-lesson journal-article version it grew from) |
-| [`curriculum_checks.py`](curriculum_checks.py) | the per-lesson verification suite |
+| [`curriculum_checks.py`](curriculum_checks.py) | the per-lesson verification suite (46 checks) |
 | [`verify_forced_chain.py`](verify_forced_chain.py) | the geometric-core verifier |
+| [`make_figures.py`](make_figures.py) | generates the eight load-bearing figures (SVG) |
+| `figures/` | the generated figures the manuscript embeds |
 
 ## The wall (the discipline that keeps it honest)
 
