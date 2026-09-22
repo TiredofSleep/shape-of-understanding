@@ -253,11 +253,33 @@ def fig_cube_grades():
     ax.set_axis_off()
     save(fig, "fig_cube_grades.svg")
 
+# 12 -- the staircase: from gumdrops (age 10) up to undergraduate mathematics
+def fig_staircase():
+    fig, ax = plt.subplots(figsize=(8.6, 4.2))
+    names = ["Part Zero", "Part One", "Part Two", "Part Three", "Part Four", "Part Five"]
+    details = ["gumdrops:\nsix pictures", "the grammar;\nCl(3) from candy",
+               "e, π, primes;\nwhy QM is complex", "√2, eigenvalues,\nFourier, groups",
+               "magic squares,\ndimension-doubling", "one model;\nhow to test it"]
+    heights = [1, 2, 3, 4, 5, 6]
+    cols = [(0.86 - 0.08 * i / 5, 0.91 - 0.04 * i / 5, 0.97) for i in range(6)]
+    ax.bar(range(6), heights, width=1.0, color=cols, edgecolor=INK, align="edge", zorder=2)
+    for i, (n, d, h) in enumerate(zip(names, details, heights)):
+        ax.text(i + 0.5, h - 0.12, n, ha="center", va="top", fontsize=9, fontweight="bold", color=INK)
+        ax.text(i + 0.5, 0.12, d, ha="center", va="bottom", fontsize=6.6, color=MUT)
+    ax.annotate("", xy=(6.15, 6.45), xytext=(-0.15, 0.2),
+                arrowprops=dict(arrowstyle="->", color=ACC, lw=1.6), zorder=3)
+    ax.text(-0.15, 6.15, "university", color=ACC, fontsize=8, ha="left")
+    ax.text(-0.15, 0.4, "age ten", color=ACC, fontsize=8, ha="left")
+    ax.set_xlim(-0.5, 6.9); ax.set_ylim(0, 7); ax.axis("off")
+    ax.set_title("The staircase — start with gumdrops, arrive at undergraduate mathematics;\n"
+                 "every step rests on the one below", fontsize=10)
+    save(fig, "fig_staircase.svg")
+
 if __name__ == "__main__":
     print("generating figures ->", OUT)
     for f in (fig_ladder, fig_equidistance, fig_two_shadows, fig_eigen,
               fig_fourier, fig_void, fig_golden, fig_crystallographic,
-              fig_doubling, fig_two_builds, fig_cube_grades):
+              fig_doubling, fig_two_builds, fig_cube_grades, fig_staircase):
         try:
             f()
         except Exception as e:  # keep going; report which failed

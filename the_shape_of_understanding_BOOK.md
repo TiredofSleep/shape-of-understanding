@@ -41,6 +41,11 @@
 
 ---
 
+![Six rising steps from age ten to university.](figures/fig_staircase.svg)
+*Figure 0 — The staircase. This book starts with gumdrops (Part Zero) and climbs, one step
+at a time, to undergraduate mathematics (Part Five). Every step rests on the one below; if a
+page feels hard, the page before it has what you need.*
+
 # PART ZERO — SIX SIMPLE PICTURES
 ### *Start here. No math needed yet — just six pictures.*
 
@@ -871,8 +876,10 @@ each independent direction.*
 
 ## Chapter 15 — Why it is one model, not sixteen
 
-The power of the vocabulary is that the **same six primitives taught all sixteen
-lessons**, and that the lessons connect *through* the primitives:
+The power of the vocabulary is that the **same six primitives taught all sixteen core
+lessons — and every shorter extension besides** (the doubling, the two builds and Cl(3),
+Pascal, Euclid, the logarithm, π, the derivative, the golden ratio, the quaternions) — and
+that the lessons connect *through* the primitives:
 
 - The **count-versus-measure** seam is √2's irrationality (Ch. 8), *and* why the
   discrete integers cast continuous shadows (Ch. 1), *and* the deep reason the hardest
@@ -989,7 +996,11 @@ group, the operational meaning of primality, the construction of magic squares, 
 doubling of algebraic dimension, and the golden ratio — have been taught here with one
 small visual vocabulary: shapes that build by
 dimension, a rotation that is an imaginary axis, a growth that is a breath, a cube with
-two shadows, and the seam where counting fails to measure. Each picture was checked
+two shadows, and the seam where counting fails to measure. Along the way a dozen shorter
+*extensions* reused those very same primitives — the doubling behind every power of two, the
+two builds and the algebra of space (Cl(3)), Pascal's triangle, Euclid's endless primes, the
+logarithm, π, the derivative, the golden ratio, and the quaternions — so the exact count was
+never the point; the *connectedness* is. Each picture was checked
 against the real mathematics; each is visual; each connects to the others, so that the
 learner acquires one model seen from many sides rather than many disconnected facts. The
 pictures are kept honest by a discipline of checking and a record of discarded failures,
