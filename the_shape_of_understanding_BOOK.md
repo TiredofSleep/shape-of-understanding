@@ -553,11 +553,26 @@ periodic structure above it is research, not curriculum.)
 *A pedagogy proves itself on the concepts that stop people, not the elegant ones. Each
 of the four below has been checked against its real proof or definition.*
 
+> *Where we are on the staircase.* This is the steep part — the four lessons that stop most
+> students. But every one of them rests on pictures you already have from Part Zero: turning
+> (Picture 3), counting-versus-measuring (Picture 6), and fair shapes (Picture 1). If a page
+> feels hard, it is not because something new is missing; it is the same pictures, higher up.
+> Each chapter opens with the plain idea before the symbols — read that first, and lean on it.
+
 ## Chapter 8 — Why √2 is irrational (the first crisis)
 
 √2 is the **diagonal of the unit square** (§1.1's segment doubled into a square).
 Asking whether it is a ratio p/q asks whether the diagonal and side can be measured in
-the same unit. They cannot: if diagonal/side = p/q in lowest terms, then p² = 2q² forces
+the same unit. **The plain idea, in whole numbers.** Suppose you *could* write that diagonal as a fraction
+— some whole number of tiny units for the diagonal over some whole number for the side —
+and suppose you've already cancelled it down so the two numbers share no common factor (the
+way ⁶⁄₈ cancels to ¾). A short chain of reasoning then forces *both* of your numbers to be
+even. But two even numbers *do* share a common factor — namely 2 — which a fully-cancelled
+fraction is not allowed to have. The assumption destroys itself. So no such fraction can
+exist, and the diagonal is a length no whole-number ratio will ever name. Here is that chain
+exactly:
+
+They cannot: if diagonal/side = p/q in lowest terms, then p² = 2q² forces
 both p and q even (p² even ⟹ p even ⟹ 4r² = 2q² ⟹ q even), contradicting "lowest terms"
 [the classical proof, attributed to the Pythagoreans; Heath 1921]. Geometrically, the
 square contains a *shrinking similar copy* of its own incommensurability — an infinite
@@ -593,7 +608,11 @@ e^{±iθ} — the rotation itself is the i.*
 Any repeating shape is a **sum of pure rotations** — circles turning at different
 speeds. The Fourier transform asks each speed, *"how much of you is in this signal?"*
 [Fourier 1822]. A square wave, for example, is Σ 4/(πk)·sin(kt) over odd k; a seven-term
-sum already matches it closely (verified: mean-squared error 0.029). Each frequency is a
+sum already matches it closely (verified: mean-squared error 0.029). (Reading the formula
+in plain words: the big Σ just means *add up*; each piece is one spinning circle — sin is
+the up-and-down height of a dot going around a circle, *k* is how fast that circle spins,
+and 4/(πk) is how big it is. Add the first few circles and the square wave already appears,
+as Figure 8 shows.) Each frequency is a
 circle spinning at its rate — an *i*-rotation, a breath — and the transform reads off
 each circle's strength. Fourier ceases to be an intimidating integral and becomes *which
 spinning circles, added together, build this wave, and how strong is each* [the "epicycle"
@@ -646,6 +665,12 @@ concrete encounter with the idea that generation and structure are the same thin
 from two sides.
 
 ## Chapter 14 — Why algebra's dimensions double
+
+**The plain idea.** Every time you add one new independent direction to build with, the
+number of pieces the algebra needs *doubles* — 1, then 2, then 4, 8, 16, … — because each
+new direction can be either included or not, on top of every combination you already had
+(the same reason two coins give 4 outcomes and three coins give 8). Doubling over and over
+is why these sizes are always powers of two. In symbols:
 
 The dimension of the n-fold tensor of a four-dimensional space is 4ⁿ = 2^{2n}, which is
 exactly the dimension of the Clifford algebra Cl(2n) (verified for n = 1…5). The
