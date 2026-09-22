@@ -35,7 +35,9 @@
 > university student sees, with the grown-up words and the real proofs. **Every step rests
 > on the one below it.** If a page ever feels too hard, the pages before it have exactly
 > what you need — go back a step, then come up again. You are never expected to jump.
-> Start with **Part Zero**; anyone can read it.
+> Start with **Part Zero**; anyone can read it. (A glossary of the grown-up words — which
+> plain picture each hard term stands for — is in **Appendix B**, for whenever you want a
+> real name.)
 
 ---
 
@@ -794,6 +796,12 @@ verifiable combinatorial results appear here; the canon's speculative bridges to
 physics are research frontier, not curriculum, and are deliberately excluded (see the
 note closing this part).*
 
+> *Where we are on the staircase.* These three come from research, but each is admitted only
+> if the picture stays something a ten-year-old could follow — a walking rule that builds a
+> magic square, the first number that catches you, the doubling behind algebra's dimensions.
+> The deep frontier stays out (the closing note says why); what's here is still the shared
+> language, one step higher.
+
 ## Chapter 12 — What a prime *is*: the first number that catches you
 
 Walk 1, 2, 3, … and ask of each: *does it share a factor with N?* For a square-free N,
@@ -801,6 +809,16 @@ Walk 1, 2, 3, … and ask of each: *does it share a factor with N?* For a square
 N=30→2). Coprimality is "no shared factor"; a prime is *the first thing that catches
 you.* This gives an operational feel for primality that complements Chapter 6's density
 picture [the result is elementary; it formalizes the sieve intuition of Eratosthenes].
+
+**12.1 And the primes never run out (extension).** Primes *thin* (Ch. 6), but they never
+*stop* — and the proof, due to Euclid, is one of the most beautiful in mathematics. Suppose
+someone hands you a list they swear contains *every* prime. Multiply all the primes on the
+list together, then **add 1**; call the result *P.* Divide *P* by any prime on the list and
+it leaves remainder 1 (that is the +1), so **no prime on the list divides *P*.** But every
+whole number above 1 has at least one prime factor — so *P* has a prime factor that is **not
+on the list.** The list was not complete. Since *no* list can be complete, **the primes are
+endless** (verified: for the first *k* primes, the factors of their product-plus-one are
+always new ones). The sieve thins the primes forever, and forever there are more to thin.
 
 ## Chapter 13 — Structure can be built: magic squares by a walking rule
 
@@ -846,6 +864,11 @@ each independent direction.*
 
 # PART FIVE — THE MODEL AS A WHOLE
 
+> *Where we are on the staircase — the top.* You have climbed from gumdrops (Part Zero) to
+> eigenvalues, Fourier, groups, and the algebra of space. This last part steps back to see
+> the whole climb as *one* picture, keeps the pictures that were tried and *failed* (so the
+> trust holds), and asks how to test whether the teaching actually works.
+
 ## Chapter 15 — Why it is one model, not sixteen
 
 The power of the vocabulary is that the **same six primitives taught all sixteen
@@ -885,6 +908,10 @@ Kept so the vocabulary stays trustworthy:
   Fibonacci recursion. Many celebrated sightings (the Parthenon, the "ideal" face, most
   spirals labelled "golden") are retrofitted or simply wrong [Markowsky 1992]. The picture
   is kept for the mechanism, not the mystique.
+- **"Multiplying the first primes and adding 1 always gives a prime."** False, and a classic
+  slip in reading Euclid (§12.1). The number *P* need only have a *new prime factor*, not be
+  prime itself: 2·3·5·7·11·13 + 1 = 30031 = 59 × 509. The proof needs a new *factor*, which
+  it always has; it never needs *P* to be prime.
 - **"Adding a point doubles the edges (or the faces)."** False in general, and a tempting
   trap from the very first lift (§1.1b), where the sticks *do* double (3 → 6) and the faces
   quadruple (1 → 4). Those multipliers shrink at every later step (edges next go ×1⅔). The
@@ -1026,13 +1053,49 @@ the equidistance ladder and the omni-adjacent void, the crystallographic restric
 two-shadow cube, the Schläfli count, *e* as self-proportional growth, the radian, the
 sieve/Mertens density with the units-versus-primes distinction, Euler's *e^{iπ} = −1*, the
 √2 parity descent, the eigenvalue axis/rotation split, the Fourier square-wave synthesis,
-the D₃ symmetry count, the First-G law, the Siamese magic square, the dimension-doubling
+the D₃ symmetry count, the First-G law and Euclid's endless primes, the Siamese magic square, the dimension-doubling
 identity, the lift-as-doubling (§1.1b) and the cube = Cl(3) grade split 1+3+3+1 with its
 rotating bivectors (§2.2), Pascal's triangle (row sums = the doublings, row 3 = the Cl(3)
 grades; §2.3), and the extension lessons — the logarithm, π, the derivative, the
 golden ratio with the pentagon, and the ℝ→ℂ→ℍ rotation tower). Every asserted mathematical fact in the book is
 reproduced by running these, and `curriculum_checks.py` prints `ALL LESSON CHECKS PASS`
 only after its final assertion succeeds.
+
+## Appendix B — The grown-up words (a glossary)
+
+This book says things simply first and gives the real name second. Here is the map, so you
+can always look up what mathematicians call a picture — or, coming the other way, remember
+which picture a hard word stands for. Each is introduced where the last column says.
+
+| In this book (plain words) | The grown-up word | Where |
+|---|---|---|
+| the same distance apart | **equidistant** | §1.1, Picture 1 |
+| a fair shape (dots joined by equal sticks) | a **simplex** | Ch. 1 |
+| the fourth dot rising off the table | the **dimensional lift** | §1.1, §2.1 |
+| the full empty middle | the **centroid** / the **void** (0) | §1.6b |
+| adding one doubles everything (the yes/no) | the **power set**, 2ⁿ | §1.1b |
+| the doubling sorted by size | **Pascal's triangle** / **binomial coefficients** C(n,k) | §2.3 |
+| the box that *is* the algebra of space | the **Clifford algebra** Cl(3) | §2.2 |
+| the face-planes that turn | **bivectors** | §2.2 |
+| the quarter-turn number | the **imaginary unit** *i* | §1.3 |
+| three quarter-turn units at once | the **quaternions** ℍ | §7.1 |
+| turning counted in unit arcs | the **radian** | Ch. 5 |
+| half a turn | **π** | §5.1 |
+| growing that feeds itself | **e** / **exponential growth** | §1.4, Ch. 4 |
+| the breath run backward | the **logarithm** | §4.1 |
+| how fast it's growing right now | the **derivative** | §4.2 |
+| the pentagon's number | the **golden ratio** φ | §3.1 |
+| the box's two shadows | **projections** | §1.5 |
+| counting versus measuring | **discrete** versus **continuous** | §1.6 |
+| a length no fraction can name (√2) | an **irrational number** | Ch. 8 |
+| an axis a transformation only stretches | an **eigenvector** (with its **eigenvalue**) | Ch. 9 |
+| a wave as a sum of spinning circles | the **Fourier transform** | Ch. 10 |
+| the moves that leave a shape the same | a **group** | Ch. 11 |
+| the first number that catches you | the **smallest prime factor** | Ch. 12 |
+| the numbers that reach every clock position | the **units** (coprime to n) | Ch. 6 |
+| shapes that have room to fold into a solid | the **Platonic solids** | Ch. 3 |
+
+---
 
 ## References
 

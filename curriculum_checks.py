@@ -220,6 +220,20 @@ for N in [15, 35, 77, 30, 143]:
     assert fc == spf
 print("  -> coprimality is 'no shared factor'; a prime is 'the first thing that catches you'.")
 
+banner("Ch.12.1 -- Euclid: the primes never run out (product of primes + 1 has a NEW factor)")
+from sympy import prime as _prime, factorint as _fac
+for _k in range(1, 8):
+    _firstk = [_prime(_i) for _i in range(1, _k + 1)]
+    _P = 1
+    for _p in _firstk:
+        _P *= _p
+    _P += 1
+    assert all(_q not in _firstk for _q in _fac(_P).keys())      # every prime factor is new
+show("first k primes -> (their product + 1) has only NEW prime factors", "so no finite list of primes is complete: the primes are endless")
+show("but product + 1 need NOT itself be prime", "2*3*5*7*11*13 + 1 = 30031 = 59 x 509 (the classic misconception)")
+assert _fac(30031) == {59: 1, 509: 1}
+print("  -> the sieve thins the primes forever, and forever there are more to thin.")
+
 banner("Ch.13 -- structure can be BUILT: Siamese magic squares by a walking rule")
 def siamese(n):
     assert n % 2 == 1
