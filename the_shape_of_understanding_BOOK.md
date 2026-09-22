@@ -618,6 +618,14 @@ falsifiable by teaching. This chapter states the test concretely enough to run.
   *vocabulary* transfers, not just one lucky picture — is tested only if several
   independent lessons move the same way.
 
+A **ready-to-run kit** implementing this protocol is in [`study/`](study/): the
+pre-registration, the two matched lesson scripts (treatment and control), the four
+assessment instruments with scoring rubrics, a power analysis (≈ 64 per arm for
+*d* = 0.5 at 80% power), and the analysis script — the last already tested on
+simulated data, so the pipeline is verified before any student is taught. It is a
+kit, not a result: until a cohort is run, the pedagogy is a hypothesis with an
+apparatus, and the book says so.
+
 **17.3 The honest edge.** Some advanced structure — high-dimensional phenomena, genuinely
 non-geometric algebra — may have *no* faithful low-dimensional picture, and the protocol
 above will find it as a lesson whose treatment arm does *not* beat control. Locating that

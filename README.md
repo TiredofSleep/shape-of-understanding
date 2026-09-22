@@ -43,6 +43,7 @@ python make_figures.py         # (re)generate the load-bearing figures into figu
 | [`verify_forced_chain.py`](verify_forced_chain.py) | the geometric-core verifier |
 | [`make_figures.py`](make_figures.py) | generates the eight load-bearing figures (SVG) |
 | `figures/` | the generated figures the manuscript embeds |
+| [`study/`](study/README.md) | the ready-to-run A/B study kit for Ch.17 (pre-registration, lessons, assessments, power + analysis scripts) |
 
 ## The wall (the discipline that keeps it honest)
 
