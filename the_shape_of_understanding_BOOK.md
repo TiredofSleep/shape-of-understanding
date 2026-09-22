@@ -54,6 +54,11 @@ they are in the simplest way I know how to say them. Every later chapter is one 
 same six pictures, drawn again a little deeper, with grown-up words and real reasons. The
 pictures never change on the way up — only how much you can see in them.
 
+> **To build along (optional, but the best way):** a handful of gumdrops or mini-marshmallows,
+> a box of toothpicks, a flashlight or lamp, and a dice or small box. Several of these six
+> pictures are things you can make with your own hands — and by Chapter 2 you'll build the
+> algebra of space itself out of three toothpicks.
+
 ## Picture 1 — Fair shapes from same-length lines
 
 Take some dots. Join them with sticks that are **all the same length** — so no dot is

@@ -9,6 +9,8 @@ Mathematics is taught as a stack of separate languages — arithmetic, algebra, 
 
 It is a work of **pedagogy**. Its claims are testable *as pedagogy* — whether learners build a connected model faster, retain it longer, and make fewer of the classic errors. It is **not** a theory of physics or a decoding of reality.
 
+**It is built as a staircase.** It starts so simply a curious ten-year-old can begin — with gumdrops, toothpicks, shadows, and spinning tops (**Part Zero**) — and climbs, one checked step at a time, to genuine undergraduate mathematics (eigenvalues, the Fourier transform, groups, the Clifford algebra of space, built from candy). Every step rests on the one below; a glossary of the grown-up words (**Appendix B**) lets a reader look up any real name.
+
 ## The six primitives
 
 1. **Integers are shapes** — *n* mutually-equidistant points force the (n−1)-simplex; the dimensional ladder is the ladder of *simultaneous equality* (three is the last count that stays flat).
@@ -23,25 +25,26 @@ It is a work of **pedagogy**. Its claims are testable *as pedagogy* — whether 
 Every mathematical assertion in the book is reproduced by two scripts (NumPy/SymPy/SciPy):
 
 ```bash
-python curriculum_checks.py    # every lesson (46 checks): Schläfli count, √2 parity descent,
-                               # Mertens density, eigenvalue axis-vs-rotation, Fourier synthesis, D₃,
-                               # the equidistance ladder, the omni-adjacent void, the crystallographic
-                               # restriction, generators-vs-primes, First-G, Siamese magic squares,
-                               # dimension-doubling, and the extensions (log, π, derivative, golden ratio)
+python curriculum_checks.py    # every lesson (61 checks): the equidistance ladder & the void,
+                               # the lift-as-doubling, the two builds & Cl(3) grades (1+3+3+1,
+                               # bivectors² = −1), Pascal's triangle, the Schläfli count, Mertens
+                               # density, eigenvalue axis-vs-rotation, Fourier, D₃, √2 descent,
+                               # First-G & Euclid's endless primes, Siamese squares, dimension-
+                               # doubling, and the extensions (log, π, derivative, golden ratio, quaternions)
 python verify_forced_chain.py  # the geometric core: simplices, the tetrahedral 1/3, the cube = Cl(3),
                                # the two shadows
-python make_figures.py         # (re)generate the load-bearing figures into figures/*.svg
+python make_figures.py         # (re)generate the twelve figures into figures/*.svg
 ```
 
 ## Files
 
 | file | what it is |
 |---|---|
-| [`the_shape_of_understanding_BOOK.md`](the_shape_of_understanding_BOOK.md) | the full manuscript frame — front matter, 5 parts, 17 chapters, coda, appendix, references |
+| [`the_shape_of_understanding_BOOK.md`](the_shape_of_understanding_BOOK.md) | the full manuscript — a **Part Zero** for the youngest reader, then 5 parts / 17 chapters climbing to undergrad, coda, appendices A (scripts) & B (grown-up-words glossary), references |
 | [`the_shape_of_understanding.md`](the_shape_of_understanding.md) | the shorter companion paper (the 9-lesson journal-article version it grew from) |
-| [`curriculum_checks.py`](curriculum_checks.py) | the per-lesson verification suite (46 checks) |
+| [`curriculum_checks.py`](curriculum_checks.py) | the per-lesson verification suite (61 checks) |
 | [`verify_forced_chain.py`](verify_forced_chain.py) | the geometric-core verifier |
-| [`make_figures.py`](make_figures.py) | generates the eight load-bearing figures (SVG) |
+| [`make_figures.py`](make_figures.py) | generates the twelve load-bearing figures (SVG) |
 | `figures/` | the generated figures the manuscript embeds |
 | [`study/`](study/README.md) | the ready-to-run A/B study kit for Ch.17 (pre-registration, lessons, assessments, power + analysis scripts) |
 
