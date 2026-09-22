@@ -281,6 +281,11 @@ choice, and one more choice doubles everything.* Counting shapes and climbing di
 turn out to be the same act, and a ten-year-old can hold both in one hand: **add a gumdrop,
 everything doubles, the shape climbs.**
 
+![A binary tree doubling 1 → 2 → 4 → 8 as toothpicks are added.](figures/fig_doubling.svg)
+*Figure 9 — The lift is a doubling. Each perpendicular toothpick asks one yes/no of
+everything already built, so the count doubles: 1 → 2 → 4 → 8. Three toothpicks give
+2³ = 8 — the cube, Cl(3).*
+
 **1.2 The break, and the round.** At five points the picture changes character. The
 regular pentagon has five-fold symmetry, and five-fold symmetry **cannot tile the
 plane** — a theorem (the crystallographic restriction: the only rotation orders a
@@ -387,6 +392,11 @@ new dimension — that gives the simplices and the tetrahedral angle (§2.1). Ma
 algebra of space itself (§2.2). Same gumdrops, same act of adding one toothpick; the only
 difference is the angle you set.
 
+![A tetrahedron beside a cube, the two builds.](figures/fig_two_builds.svg)
+*Figure 10 — Same gumdrops, two builds. Equal-length toothpicks force the shape to lift
+(the tetrahedron / simplex, left); perpendicular toothpicks force it to double (the cube =
+Cl(3), right). The only difference is the angle.*
+
 **2.1 The equal build: same-length toothpicks, and the lift.**
 
 *In plain words first, before any symbols.* Draw an arrow from the middle of the shape out
@@ -459,6 +469,11 @@ three-dimensional space, Cl(3)** — and its pieces are literally the parts of t
 point at: centre, axes, faces, volume. A child with three toothpicks is holding the complete
 structure of the algebra of space, sorted by what they can see. (Chapter 14 meets these
 doubling dimensions again from the outside; here they are built from the inside, by hand.)
+
+![A cube with its centre, three axes, three shaded faces, and volume labelled.](figures/fig_cube_grades.svg)
+*Figure 11 — The cube is Cl(3). Its eight parts are the algebra's eight elements: the centre
+(1 scalar), the three axes from a corner (3 vectors), the three faces meeting that corner
+(3 bivectors — the *i*), and the whole volume (1 pseudoscalar). 1 + 3 + 3 + 1 = 8.*
 
 **And the imaginary unit falls out of the candy.** Take two perpendicular toothpicks and look
 at the face-plane they span — a bivector. Multiply it by itself and you get **−1** (verified:

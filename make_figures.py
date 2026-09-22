@@ -177,10 +177,87 @@ def fig_crystallographic():
     ax.set_xlabel("rotation order n"); ax.set_yticks([-2, -1, 0, 1, 2]); ax.set_xticks(ns)
     save(fig, "fig_crystallographic.svg")
 
+# 9 -- the doubling: each perpendicular toothpick is one in/out choice (1->2->4->8)
+def fig_doubling():
+    fig, ax = plt.subplots(figsize=(7, 3.4))
+    levels = [1, 2, 4, 8]
+    labels = ["1 gumdrop\n(scalar)", "+1 toothpick", "+1 perp.", "+1 perp.  =  cube, Cl(3)"]
+    xmax = 8
+    for L, n in enumerate(levels):
+        ys = np.linspace(0, 1, n + 1)[:-1] + 1.0 / (2 * n)
+        for k, y in enumerate(ys):
+            ax.scatter([L], [y], s=40, c=(ACC if L == 3 else INK), zorder=3)
+            if L > 0:  # each node splits from a parent (the in/out choice)
+                py = np.linspace(0, 1, levels[L-1] + 1)[:-1] + 1.0 / (2 * levels[L-1])
+                ax.plot([L-1, L], [py[k // 2], y], c=MUT, lw=0.8, zorder=1)
+        ax.text(L, -0.12, f"2^{L} = {n}", ha="center", fontsize=9, color=(ACC if L == 3 else INK))
+        ax.text(L, 1.1, labels[L], ha="center", fontsize=8, color=MUT)
+    ax.set_title("Each perpendicular toothpick is one yes/no — so the count DOUBLES",
+                 fontsize=10)
+    ax.set_xlim(-0.5, 3.6); ax.set_ylim(-0.25, 1.25); ax.axis("off")
+    save(fig, "fig_doubling.svg")
+
+# 10 -- the two builds: equal->lift (tetrahedron) vs perpendicular->double (cube)
+def fig_two_builds():
+    import itertools
+    fig = plt.figure(figsize=(9, 4.2))
+    a = fig.add_subplot(1, 2, 1, projection="3d")
+    v = np.array([[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]], float)
+    for i in range(4):
+        for j in range(i+1, 4):
+            a.plot(*zip(v[i], v[j]), c=ACC, lw=1.4)
+    a.scatter(v[:, 0], v[:, 1], v[:, 2], s=45, c=INK)
+    a.set_title("EQUAL toothpicks → the shape LIFTS\ntetrahedron · the simplex ladder", fontsize=9)
+    a.set_axis_off()
+    b = fig.add_subplot(1, 2, 2, projection="3d")
+    V = np.array(list(itertools.product([0, 1], [0, 1], [0, 1])), float)
+    for i in range(8):
+        for j in range(i+1, 8):
+            if np.sum(np.abs(V[i]-V[j])) == 1:
+                b.plot(*zip(V[i], V[j]), c=INK, lw=1)
+    for tgt in [(1, 0, 0), (0, 1, 0), (0, 0, 1)]:   # the 3 perpendicular toothpicks from a corner
+        b.plot([0, tgt[0]], [0, tgt[1]], [0, tgt[2]], c=ACC, lw=3)
+    b.scatter([0], [0], [0], s=45, c=ACC)
+    b.set_title("PERPENDICULAR toothpicks → it DOUBLES\ncube = Cl(3),  2³ = 8", fontsize=9)
+    b.set_axis_off()
+    fig.suptitle("Same gumdrops, two builds — equal lifts the shape, perpendicular doubles the algebra",
+                 fontsize=10, y=1.03)
+    save(fig, "fig_two_builds.svg")
+
+# 11 -- the cube IS Cl(3): 1 + 3 + 3 + 1 = 8, its parts are the grades
+def fig_cube_grades():
+    import itertools
+    from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+    fig = plt.figure(figsize=(6.6, 5.2))
+    ax = fig.add_subplot(111, projection="3d")
+    V = np.array(list(itertools.product([0, 1], [0, 1], [0, 1])), float)
+    for i in range(8):
+        for j in range(i+1, 8):
+            if np.sum(np.abs(V[i]-V[j])) == 1:
+                ax.plot(*zip(V[i], V[j]), c=MUT, lw=0.7)
+    # 3 bivectors: the 3 faces meeting the origin corner (shaded)
+    faces = [[(0, 0, 0), (1, 0, 0), (1, 1, 0), (0, 1, 0)],
+             [(0, 0, 0), (1, 0, 0), (1, 0, 1), (0, 0, 1)],
+             [(0, 0, 0), (0, 1, 0), (0, 1, 1), (0, 0, 1)]]
+    ax.add_collection3d(Poly3DCollection(faces, facecolor=ACC2, alpha=0.13, edgecolor=ACC2, linewidths=0.6))
+    # 3 vectors: the 3 axes from the origin corner
+    for tgt, lab in [((1, 0, 0), "e₁"), ((0, 1, 0), "e₂"), ((0, 0, 1), "e₃")]:
+        ax.plot([0, tgt[0]], [0, tgt[1]], [0, tgt[2]], c=ACC, lw=3)
+        ax.text(tgt[0], tgt[1], tgt[2], "  " + lab, color=ACC, fontsize=9)
+    # 1 scalar: the centre
+    ax.scatter([0.5], [0.5], [0.5], s=70, c=INK)
+    ax.text(0.5, 0.5, 0.62, "scalar", ha="center", fontsize=8, color=INK)
+    ax.set_title("The cube IS Cl(3):  1 + 3 + 3 + 1 = 8\n"
+                 "centre (1 scalar) · axes (3 vectors) · faces (3 bivectors = the i) · volume (1 pseudoscalar)",
+                 fontsize=8.5)
+    ax.set_axis_off()
+    save(fig, "fig_cube_grades.svg")
+
 if __name__ == "__main__":
     print("generating figures ->", OUT)
     for f in (fig_ladder, fig_equidistance, fig_two_shadows, fig_eigen,
-              fig_fourier, fig_void, fig_golden, fig_crystallographic):
+              fig_fourier, fig_void, fig_golden, fig_crystallographic,
+              fig_doubling, fig_two_builds, fig_cube_grades):
         try:
             f()
         except Exception as e:  # keep going; report which failed
