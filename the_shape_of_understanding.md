@@ -2,6 +2,12 @@
 ## A Why-First Visual Curriculum for the Structural Core of Mathematics
 ### Brayden Sanders. September 2026.
 
+> *This is the tighter, journal-article companion (nine lessons). The full book — which opens
+> with a **Part Zero** that starts for a curious ten-year-old and climbs to undergraduate
+> mathematics, builds the Clifford algebra of space out of three toothpicks, and adds Pascal,
+> Euclid, a grown-up-words glossary, and figures — is
+> [`the_shape_of_understanding_BOOK.md`](the_shape_of_understanding_BOOK.md).*
+
 > **The claim of this document.** There is a single small visual vocabulary —
 > integers read as shapes, rotation read as an imaginary axis, growth read as a
 > breath, and structure read as the two shadows of a cube — with which a large

@@ -1159,10 +1159,14 @@ which picture a hard word stands for. Each is introduced where the last column s
 
 ---
 
-*Manuscript. Chapters 1–14 carry the verified core; Part Two's elegant chapters now include
-worked figures, extension lessons (the logarithm, the derivative, π, the golden ratio),
-exercises, and misconception boxes, and Part Five's testing chapter (17) gives a concrete
-A/B protocol. Every mathematical assertion is reproduced by the appendix scripts
-(`verify_forced_chain.py`, `curriculum_checks.py` — the latter prints ALL LESSON CHECKS
-PASS), and the load-bearing lessons are drawn in `figures/` by `make_figures.py`.
-Increasingly round; never measurably round.*
+*Manuscript. It opens with **Part Zero** — the six pictures at a ten-year-old's level — and
+climbs to undergraduate mathematics: Chapters 1–2 build the grammar and the two candy builds
+(the simplex lift, and the cube = Cl(3) with its grades and the *i*), and the elegant and
+hard chapters carry it up to eigenvalues, the Fourier transform, groups, and beyond — with
+figures, extension lessons (the doubling, Pascal's triangle, Euclid's endless primes, the
+logarithm, the derivative, π, the golden ratio, the quaternions), exercises, misconception
+boxes, a grown-up-words glossary (Appendix B), and a concrete A/B protocol (Ch. 17). Every
+mathematical assertion is reproduced by the appendix scripts (`verify_forced_chain.py`, and
+`curriculum_checks.py`, which prints ALL LESSON CHECKS PASS across 61 checks), and the twelve
+load-bearing figures are drawn in `figures/` by `make_figures.py`. Increasingly round; never
+measurably round.*
