@@ -78,6 +78,11 @@ and they call these fair shapes **simplexes** — you'll meet those words in Cha
 watch closely when that fourth gumdrop lifts: something surprising happens to the *number*
 of connections at the very same moment. That's Chapter 1's payoff.
 
+![One dot, then two, then a flat triangle, then a tetrahedron that has lifted off the table.](figures/fig_simplex_ladder.svg)
+*Building up, one gumdrop at a time: a dot, a line, a flat triangle — and then the fourth
+gumdrop, which could not stay flat and had to rise into a little pyramid. Try it with
+gumdrops and toothpicks and watch the fourth one lift.*
+
 ## Picture 2 — The full middle
 
 Every fair shape has a **middle** — the spot right in the center, the same distance from
