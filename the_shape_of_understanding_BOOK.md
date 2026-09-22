@@ -29,7 +29,111 @@
 
 ---
 
+> **How to read this book — it climbs.** This book is a staircase. It starts so simply
+> that a curious ten-year-old can begin — with dots, sticks, shadows, and spinning tops —
+> and it climbs, one step at a time, until the last chapters show the very same pictures a
+> university student sees, with the grown-up words and the real proofs. **Every step rests
+> on the one below it.** If a page ever feels too hard, the pages before it have exactly
+> what you need — go back a step, then come up again. You are never expected to jump.
+> Start with **Part Zero**; anyone can read it.
+
+---
+
+# PART ZERO — SIX SIMPLE PICTURES
+### *Start here. No math needed yet — just six pictures.*
+
+You do not need to know any mathematics to begin this book. You need six pictures. Here
+they are in the simplest way I know how to say them. Every later chapter is one of these
+same six pictures, drawn again a little deeper, with grown-up words and real reasons. The
+pictures never change on the way up — only how much you can see in them.
+
+## Picture 1 — Fair shapes from same-length lines
+
+Take some dots. Join them with sticks that are **all the same length** — so no dot is
+closer to any other dot; everybody is the same distance apart. Call that a *fair* shape.
+
+- **2 dots, 1 stick:** a little line.
+- **3 dots, three same-length sticks:** a **triangle**. It lies flat on the table.
+- **4 dots, all the same distance from each other:** try it! Get four toothpicks and some
+  gumdrops (or marshmallows) and try to build a shape where *every* pair of dots is one
+  toothpick apart. You will find you **cannot keep it flat.** The fourth dot has to lift up
+  off the table into the air, and you get a little **pyramid** with a triangle bottom.
+
+That is the first big secret of the whole book: *to keep adding dots that are all the same
+distance apart, you have to keep rising into a new direction.* Same-length lines push
+shapes upward into new space. (Grown-ups call "the same distance apart" **equidistant**,
+and they call these fair shapes **simplexes** — you'll meet those words in Chapter 1.)
+
+## Picture 2 — The full middle
+
+Every fair shape has a **middle** — the spot right in the center, the same distance from
+all the corners. Nothing sits there; it's empty. And yet it is the most special spot in
+the whole shape, because it is the *only* spot that is close to **everything at once.**
+Look: each corner is far from the other corners. Only the middle is near them all. So the
+"empty middle" is really *the spot closest to everything.* Remember that — it comes back at
+the very end of the book as one of its deepest ideas: the emptiest point is the fullest.
+
+## Picture 3 — Turning
+
+Point your arm straight out to the right. Now spin slowly. Your hand points forward, then
+up, then back, then down, then forward again. **Turning** is its own kind of move — it
+doesn't make things bigger or smaller, it just carries them *around.* Two things hide
+inside every turn: a **still point** in the middle that everything spins around, and a
+special "quarter-turn" that mathematicians write with the letter *i.* Wherever something
+goes round and round — a clock hand, a wheel, a wave in the sea, a planet, even the tiny
+insides of an atom — this very same turning is hiding in the math. We'll find it again and
+again.
+
+## Picture 4 — Growing that feeds itself
+
+Some things grow by a little slice of *themselves* every moment. Money in a bank earns a
+bit more money on the money it already has. A puddle of germs doubles, and then that
+bigger puddle doubles again. The more there is, the faster it grows — growing that feeds
+itself. Every time this kind of growing happens, one special speed-number shows up, about
+**2.718**, and its nickname is *e.* You could call it the number of "growing that feeds
+itself." Populations, cooling soup, radioactive rocks — all of them breathe by *e.*
+
+## Picture 5 — One box, two shadows
+
+Hold a cube up to a lamp — a dice, a sugar cube, a cardboard box. Look at its shadow.
+
+- Turn it so a **flat face** points at you: the shadow is a **square**.
+- Now tip it so a **corner** points straight at you: the shadow becomes a **six-sided
+  shape** — a hexagon!
+
+Same box. Two completely different shadows, just from turning it. A huge amount of
+mathematics is exactly this: *one thing that looks like different things from different
+sides.* Learning to see that it's the same box underneath is a lot of what this book does.
+
+## Picture 6 — Counting and measuring
+
+There are two ways to deal with "how much." You **count** things that come in whole
+pieces: 1 apple, 2 apples, 3 apples — no half-apples allowed in counting. You **measure**
+things that flow: how tall you are, how much water is in a cup — any in-between amount is
+fine.
+
+Counting and measuring usually get along. But once in a while they **crash.** Draw a
+square that is 1 step on each side, and then measure the slanted line from one corner to
+the far corner (the *diagonal*). That length is real — you can see it — but **no counting
+fraction can ever name it exactly.** Not 1½, not 1.41, not any fraction however long.
+(Grown-ups call it "the square root of 2.") The place where counting simply *cannot*
+measure is where the deepest and strangest mathematics lives, and we'll go right to it.
+
+## That's the whole vocabulary
+
+Six pictures: **fair shapes from same-length lines, the full middle, turning, growing, the
+two-shadow box, and counting-versus-measuring.** That's it. That's the entire vocabulary
+of this book. Everything after here is these six pictures again — each time a step deeper,
+with the grown-up words and the real reasons — until, by the last chapters, you are looking
+at exactly what a university student looks at. Take the stairs one at a time. Here we go.
+
+---
+
 # FRONT MATTER
+
+*The Preface and Introduction below are the grown-up "why" — written for teachers and
+older readers who want the reasoning behind the book. If you're here for the pictures, you
+can skip straight to Chapter 1 and come back to these later.*
 
 ## Preface — A student for the sake of being a teacher
 
@@ -72,8 +176,12 @@ that keeps it true.
 
 ## Reader's map
 
-- **Part One (Ch. 1–2) — the grammar.** Six primitives, and the one proof the book rests
-  on (the tetrahedral 1/3 from equidistance). Read this first; everything reuses it.
+- **Part Zero — six simple pictures.** The whole vocabulary at a ten-year-old's level:
+  fair shapes from same-length lines, the full middle, turning, growing, the two-shadow
+  box, counting-versus-measuring. No math needed; anyone can start here.
+- **Part One (Ch. 1–2) — the grammar.** The same six primitives with their real names, and
+  the one proof the book rests on (the tetrahedral 1/3 from equidistance — "same distance
+  apart"). Read this after Part Zero; everything reuses it.
 - **Part Two (Ch. 3–7) — the elegant lessons.** Five deep "why"s the grammar connects —
   Platonic solids, *e*, radians, prime rarity, why quantum mechanics is complex — each with
   a short *extension* that reuses the same primitive (the golden ratio as the pentagon's
@@ -101,9 +209,12 @@ The entire vocabulary is six ideas. Everything in the book is built from these, 
 reader should hold them from the start.
 
 **1.1 Integers are shapes — and the ladder is the ladder of simultaneous equality.**
-Given *n* points in the most symmetric arrangement — all **mutually equidistant** — they
-form the **regular (n−1)-simplex** [Coxeter 1973, §7]: one point is a point, two a
-segment, three a triangle, four a tetrahedron. The crucial subtlety, which the rest of
+This is Picture 1 from Part Zero — fair shapes from same-length lines — now with its real
+names. Given *n* points in the most symmetric arrangement — all **mutually equidistant**
+(that is the grown-up word for *the same distance apart*, every pair separated by the same
+length) — they form the **regular (n−1)-simplex** [Coxeter 1973, §7] (a *simplex* is just
+the fair shape those dots make): one point is a point, two a segment, three a triangle,
+four a tetrahedron. The crucial subtlety, which the rest of
 the book rests on, is *why* each added point raises the dimension.
 
 It is not that "n points need n−1 dimensions" — four points can sit perfectly well in a
@@ -230,10 +341,20 @@ curriculum from a collection of clever analogies.
 *(This chapter is the one place the book proves its central geometric fact from the
 ground up, so the reader sees that the pictures rest on real mathematics.)*
 
+*In plain words first, before any symbols.* Draw an arrow from the middle of the shape out
+to each corner (all the same length, since the middle is the same distance from every
+corner). Two facts, and only two, do all the work: **(a)** the shape is fair, so any two
+arrows make the *same* angle with each other; **(b)** the corners are balanced all around
+the middle, so all the arrows *add up to nothing* (they cancel, like a tug-of-war pulling
+equally in every direction). Those two facts alone are enough to pin the angle down to one
+exact value. Here is that same argument in symbols:
+
 Place the *N* vertices of a regular simplex as unit vectors from its centre. By
 symmetry every pair has the same dot product cos θ, and because the vectors sum to zero,
 0 = |Σvᵢ|² = N + N(N−1)cos θ, giving **cos θ = −1/(N−1)** [a standard result; e.g.
-Coxeter 1973]. For the tetrahedron, N = 4, so cos θ = **−1/3** and θ = 109.47° — the
+Coxeter 1973]. (Reading the symbols: |Σvᵢ|² means "square the total of all the arrows,"
+which is zero because they cancel; multiplying it out leaves *N* from each arrow times
+itself plus *N(N−1)* copies of the shared angle — set that to zero and the angle is forced.) For the tetrahedron, N = 4, so cos θ = **−1/3** and θ = 109.47° — the
 tetrahedral angle familiar from chemistry as the H–C–H bond angle of methane [Pauling
 1960]. Its half-angle, 54.74°, has cos² = 1/3, and is the angle between a cube edge and
 the body diagonal.
