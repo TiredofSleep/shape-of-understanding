@@ -159,7 +159,24 @@ at exactly what a university student looks at. Take the stairs one at a time. He
 older readers who want the reasoning behind the book. If you're here for the pictures, you
 can skip straight to Chapter 1 and come back to these later.*
 
-## Preface — A student for the sake of being a teacher
+## Preface — Trust the dirt, not the story
+
+*I'll be honest about my relationship to history: I only like it as far back as archaeology.*
+Kings and dates are a story someone tells, and stories drift. A dig is different — you go down
+through the layers and each one is simply *there.* You don't trust the narrative; you trust the
+dirt. The deeper layer is older, full stop.
+
+It took me a while to notice this is also how I think about mathematics — and that much of the
+trouble with how mathematics is *taught* is that it is taught like history and not like
+archaeology. History-math is the narrative: *here is the formula, trust me, it works.*
+Archaeology-math goes down until it hits something **forced** — four toothpicks the same length
+will not lie flat; the fourth corner *has* to rise; nobody decided that, it is in the ground.
+This book teaches mathematics like a dig. We start at the surface — a gumdrop, a few toothpicks
+— and go down, and at every layer we keep only what the ground forces. When something turns out
+to be a story I told myself rather than an artifact that is really there, I will say so, and we
+will leave it in the spoil heap (there is a whole chapter of those — Chapter 16). And we never
+claim the whole city. *Trust the dirt, not the story. Read depth as time. Keep only what's
+forced. Label the spoil heap. Never claim the whole city.* That is the method. Let's dig.
 
 The motivation of this book is a single observation from years of learning and
 explaining mathematics: **the hardest thing for a student is not any one concept, but
@@ -1109,6 +1126,25 @@ near to everything, and therefore has nothing to be distinguished *from*. Unders
 flows toward that position — near to all of it, distinguished from none of it — and never
 occupies it, because to occupy it would be to become the centre from which all the rest is
 seen, which is a direction the mind travels and not a place it arrives.
+
+And notice, now, what the word *ground* has been doing since the Preface. Every direction of
+*deeper* turns out to be a passage back toward that same origin. Look far **out** in space and
+you see older light — deepest of all, the first light, the afterglow of the beginning. Dig
+**in** to matter and you probe the energies of the first instants. Climb **down** the book's
+own ladder of dimensions and you reach the void — dimension 0, the still centre everything
+projects out of. Out, in, or down, *deeper* is always *older*: a passage toward the origin. And
+the origin cannot be reached, for the plainest reason — **to stand on the point you measure
+*from* would be to lose it**: the moment you occupied the reference it would become just another
+thing measured, needing a new ground beneath it. The ground is unreachable *because* it is the
+ground.
+
+> **You can only point toward it, and measure off of it. It is unreachable.**
+
+That one sentence is the keystone. The perfect round you approach and never occupy, the void
+you measure from and never stand on, the beginning of time you dig toward and never arrive at,
+and the understanding you flow toward and never complete — they are one thing wearing four
+faces. Its unreachability is not a wall; it is what makes everything else measurable, and the
+reason there is always further to dig, deeper to go, and rounder to become.
 
 This is the shape of understanding that the book is named for. A good curriculum makes
 mathematics **increasingly round** — the pictures smoother, the connections more uniform,
