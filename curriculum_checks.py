@@ -492,6 +492,54 @@ show("every rotation is the exponential of a spin", f"{onto18}/25 random rotatio
 assert onto18 == 25
 print("  -> the base does not prove the towers; it points up them.")
 
+banner("Ch.18 -- every tower is also a coin: a flip, two sides, and an edge")
+def faces18(V, normals):
+    out = set()
+    for u in normals:
+        h = V @ u
+        Fv = V[np.isclose(h, h.max())]
+        if np.linalg.matrix_rank(Fv[1:] - Fv[0]) == 2:
+            out.add(frozenset(map(tuple, np.round(Fv, 9))))
+    return out
+cube18 = np.array(list(itertools.product((1, -1), repeat=3)), float)
+octa18 = np.vstack([np.eye(3), -np.eye(3)])
+tet18 = cube18[np.prod(cube18, axis=1) > 0]
+show("duality trades corners for faces", f"cube {len(cube18)} corners, {len(faces18(cube18, octa18))} faces; "
+     f"octahedron {len(octa18)} corners, {len(faces18(octa18, cube18))} faces; tetrahedron 4 and "
+     f"{len(faces18(tet18, -tet18))} -- its own dual")
+assert len(faces18(cube18, octa18)) == 6 and len(faces18(octa18, cube18)) == 8 and len(faces18(tet18, -tet18)) == 4
+ico18 = np.array([p for c in range(3) for p in (np.roll([0, s1, s2 * phi18], c) for s1 in (1, -1) for s2 in (1, -1))])
+dico = np.linalg.norm(ico18[:, None] - ico18[None], axis=-1)
+tri18 = [t for t in combinations(range(12), 3)
+         if all(np.isclose(dico[a, b], dico[dico > 0].min()) for a, b in combinations(t, 2))]
+show("the icosahedron and the dodecahedron", f"icosahedron: 12 corners, {len(tri18)} faces; its face-centres are the dodecahedron's 20 corners")
+dod18 = np.array([ico18[list(t)].mean(axis=0) for t in tri18])
+ddod = np.linalg.norm(dod18[:, None] - dod18[None], axis=-1)
+assert len(tri18) == 20 and np.allclose(np.linalg.norm(dod18, axis=1), np.linalg.norm(dod18[0]))
+assert all(np.isclose(ddod[k], ddod[ddod > 1e-9].min()).sum() == 3 for k in range(20))   # 3 edges at each corner
+xs18 = [rng18.normal(size=n) for n in (2, 4, 8)]
+show("the mirror a + bi -> a - bi", "a number times its mirror lands on the edge, the reals: x xbar = |x|^2 (C, H, O)")
+assert all(np.allclose(cd_mul(x, cd_conj(x))[1:], 0) and np.isclose(cd_mul(x, cd_conj(x))[0], x @ x) for x in xs18)
+even18 = [b for b in range(8) if bin(b).count("1") % 2 == 0]
+coord18 = lambda b: tuple(1 - 2 * ((b >> i) & 1) for i in range(3))
+def bmul18(a, b):
+    s, x = 0, a >> 1
+    while x:
+        s += bin(x & b).count("1")
+        x >>= 1
+    return (-1) ** s, a ^ b
+show("even against odd in Cl(3)", "the even pieces (1, e12, e13, e23) sit on one of the cube's tetrahedra; "
+     "e12, e13, e23 square to -1 and anticommute: the quaternions")
+assert {coord18(b) for b in even18} == {tuple(int(v) for v in r) for r in tet18}
+assert all(bmul18(b, b) == (-1, 0) for b in (3, 5, 6)) and bmul18(3, 5)[0] == -bmul18(5, 3)[0]
+zz18 = rng18.normal(size=50) + 1j * rng18.normal(size=50)
+show("growing against shrinking", "|e^z| > 1 exactly when Re z > 0; on the edge Re z = 0, |e^z| = 1: pure turning")
+assert np.all((np.abs(np.exp(zz18)) > 1) == (zz18.real > 0)) and np.allclose(np.abs(np.exp(1j * zz18.imag)), 1)
+show("the missing edges", "x -> 2/x keeps no fraction (p^2 = 2q^2 never, q <= 5000); x -> -1/x keeps no real number (x^2 = -1)")
+assert all(math.isqrt(2 * q * q) ** 2 != 2 * q * q for q in range(1, 5001))
+assert np.allclose(sorted(np.roots([1, 0, 1]), key=lambda c: c.imag), [-1j, 1j])
+print("  -> the towers are what you climb; their edges are what you point toward.")
+
 # ======================================================================
 banner("ALL LESSON CHECKS PASS -- every picture matches the mathematics.")
 print("Parts One-Four plus the extension lessons are each reproduced above.")

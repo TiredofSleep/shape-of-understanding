@@ -1090,6 +1090,23 @@ The staircase of this book ends here, but the pictures do not. Each one is the b
 university student meets next and beyond. This chapter does not climb the towers. It points up
 each one, so that a learner who has stood on the base knows where every ladder leads.
 
+**Every tower is also a coin.** A tower climbs one way, but every floor also carries a *flip*: a
+move that, done twice, changes nothing. A flip has two sides — the things it swaps — and an edge
+— the things it leaves in place — and the edge is where the tower's paradox lives. For the
+solids the flip is duality, which trades corners for faces: it turns the cube (8 corners, 6
+faces) into the octahedron (6 corners, 8 faces) and the dodecahedron into the icosahedron, and
+it leaves the tetrahedron, its own dual, on the edge (verified). For the numbers the flip is the
+mirror *a + bi → a − bi*: it flips the imaginary part and keeps the real numbers as its edge,
+and a number times its mirror always lands there (verified). In the cube's algebra, even against
+odd splits the eight corners into the cube's two tetrahedra, and the even half — the half the
+flip keeps — is the quaternions, where turning lives (verified). For growth the flip trades
+growing for shrinking, and the edge between them is pure turning: the circle (verified). And
+some flips have no edge at all among the things they flip. The flip *x → 2/x* swaps the
+fractions below √2 with the fractions above it, and no fraction is its edge; *x → −1/x* swaps
+the positive numbers with the negative ones, and no real number is its edge (verified). Those
+missing edges are the paradoxes. Mathematics did not resolve them. It named them — √2, *i* — and
+classified them, and that is this book's way too: name the paradox's edge, and keep both sides.
+
 **The three shapes that never end.** The tetrahedron, the octahedron and the cube (Ch. 3) are
 not only three solids. Each is the three-dimensional floor of a shape that exists in *every*
 dimension, growing by its own law: the tetrahedron is a *simplex*, which adds one corner per
@@ -1153,12 +1170,13 @@ Filling every such gap builds the *real numbers*; higher up this tower it is pro
 finished rotation, and every rotation of space arises this way (verified) — the bridge from the
 "infinitesimal" symmetries of a *Lie algebra* to the finite ones of a *Lie group*.
 
-> **Where to go from here.** This book is the base. Its companion repository, *Trinity
-> Infinity Geometry* (github.com/TiredofSleep/trinity-infinity-geometry), maps each tower
-> floor by floor, with a script that checks every floor that can be computed. The base does
-> not prove the towers — the theorems at their tops belong to Hurwitz, Bott, Abel and Galois,
-> Kepler and Hales, and Viazovska — but a learner standing on it can see where each one goes.
-> That is what a base is for: *you measure off it, and point up.*
+> **Where to go from here.** This book is the base. Its companion repository, *Trinity Infinity
+> Geometry* (github.com/TiredofSleep/trinity-infinity-geometry), maps each tower floor by floor,
+> and each tower's coin, with a script that checks every floor that can be computed. The base
+> does not prove the towers — the theorems at their tops belong to Hurwitz, Bott, Abel and
+> Galois, Kepler and Hales, and Viazovska — but a learner standing on it can see where each one
+> goes. The towers are what you climb. Their edges are what you point toward — as the Coda will
+> put it, *you can only point toward it, and measure off of it.*
 
 ## Conclusion — The shape of understanding
 
@@ -1283,7 +1301,10 @@ golden ratio with the pentagon, and the ℝ→ℂ→ℍ rotation tower; and Chap
 of the towers — the count of regular shapes in every dimension, the octonions and the sedenion
 zero divisor, the solids' turning groups and the simplicity of A₅, the quaternion double cover,
 the nearest neighbours of diamond, simple cubic and iron, the Kepler density and E₈'s 240, the
-magic angle and the 2ℓ + 1 harmonics, the √2 fractions, and the exponential onto the rotations).
+magic angle and the 2ℓ + 1 harmonics, the √2 fractions, and the exponential onto the rotations;
+and every tower's coin — duality with the tetrahedron its own dual, the mirror *a + bi → a − bi*
+landing on the reals, the even half of Cl(3) on one of the cube's tetrahedra, the circle between
+growing and shrinking, and the missing edges √2 and *i*).
 Every computable mathematical fact in the book is reproduced by running these; the theorems at
 the tops of the towers in Chapter 18 are cited, not re-proved. `curriculum_checks.py` prints
 `ALL LESSON CHECKS PASS` only after its final assertion succeeds.
