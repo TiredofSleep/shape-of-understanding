@@ -50,7 +50,7 @@ python make_figures.py         # (re)generate the twelve figures into figures/*.
 
 ## The wall (the discipline that keeps it honest)
 
-This book grew out of a research program (Trinity Infinity Geometry) **but is deliberately walled off from it.** It teaches the *shared* language of mathematics; it does **not** import the research frontier (Lie-algebra closures, GUT gauge groups, mass-gap or Dirac realizations, the 5/7 threshold, the attractor's Galois group). Those are research — some proven as self-contained algebra, most tagged structural/open — and they belong in the research papers, not a curriculum. A lesson is admitted only if it is (a) self-contained mathematics, (b) a *true* picture, and (c) a concept students meet elsewhere. Keeping the two apart is the honesty of the whole book. The research program lives separately at [`trinity-infinity-geometry`](https://github.com/TiredofSleep/trinity-infinity-geometry).
+This book's premise — *integers are shapes* — is also the subject of a research program, [`trinity-infinity-geometry`](https://github.com/TiredofSleep/trinity-infinity-geometry), which carries the geometric realization of the integers 0–9 further than a curriculum should (which rule realizes 5, 7 and 9; the Clifford tower past the cube). The book is **deliberately walled off from it**: it teaches the *shared* language of mathematics and does not import that frontier. A lesson is admitted only if it is (a) self-contained mathematics, (b) a *true* picture, and (c) a concept students meet elsewhere. Keeping the two apart is the honesty of the whole book. (An earlier layer of that program, built on AI-rendered composition tables, was archived in September 2026.)
 
 ## The honest edge
 
