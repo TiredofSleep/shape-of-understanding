@@ -329,6 +329,170 @@ assert np.allclose(qI@qJ@qK, -np.eye(2)) and np.allclose(qJ@qI, -qK)
 print("  -> R (still), C (one rotation plane), H (three) -- the imaginary axis is the tower's first rung.")
 
 # ======================================================================
+# PART FIVE -- CHAPTER 18: WHERE THE TOWERS GO (the base points up)
+# ======================================================================
+banner("Ch.18 -- the three shapes that never end (simplex, cross-polytope, cube)")
+simplex_n = lambda n: n + 1
+cross_n = lambda n: 2 * n
+cube_n = lambda n: 2 ** n
+show("three growth laws", f"corners in 3D: simplex {simplex_n(3)}, cross-polytope {cross_n(3)}, cube {cube_n(3)}"
+     f"; in 4D: {simplex_n(4)}, {cross_n(4)}, {cube_n(4)}")
+assert [simplex_n(3), cross_n(3), cube_n(3)] == [4, 6, 8]
+
+def regular_count(d):
+    """regular polytopes in dimension d: Schlafli symbols whose Coxeter Gram matrix is positive definite"""
+    out = []
+    for s in itertools.product(range(3, 8), repeat=d - 1):
+        G = np.eye(d)
+        for i, p in enumerate(s):
+            G[i, i + 1] = G[i + 1, i] = -np.cos(np.pi / p)
+        if np.linalg.eigvalsh(G).min() > 1e-9:
+            out.append(s)
+    return out
+
+counts = {d: len(regular_count(d)) for d in range(3, 8)}
+show("regular shapes by dimension", f"{counts}  (five in 3D, six in 4D, then only three)")
+assert counts == {3: 5, 4: 6, 5: 3, 6: 3, 7: 3}
+assert set(regular_count(3)) - {(3, 3), (3, 4), (4, 3)} == {(3, 5), (5, 3)}           # the two five-fold solids
+assert all(5 not in s for d in range(5, 8) for s in regular_count(d))                 # the five-fold line stops
+print("  -> the tetrahedron, octahedron and cube are the 3D floors of the only towers that never end.")
+
+banner("Ch.18 -- the number tower keeps doubling, and gives something up each time")
+def cd_conj(x):
+    return np.concatenate([x[:1], -x[1:]])
+def cd_mul(a, b):
+    if len(a) == 1:
+        return a * b
+    h = len(a) // 2
+    return np.concatenate([cd_mul(a[:h], b[:h]) - cd_mul(cd_conj(b[h:]), a[h:]),
+                           cd_mul(b[h:], a[:h]) + cd_mul(a[h:], cd_conj(b[:h]))])
+rng18 = np.random.default_rng(18)
+x4, y4, z4 = rng18.normal(size=(3, 4))
+x8, y8, z8 = rng18.normal(size=(3, 8))
+show("H (4): no longer commutes", f"|xy - yx| = {np.linalg.norm(cd_mul(x4, y4) - cd_mul(y4, x4)):.3f}")
+show("O (8): no longer associates", f"|(xy)z - x(yz)| = {np.linalg.norm(cd_mul(cd_mul(x8, y8), z8) - cd_mul(x8, cd_mul(y8, z8))):.3f}")
+e16 = np.eye(16)
+zd = cd_mul(e16[1] + e16[10], e16[4] - e16[15])
+show("16: division breaks", f"(e1 + e10)(e4 - e15) = 0 : {np.allclose(zd, 0)}  -- two non-zero numbers, product zero")
+assert not np.allclose(cd_mul(x4, y4), cd_mul(y4, x4))
+assert np.allclose(cd_mul(cd_mul(x4, y4), z4), cd_mul(x4, cd_mul(y4, z4)))
+assert not np.allclose(cd_mul(cd_mul(x8, y8), z8), cd_mul(x8, cd_mul(y8, z8)))
+assert np.isclose(np.linalg.norm(cd_mul(x8, y8)), np.linalg.norm(x8) * np.linalg.norm(y8))
+assert np.allclose(zd, 0)
+print("  -> R, C, H, O: the only number systems where sizes multiply (Hurwitz); the tower ends at O.")
+
+banner("Ch.18 -- symmetry: the icosahedron's group is simple (the break at five, again)")
+def rot18(axis, ang):
+    a = np.asarray(axis, float) / np.linalg.norm(axis)
+    K = np.array([[0, -a[2], a[1]], [a[2], 0, -a[0]], [-a[1], a[0], 0]])
+    return np.eye(3) + np.sin(ang) * K + (1 - np.cos(ang)) * K @ K
+def group18(gens):
+    key = lambda M: tuple(np.round(M, 6).ravel())
+    elems, todo = {key(np.eye(3)): np.eye(3)}, [np.eye(3)]
+    while todo:
+        new = []
+        for A in todo:
+            for g in gens:
+                if key(g @ A) not in elems:
+                    elems[key(g @ A)] = g @ A
+                    new.append(g @ A)
+        todo = new
+    return list(elems.values())
+def classes18(G):
+    key = lambda M: tuple(np.round(M, 6).ravel())
+    seen, sizes = set(), []
+    for h in G:
+        if key(h) not in seen:
+            c = {key(g @ h @ g.T) for g in G}
+            seen |= c
+            sizes.append(len(c))
+    return sorted(sizes)
+phi18 = (1 + 5 ** 0.5) / 2
+tet_g = group18([rot18([1, 1, 1], 2 * np.pi / 3), rot18([0, 0, 1], np.pi)])
+oct_g = group18([rot18([0, 0, 1], np.pi / 2), rot18([1, 1, 1], 2 * np.pi / 3)])
+ico_g = group18([rot18([0, 1, phi18], 2 * np.pi / 5), rot18([1, 1, 1], 2 * np.pi / 3)])
+ico_c = classes18(ico_g)
+unions = {1 + sum(c) for r in range(1, len(ico_c) - 1) for c in combinations(ico_c[1:], r)}
+show("turnings of the solids", f"tetrahedron {len(tet_g)}, octahedron/cube {len(oct_g)}, icosahedron {len(ico_g)}")
+show("the icosahedron's group A5 is simple", f"classes {ico_c}: no union with the identity divides 60 -> {sorted(u for u in unions if 60 % u == 0)}")
+assert [len(tet_g), len(oct_g), len(ico_g)] == [12, 24, 60]
+assert ico_c == [1, 12, 12, 15, 20] and not any(60 % u == 0 for u in unions)
+def half_turns_close(G):                              # identity + the 3 half-turns about the axes
+    key = lambda M: tuple(np.round(M, 6).ravel())
+    H = [g for g in G if np.allclose(g, np.diag(np.diag(g)))]   # the diagonal turns: identity + 3 half-turns
+    keys = {key(h) for h in H}
+    normal = all(key(g @ h @ g.T) in keys for g in G for h in H)
+    return len(H), all(key(a @ b) in keys for a in H for b in H) and normal
+show("the first two break into smaller pieces", f"tetrahedron and octahedron each hold a normal subgroup of "
+     f"order {half_turns_close(tet_g)[0]} (the three half-turns about the axes, with the identity)")
+assert half_turns_close(tet_g) == (4, True) and half_turns_close(oct_g) == (4, True)
+def q_rot(q):
+    turn = lambda v: cd_mul(cd_mul(q, np.concatenate([[0.0], v])), cd_conj(q))[1:]
+    return np.column_stack([turn(v) for v in np.eye(3)])
+qq = rng18.normal(size=4)
+qq = qq / np.linalg.norm(qq)
+show("a unit quaternion turns space", "q and -q give the same rotation (the quaternions double-cover the turns)")
+assert np.allclose(q_rot(qq).T @ q_rot(qq), np.eye(3)) and np.allclose(q_rot(qq), q_rot(-qq))
+print("  -> A5 is simple, so the general fifth-degree equation has no formula (Abel-Ruffini, Galois).")
+
+banner("Ch.18 -- filling the centre: crystals and sphere packing")
+fcc18 = np.array([p for p in itertools.product(range(-3, 4), repeat=3) if sum(p) % 2 == 0], float) / 2
+cub18 = np.array(list(itertools.product(range(-2, 3), repeat=3)), float)
+lat18 = {"diamond": np.vstack([fcc18, fcc18 + 0.25]), "simple cubic": cub18, "body-centred cubic": np.vstack([cub18, cub18 + 0.5])}
+nbrs = {}
+for nm, L in lat18.items():
+    d = np.linalg.norm(L, axis=1)
+    nbrs[nm] = int(np.isclose(d, d[d > 1e-9].min()).sum())
+show("an atom's nearest neighbours", f"{nbrs}  (the tetrahedron's 4, the octahedron's 6, the cube's 8)")
+assert nbrs == {"diamond": 4, "simple cubic": 6, "body-centred cubic": 8}
+dfcc = np.linalg.norm(fcc18, axis=1)
+fcc_density = 4 * 4 / 3 * np.pi * (dfcc[dfcc > 1e-9].min() / 2) ** 3
+show("the densest 3D packing (face-centred cubic)", f"{fcc_density:.4f} of space = pi/sqrt(18) (Kepler 1611; proved, Hales 2005)")
+assert np.isclose(fcc_density, np.pi / np.sqrt(18))
+e8_18 = [v for v in itertools.product((-1, 0, 1), repeat=8) if sum(map(abs, v)) == 2]
+e8_18 += [v for v in itertools.product((-0.5, 0.5), repeat=8) if sum(x < 0 for x in v) % 2 == 0]
+show("E8 in eight dimensions", f"{len(e8_18)} touching neighbours per ball (densest possible: Viazovska 2017)")
+assert len(e8_18) == 240
+
+banner("Ch.18 -- the 1/3 and the shapes of atoms; sqrt(2) and the real line; the breath and the turn")
+xm = 1 / np.sqrt(3)
+show("the magic angle", f"3x^2 - 1 = {3 * xm ** 2 - 1:.1e} at x = cos(54.74 deg): the half-tetrahedral angle")
+assert abs(3 * xm ** 2 - 1) < 1e-12
+harm = [math.comb(l + 2, 2) - (math.comb(l, 2) if l >= 2 else 0) for l in range(5)]
+show("spherical harmonics of degree l", f"{harm} = 2l + 1 (the s, p, d, f, g orbital counts)")
+assert harm == [2 * l + 1 for l in range(5)]
+pq, fr18 = (1, 1), []
+for _ in range(5):
+    fr18.append(pq)
+    pq = (pq[0] + 2 * pq[1], pq[0] + pq[1])
+show("ever-better fractions for sqrt(2)", f"{[f'{p}/{q}' for p, q in fr18]}, each p^2 - 2q^2 = +-1, none exact")
+assert fr18 == [(1, 1), (3, 2), (7, 5), (17, 12), (41, 29)] and all(abs(p * p - 2 * q * q) == 1 for p, q in fr18)
+def expm18(A):
+    out, term = np.eye(len(A)), np.eye(len(A))
+    for k in range(1, 60):
+        term = term @ A / k
+        out = out + term
+    return out
+Jq = np.array([[0.0, -1.0], [1.0, 0.0]])
+S18 = rng18.normal(size=(3, 3))
+R18 = expm18(S18 - S18.T)
+show("the exponential of a turn is a rotation", "e^(theta J) = rotation by theta; e^(any spin) is a rotation")
+assert np.allclose(expm18(0.9 * Jq), [[np.cos(0.9), -np.sin(0.9)], [np.sin(0.9), np.cos(0.9)]])
+assert np.allclose(R18.T @ R18, np.eye(3)) and np.isclose(np.linalg.det(R18), 1)
+onto18 = 0
+for _ in range(25):                                   # and every rotation arises this way
+    Qr, Rr = np.linalg.qr(rng18.normal(size=(3, 3)))
+    Qr = Qr @ np.diag(np.sign(np.diag(Rr)))
+    Qr = Qr * np.sign(np.linalg.det(Qr))              # an arbitrary rotation of space
+    ang = np.arccos(np.clip((np.trace(Qr) - 1) / 2, -1, 1))
+    ax = np.array([Qr[2, 1] - Qr[1, 2], Qr[0, 2] - Qr[2, 0], Qr[1, 0] - Qr[0, 1]]) / (2 * np.sin(ang))
+    Kr = np.array([[0, -ax[2], ax[1]], [ax[2], 0, -ax[0]], [-ax[1], ax[0], 0]])
+    onto18 += np.allclose(expm18(ang * Kr), Qr)
+show("every rotation is the exponential of a spin", f"{onto18}/25 random rotations recovered as e^(spin)")
+assert onto18 == 25
+print("  -> the base does not prove the towers; it points up them.")
+
+# ======================================================================
 banner("ALL LESSON CHECKS PASS -- every picture matches the mathematics.")
 print("Parts One-Four plus the extension lessons are each reproduced above.")
 print("Rejected pictures (the honest-failures chapter) are NOT asserted true here:")

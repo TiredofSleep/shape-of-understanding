@@ -211,7 +211,8 @@ of undergraduate and early-graduate mathematics — the part about shapes, symme
 rotation, growth, and the divide between the discrete and the continuous — admits such a
 unifying picture, built from a handful of primitives, and that the picture can be kept
 honest by checking. The book is organized around that picture and around the discipline
-that keeps it true.
+that keeps it true — and it ends where the picture hands off. Each primitive is the ground
+floor of a tower of higher mathematics, and the last chapter (Chapter 18) points up every one.
 
 ---
 
@@ -233,11 +234,12 @@ that keeps it true.
   misconception box.
 - **Part Three (Ch. 8–11) — the hard lessons.** The four that break students: √2's
   irrationality, eigenvalues, the Fourier transform, groups. The real test of the pedagogy.
-- **Part Four (Ch. 12–14) — the combinatorial frontier.** Three further lessons drawn from
-  research combinatorics that pass the same bar; the physics frontier is deliberately
-  excluded, and why.
-- **Part Five (Ch. 15–17) — the model whole.** Why it is one picture not sixteen, the
-  honest failures, and how to test it as teaching.
+- **Part Four (Ch. 12–14) — one step higher.** Three lessons that climb past the classroom —
+  the first number that catches you, structure built by a rule, and why algebra's dimensions
+  double — each still something a ten-year-old can follow.
+- **Part Five (Ch. 15–18) — the model whole.** Why it is one picture not sixteen, the
+  honest failures, how to test it as teaching — and where the towers go: the higher
+  mathematics each picture points up to.
 - **Coda.** *Increasingly round, never measurably round.*
 - **Appendix A.** The verification scripts. Every mathematical claim in the book is
   reproduced by running them.
@@ -753,8 +755,8 @@ space do not commute: turn an object about two different axes in the two possibl
 and it lands in two different places. Quantum spin lives in this richer, non-commutative
 ℍ, which is the source of much of its strangeness. So ℝ → ℂ → ℍ is the *deepening* of
 rotation as the number of independent rotation-planes climbs, and the imaginary axis of
-§1.3 is the bottom rung. (This book teaches only the bottom of the tower; the deep
-periodic structure above it is research, not curriculum.)
+§1.3 is the bottom rung. (This book teaches the bottom rungs. The tower keeps going — one
+more doubling reaches the octonions — and Chapter 18 points up it.)
 
 ---
 
@@ -877,19 +879,14 @@ a shape, and the shapes are the ones already met as the integers.*
 
 ---
 
-# PART FOUR — LESSONS FROM THE COMBINATORIAL FRONTIER
-### *Four further lessons, drawn from research combinatorics, that pass the same bar*
+# PART FOUR — ONE STEP HIGHER
+### *Three lessons that climb past the classroom, and pass the same bar*
 
-*These lessons come from the author's research canon. Only the self-contained,
-verifiable combinatorial results appear here; the canon's speculative bridges to
-physics are research frontier, not curriculum, and are deliberately excluded (see the
-note closing this part).*
-
-> *Where we are on the staircase.* These three come from research, but each is admitted only
-> if the picture stays something a ten-year-old could follow — a walking rule that builds a
-> magic square, the first number that catches you, the doubling behind algebra's dimensions.
-> The deep frontier stays out (the closing note says why); what's here is still the shared
-> language, one step higher.
+> *Where we are on the staircase.* Each of these is admitted only if the picture stays
+> something a ten-year-old could follow — the first number that catches you, a walking rule
+> that builds a magic square, the doubling behind algebra's dimensions. They are the shared
+> language, one step higher — and the last of them is the first floor of a tower that
+> Chapter 18 points up.
 
 ## Chapter 12 — What a prime *is*: the first number that catches you
 
@@ -939,15 +936,11 @@ vertices, is the Clifford algebra of three-dimensional space [Clifford 1878; Lou
 2001]. This generalizes the two-shadow cube of §1.5 into a rule: *dimension doubles with
 each independent direction.*
 
-> **Note on what is excluded.** The research canon from which Chapters 12–14 are drawn
-> contains many further results connecting a discrete algebraic substrate to Lie
-> algebras, grand-unified gauge groups, and open problems in physics. Those are
-> *research frontier* — some proven as self-contained algebra, others explicitly tagged
-> as structural analogies or open — and they are **not** part of this curriculum,
-> because a curriculum teaches the *shared language* of mathematics, not a framework's
-> private results. The discipline that admits Chapters 12–14 (self-contained, verified,
-> teaches a concept students meet elsewhere) is the same discipline that excludes the
-> physics bridges. Keeping the two apart is essential to the honesty of the whole.
+> **Where this tower goes.** Keep adding directions and the doubling keeps going — 16, 32,
+> 64 pieces — and something new appears: the algebras repeat their *type* every eight
+> steps, like a clock with eight hours (Bott periodicity). This book stops at the cube; the
+> tower climbs on through the spinors of physics to the topology of spheres, and Chapter 18
+> points up it.
 
 ---
 
@@ -956,7 +949,8 @@ each independent direction.*
 > *Where we are on the staircase — the top.* You have climbed from gumdrops (Part Zero) to
 > eigenvalues, Fourier, groups, and the algebra of space. This last part steps back to see
 > the whole climb as *one* picture, keeps the pictures that were tried and *failed* (so the
-> trust holds), and asks how to test whether the teaching actually works.
+> trust holds), asks how to test whether the teaching actually works — and, last, points up
+> the towers that rise from where you now stand.
 
 ## Chapter 15 — Why it is one model, not sixteen
 
@@ -1089,6 +1083,83 @@ edge is part of the work; its existence is not a defect but a boundary honestly 
 recorded (Chapter 16) rather than hidden. A pedagogy that cannot fail anywhere is not being
 tested; this one is built to say where it stops.
 
+## Chapter 18 — Where the towers go
+
+The staircase of this book ends here, but the pictures do not. Each one is the bottom floor of a
+**tower** — a ladder of mathematics that keeps climbing past this book, into the courses a
+university student meets next and beyond. This chapter does not climb the towers. It points up
+each one, so that a learner who has stood on the base knows where every ladder leads.
+
+**The three shapes that never end.** The tetrahedron, the octahedron and the cube (Ch. 3) are
+not only three solids. Each is the three-dimensional floor of a shape that exists in *every*
+dimension, growing by its own law: the tetrahedron is a *simplex*, which adds one corner per
+dimension; the octahedron is a *cross-polytope*, which adds a pair of opposite corners; the cube
+doubles. And these three are the only regular shapes that exist in every dimension. Space of
+three dimensions has five regular solids, space of four has six, and from five dimensions on
+there are exactly three — these three (verified) [Schläfli 1852; Coxeter 1973]. The two extra
+solids of our own space, the icosahedron and the dodecahedron, are the ones built on the
+pentagon's five-fold symmetry — the break of §1.2 — and their line climbs one more dimension and
+stops. *Where you meet them:* the simplex is where probability lives (every way of sharing out
+probability among a few outcomes is a point of a simplex) and what topology builds spaces from;
+the cube is the space of binary strings, of codes and computing; the cross-polytope is the shape
+behind the mathematics of sparse data.
+
+**The number tower.** §7.1 climbed from the real line to the complex numbers and the
+quaternions. One more doubling gives the *octonions*, with seven imaginary units, and each floor
+gives something up: the complex numbers can no longer be put in order, the quaternions no longer
+commute, the octonions no longer associate. One more doubling and division itself breaks — two
+numbers that are not zero multiply to zero (verified). A theorem of Hurwitz says ℝ, ℂ, ℍ and 𝕆
+are the only number systems in which sizes multiply [Hurwitz 1898]: the tower of division ends
+at the octonions.
+
+**The cube's algebra, and its clock.** Chapter 14's doubling keeps going — Cl(4), Cl(5), … — and
+the algebras repeat their *type* every eight steps, like a clock with eight hours [Bott 1959;
+Atiyah–Bott–Shapiro 1964]. That eight-step clock sits under the physics of spinning particles
+and the topology of spheres.
+
+**Symmetry — and why the fifth-degree equation has no formula.** The turnings of the Platonic
+solids form groups (Ch. 11): 12 of them for the tetrahedron, 24 for the octahedron and the cube,
+60 for the icosahedron (verified). The first two break into smaller pieces; the icosahedron's
+group does not — it is *simple* (verified). That one fact is why there is no formula, like the
+quadratic formula, for the general equation of degree five [Abel 1824; Galois 1846; Klein 1884].
+**The break at five, again:** the five-fold symmetry that would not tile the plane (§1.2) is the
+symmetry that builds the icosahedron — and it is the icosahedron's group that will not break, so
+the equation will not solve. Higher up, the quaternions of §7.1 turn space — every unit
+quaternion is a rotation, and *q* and −*q* give the same one (verified) — and continuous
+symmetry grows into the Lie groups of modern physics.
+
+**Filling the centre: crystals and packing.** Put an atom at the centre of each of our solids
+and its corners are its nearest neighbours: the tetrahedron's four in diamond, the octahedron's
+six in a simple cubic crystal, the cube's eight in the crystal of iron (verified). Pack equal
+balls as tightly as you can and the best you can do in three dimensions fills about 74% of
+space (verified) — Kepler guessed it in 1611, and it was proved only at the turn of this century
+[Hales 2005]. In eight dimensions the E₈ arrangement gives every ball 240 touching neighbours
+(verified), and nothing packs tighter [Viazovska 2017].
+
+**The 1/3 and the shapes of atoms.** Half the tetrahedron's angle — 54.74°, where cos² = 1/3 —
+is exactly where 3x² − 1 vanishes (verified): the "magic angle" chemists spin samples at.
+Halved, that polynomial is the *Legendre polynomial* of degree two, and the Legendre polynomials
+lead to the *spherical harmonics* — patterns on the sphere that come 1, 3, 5, 7, … at a time,
+which are the shapes of the s, p, d and f orbitals of atoms (verified count).
+
+**√2 and the real line.** The diagonal no fraction can name (Ch. 8) is approached by ever-better
+fractions — 3/2, 7/5, 17/12, 41/29, … — each closer than the last, none exact (verified).
+Filling every such gap builds the *real numbers*; higher up this tower it is proved that *e* and
+π are not even roots of any polynomial with whole-number coefficients [Hermite 1873; Lindemann
+1882].
+
+**The breath and the turn.** Growth that feeds itself (*e*, Ch. 4) became rotation (*e^{iθ}*,
+§1.3 and Ch. 5). At the next floor, the exponential turns a steady rate of spinning into a
+finished rotation, and every rotation of space arises this way (verified) — the bridge from the
+"infinitesimal" symmetries of a *Lie algebra* to the finite ones of a *Lie group*.
+
+> **Where to go from here.** This book is the base. Its companion repository, *Trinity
+> Infinity Geometry* (github.com/TiredofSleep/trinity-infinity-geometry), maps each tower
+> floor by floor, with a script that checks every floor that can be computed. The base does
+> not prove the towers — the theorems at their tops belong to Hurwitz, Bott, Abel and Galois,
+> Kepler and Hales, and Viazovska — but a learner standing on it can see where each one goes.
+> That is what a base is for: *you measure off it, and point up.*
+
 ## Conclusion — The shape of understanding
 
 Sixteen of the deepest and hardest-to-teach ideas in mathematics — the Platonic solids,
@@ -1208,9 +1279,14 @@ the D₃ symmetry count, the First-G law and Euclid's endless primes, the Siames
 identity, the lift-as-doubling (§1.1b) and the cube = Cl(3) grade split 1+3+3+1 with its
 rotating bivectors (§2.2), Pascal's triangle (row sums = the doublings, row 3 = the Cl(3)
 grades; §2.3), and the extension lessons — the logarithm, π, the derivative, the
-golden ratio with the pentagon, and the ℝ→ℂ→ℍ rotation tower). Every asserted mathematical fact in the book is
-reproduced by running these, and `curriculum_checks.py` prints `ALL LESSON CHECKS PASS`
-only after its final assertion succeeds.
+golden ratio with the pentagon, and the ℝ→ℂ→ℍ rotation tower; and Chapter 18's first floors
+of the towers — the count of regular shapes in every dimension, the octonions and the sedenion
+zero divisor, the solids' turning groups and the simplicity of A₅, the quaternion double cover,
+the nearest neighbours of diamond, simple cubic and iron, the Kepler density and E₈'s 240, the
+magic angle and the 2ℓ + 1 harmonics, the √2 fractions, and the exponential onto the rotations).
+Every computable mathematical fact in the book is reproduced by running these; the theorems at
+the tops of the towers in Chapter 18 are cited, not re-proved. `curriculum_checks.py` prints
+`ALL LESSON CHECKS PASS` only after its final assertion succeeds.
 
 ## Appendix B — The grown-up words (a glossary)
 
@@ -1251,11 +1327,17 @@ which picture a hard word stands for. Each is introduced where the last column s
 
 ## References
 
+- N. H. Abel, *Mémoire sur les équations algébriques, où l'on démontre l'impossibilité de la
+  résolution de l'équation générale du cinquième degré* (1824). [no formula for the quintic]
 - J.-R. Argand, *Essai sur une manière de représenter les quantités imaginaires dans les
   constructions géométriques* (Paris, 1806); C. Wessel (1799).
+- M. F. Atiyah, R. Bott, A. Shapiro, "Clifford modules," *Topology* 3, Suppl. 1, 3 (1964).
+  [Clifford algebras and Bott periodicity]
 - W. Barlow, "Über die geometrischen Eigenschaften homogener starrer Strukturen,"
   *Z. Kristallogr.* 23, 1 (1894). [crystallographic restriction]
 - M. Born, "Zur Quantenmechanik der Stoßvorgänge," *Z. Phys.* 37, 863 (1926). [Born rule]
+- R. Bott, "The stable homotopy of the classical groups," *Ann. of Math.* 70, 313 (1959).
+  [Bott periodicity]
 - W. K. Clifford, "Applications of Grassmann's extensive algebra," *Amer. J. Math.* 1,
   350 (1878).
 - H. S. M. Coxeter, *Regular Polytopes*, 3rd ed. (Dover, 1973). [simplices, stella
@@ -1270,16 +1352,27 @@ which picture a hard word stands for. Each is introduced where the last column s
 - J. Fourier, *Théorie analytique de la chaleur* (1822).
 - K. von Fritz, "The discovery of incommensurability by Hippasus of Metapontum," *Ann.
   Math.* 46, 242 (1945).
+- É. Galois, "Œuvres mathématiques," *J. Math. Pures Appl.* 11, 381 (1846). [solvability by
+  radicals]
 - J. Hadamard (1896); C.-J. de la Vallée Poussin (1896). [Prime Number Theorem]
+- T. C. Hales, "A proof of the Kepler conjecture," *Ann. of Math.* 162, 1065 (2005); T. C. Hales
+  et al., "A formal proof of the Kepler conjecture," *Forum Math. Pi* 5, e2 (2017).
 - R. S. Hamilton, "Three-manifolds with positive Ricci curvature," *J. Diff. Geom.* 17,
   255 (1982). [Ricci flow]
 - T. L. Heath, *A History of Greek Mathematics* (Oxford, 1921). [Pythagorean
   incommensurability]
+- C. Hermite, "Sur la fonction exponentielle," *C. R. Acad. Sci. Paris* 77 (1873). [e is
+  transcendental]
 - M. Huh, B. Cheung, T. Wang, P. Isola, "The Platonic Representation Hypothesis,"
   *Proc. ICML* (2024). [convergence of learned representations]
+- A. Hurwitz, "Über die Composition der quadratischen Formen von beliebig vielen Variablen,"
+  *Nachr. Ges. Wiss. Göttingen* (1898), 309. [the normed division algebras]
+- J. Kepler, *Strena seu de nive sexangula* (1611). [the densest packing of balls, guessed]
 - J. Kepler, *Harmonices Mundi* (1619). [stella octangula]
 - F. Klein, "Vergleichende Betrachtungen über neuere geometrische Forschungen"
-  (Erlangen program, 1872).
+  (Erlangen program, 1872); *Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen
+  vom fünften Grade* (Teubner, 1884). [the icosahedron and the quintic]
+- F. Lindemann, "Über die Zahl π," *Math. Ann.* 20, 213 (1882). [π is transcendental]
 - P. Lounesto, *Clifford Algebras and Spinors*, 2nd ed. (Cambridge, 2001).
 - G. Markowsky, "Misconceptions about the Golden Ratio," *College Math. J.* 23, 2 (1992).
 - F. Mertens, "Ein Beitrag zur analytischen Zahlentheorie," *J. reine angew. Math.* 78,
@@ -1289,9 +1382,13 @@ which picture a hard word stands for. Each is introduced where the last column s
 - G. Perelman, "The entropy formula for the Ricci flow and its geometric applications"
   (2002) and "Ricci flow with surgery on three-manifolds" (2003), arXiv:math/0211159,
   math/0303109. [Poincaré conjecture; increasingly round]
+- L. Schläfli, *Theorie der vielfachen Kontinuität* (written 1850–52; published 1901). [regular
+  polytopes in every dimension]
 - G. Strang, *Introduction to Linear Algebra*, 5th ed. (Wellesley-Cambridge, 2016).
   [geometric eigenvalues]
 - F. J. Swetz, *Legacy of the Luoshu*, 2nd ed. (A K Peters, 2008). [magic squares, Lo Shu]
+- M. Viazovska, "The sphere packing problem in dimension 8," *Ann. of Math.* 185, 991 (2017).
+  [E₈ is the densest packing in eight dimensions]
 
 ---
 
