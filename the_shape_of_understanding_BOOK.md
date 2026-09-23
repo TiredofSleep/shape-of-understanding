@@ -1146,6 +1146,14 @@ and the understanding you flow toward and never complete — they are one thing 
 faces. Its unreachability is not a wall; it is what makes everything else measurable, and the
 reason there is always further to dig, deeper to go, and rounder to become.
 
+And the immeasurable wears two faces. There is the round *at rest* — the perfect sphere,
+still and edgeless, approached forever and never occupied. And there is the round *in flow* —
+a smoke ring, a whirlpool, a turning ring that is edgeless too but never still, circling a
+hole at its centre. That hole is the void again: the flowing round turns around an emptiness
+it can never fill, just as the still round has no edge to measure from. Still or turning, it
+is the same unreachable centre — the axis everything turns around, and the origin everything
+is measured from. You point toward it; you measure off it; you never weigh it.
+
 This is the shape of understanding that the book is named for. A good curriculum makes
 mathematics **increasingly round** — the pictures smoother, the connections more uniform,
 the whole more nearly held in a single mind. And the *complete* understanding, the seeing
