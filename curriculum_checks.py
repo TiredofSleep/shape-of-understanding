@@ -171,6 +171,19 @@ assert abs(np.exp(1j*np.pi) + 1) < 1e-12
 # PART THREE -- THE HARD LESSONS
 # ======================================================================
 
+banner("Ch.8.1 -- Pythagoras: a^2 + b^2 = c^2 (the dissection proof, and the triples)")
+from sympy import symbols as _sym, expand as _exp
+_a, _b = _sym('a b', positive=True)
+assert _exp((_a + _b)**2 - 4 * (_a * _b / 2)) == _a**2 + _b**2     # (a+b)^2 minus 4 triangles
+show("the dissection identity", "(a+b)^2 - 4*(ab/2) = a^2 + b^2  ->  a^2 + b^2 = c^2")
+_triples = [(3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25), (20, 21, 29)]
+for _x, _y, _z in _triples:
+    assert _x*_x + _y*_y == _z*_z
+show("the whole-number right triangles (the counting side)", f"{_triples} all satisfy x^2 + y^2 = z^2")
+show("and the crisis (the measuring side)", "legs 1,1 -> c^2 = 2 -> c = sqrt(2), which no fraction names")
+assert 1**2 + 1**2 == 2 and math.isqrt(2)**2 != 2
+print("  -> one theorem gives both: whole-number triples (counting) and sqrt2 (measuring) -- the seam of Picture 6.")
+
 banner("Ch.8 -- why sqrt(2) is irrational (parity descent)")
 show("2 is not a perfect square", f"isqrt(2)^2 = {math.isqrt(2)**2} != 2  -> p^2=2q^2 forces both even, no lowest terms")
 assert math.isqrt(2)**2 != 2

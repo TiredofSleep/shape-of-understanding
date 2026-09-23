@@ -138,8 +138,10 @@ Counting and measuring usually get along. But once in a while they **crash.** Dr
 square that is 1 step on each side, and then measure the slanted line from one corner to
 the far corner (the *diagonal*). That length is real — you can see it — but **no counting
 fraction can ever name it exactly.** Not 1½, not 1.41, not any fraction however long.
-(Grown-ups call it "the square root of 2.") The place where counting simply *cannot*
-measure is where the deepest and strangest mathematics lives, and we'll go right to it.
+(Grown-ups call it "the square root of 2") — and the theorem that produces it, *a² + b² =
+c²*, belongs to **Pythagoras**, this book's oldest inspiration (Chapter 8). The place where
+counting simply *cannot* measure is where the deepest and strangest mathematics lives, and
+we'll go right to it.
 
 ## That's the whole vocabulary
 
@@ -725,11 +727,29 @@ of the four below has been checked against its real proof or definition.*
 > feels hard, it is not because something new is missing; it is the same pictures, higher up.
 > Each chapter opens with the plain idea before the symbols — read that first, and lean on it.
 
-## Chapter 8 — Why √2 is irrational (the first crisis)
+## Chapter 8 — Pythagoras: his theorem, and the crisis it caused
 
-√2 is the **diagonal of the unit square** (§1.1's segment doubled into a square).
-Asking whether it is a ratio p/q asks whether the diagonal and side can be measured in
-the same unit. **The plain idea, in whole numbers.** Suppose you *could* write that diagonal as a fraction
+*This book's oldest debt. Pythagoras is where counting first meets geometry — and where the
+seam between counting and measuring (Picture 6) was first torn open. His theorem and the
+crisis it caused are one story.*
+
+**8.1 The theorem.** In a right triangle — one with a square corner — the square built on the
+longest side (the *slope*, or hypotenuse) has exactly the area of the two squares built on
+the other two sides put together: **a² + b² = c².** You can *see* why: take a big square of
+side (a + b) and fill it with four copies of the triangle in two different ways. One way
+leaves the squares a² and b² uncovered; the other leaves the single tilted square c². The
+four triangles are the same both times, so what's left must be equal: a² + b² = c²
+(verified). The whole-number right triangles fall straight out — **3² + 4² = 5²**, then
+5-12-13, 8-15-17 — the *counting* side of the theorem, clean and exact.
+
+![The square on the slope equals the two squares on the sides (3-4-5).](figures/fig_pythagoras.svg)
+*Figure 12 — Pythagoras. On the 3-4-5 triangle the square on the slope (25) is exactly the
+two squares on the sides (9 + 16). a² + b² = c².*
+
+**8.2 The crisis he caused.** Now apply the very same theorem to the *simplest* right triangle
+— a square's corner, both legs **1.** The slope is a length *c* with c² = 1² + 1² = **2**: the
+diagonal of the unit square (§1.1's segment doubled). Ask whether *that* length is a whole-
+number ratio p/q — whether the diagonal and the side can be measured in the same unit. **The plain idea, in whole numbers.** Suppose you *could* write that diagonal as a fraction
 — some whole number of tiny units for the diagonal over some whole number for the side —
 and suppose you've already cancelled it down so the two numbers share no common factor (the
 way ⁶⁄₈ cancels to ¾). A short chain of reasoning then forces *both* of your numbers to be
@@ -1072,7 +1092,7 @@ every genuine limit is. Always rounder; never round. That is what it is to under
 as Cl(3), the two shadows) and `curriculum_checks.py` (each lesson, in the book's order:
 the equidistance ladder and the omni-adjacent void, the crystallographic restriction, the
 two-shadow cube, the Schläfli count, *e* as self-proportional growth, the radian, the
-sieve/Mertens density with the units-versus-primes distinction, Euler's *e^{iπ} = −1*, the
+sieve/Mertens density with the units-versus-primes distinction, Euler's *e^{iπ} = −1*, the Pythagorean theorem and the
 √2 parity descent, the eigenvalue axis/rotation split, the Fourier square-wave synthesis,
 the D₃ symmetry count, the First-G law and Euclid's endless primes, the Siamese magic square, the dimension-doubling
 identity, the lift-as-doubling (§1.1b) and the cube = Cl(3) grade split 1+3+3+1 with its
@@ -1108,6 +1128,7 @@ which picture a hard word stands for. Each is introduced where the last column s
 | the pentagon's number | the **golden ratio** φ | §3.1 |
 | the box's two shadows | **projections** | §1.5 |
 | counting versus measuring | **discrete** versus **continuous** | §1.6 |
+| the theorem about right triangles | the **Pythagorean theorem** (a² + b² = c²) | Ch. 8 |
 | a length no fraction can name (√2) | an **irrational number** | Ch. 8 |
 | an axis a transformation only stretches | an **eigenvector** (with its **eigenvalue**) | Ch. 9 |
 | a wave as a sum of spinning circles | the **Fourier transform** | Ch. 10 |

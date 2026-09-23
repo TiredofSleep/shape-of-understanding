@@ -275,11 +275,40 @@ def fig_staircase():
                  "every step rests on the one below", fontsize=10)
     save(fig, "fig_staircase.svg")
 
+# 13 -- Pythagoras: the square on the slope = the two squares on the sides (3-4-5)
+def fig_pythagoras():
+    from matplotlib.patches import Polygon
+    fig, ax = plt.subplots(figsize=(6.2, 6.2))
+    A = np.array([0, 0]); B = np.array([4, 0]); C = np.array([0, 3])   # legs 4, 3; hyp 5
+    ax.add_patch(Polygon([A, B, C], closed=True, facecolor=ACC, alpha=0.30, edgecolor=INK, lw=1.6))
+    # square on leg AB (=4), downward
+    ax.add_patch(Polygon([A, B, B + [0, -4], A + [0, -4]], closed=True, facecolor=ACC2, alpha=0.18, edgecolor=INK))
+    ax.text(2, -2, "16", ha="center", va="center", fontsize=14, color=ACC2)
+    # square on leg AC (=3), leftward
+    ax.add_patch(Polygon([A, C, C + [-3, 0], A + [-3, 0]], closed=True, facecolor=ACC2, alpha=0.18, edgecolor=INK))
+    ax.text(-1.5, 1.5, "9", ha="center", va="center", fontsize=14, color=ACC2)
+    # square on the hypotenuse BC, outward (direction (3,4)/5 * 5 = (3,4))
+    hyp = [B, C, C + [3, 4], B + [3, 4]]
+    ax.add_patch(Polygon(hyp, closed=True, facecolor=ACC, alpha=0.22, edgecolor=INK))
+    cen = np.mean(hyp, axis=0)
+    ax.text(cen[0], cen[1], "25", ha="center", va="center", fontsize=14, color=ACC)
+    # right-angle mark at A, and side labels
+    ax.plot([0.35, 0.35, 0], [0, 0.35, 0.35], c=INK, lw=1)
+    ax.text(2, 0.18, "4", ha="center", fontsize=10, color=INK)
+    ax.text(-0.2, 1.5, "3", ha="right", fontsize=10, color=INK)
+    ax.text(2.2, 1.7, "5", fontsize=10, color=INK)
+    ax.text(-3.8, -3.8, "9 + 16 = 25\n(a² + b² = c²)", ha="left", va="bottom", fontsize=12, color=INK)
+    ax.set_xlim(-4.3, 8.3); ax.set_ylim(-4.6, 8.3); ax.set_aspect("equal"); ax.axis("off")
+    ax.set_title("Pythagoras: the square on the slope equals the two squares on the sides",
+                 fontsize=10)
+    save(fig, "fig_pythagoras.svg")
+
 if __name__ == "__main__":
     print("generating figures ->", OUT)
     for f in (fig_ladder, fig_equidistance, fig_two_shadows, fig_eigen,
               fig_fourier, fig_void, fig_golden, fig_crystallographic,
-              fig_doubling, fig_two_builds, fig_cube_grades, fig_staircase):
+              fig_doubling, fig_two_builds, fig_cube_grades, fig_staircase,
+              fig_pythagoras):
         try:
             f()
         except Exception as e:  # keep going; report which failed
