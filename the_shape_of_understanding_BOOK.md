@@ -1108,6 +1108,17 @@ learner acquires one model seen from many sides rather than many disconnected fa
 pictures are kept honest by a discipline of checking and a record of discarded failures,
 so that following them leads to true mathematics rather than comfortable error.
 
+And notice what *kind* of facts these all are. Not one of them is a fact of physics, or
+chemistry, or computer science. They are facts about **shape, counting, rotation, and
+growth** — which is to say, facts about the **floor those sciences are built on.** √2 is true
+before any physicist measures a diagonal; the doubling is true before any computer counts;
+the tetrahedral angle is true before any molecule sits at it; π is the half-turn before any
+planet takes one. That is why one small vocabulary reaches so far without ever leaving honest
+ground: it is not describing any single science, it is describing the **floor beneath all of
+them** — the mathematics the world is written in, one level down from the world. The sciences
+are the building; this book is a tour of the floor. And the floor is worth knowing precisely
+because everything heavier stands on it.
+
 Whether this makes the deep studies easier to hold in one mind is a question about
 teaching, and it is answerable by teaching. It is worth asking, because the absence of a
 shared, true, visual model has been the oldest obstacle in mathematics education, and a
