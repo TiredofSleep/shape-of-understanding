@@ -35,6 +35,7 @@ python curriculum_checks.py    # every lesson (91 checks): the equidistance ladd
                                # dimension, octonions & the sedenion zero divisor, A₅ simple, the
                                # double cover, crystals & E₈, the magic angle & 2l+1, exp onto SO(3),
                                # and each tower's coin: two sides and an edge)
+python two_sides_checks.py     # the companion unit, Two Sides and an Edge (48 checks)
 python verify_forced_chain.py  # the geometric core: simplices, the tetrahedral 1/3, the cube = Cl(3),
                                # the two shadows
 python make_figures.py         # (re)generate the twelve figures into figures/*.svg
@@ -51,10 +52,12 @@ python make_figures.py         # (re)generate the twelve figures into figures/*.
 | [`make_figures.py`](make_figures.py) | generates the twelve load-bearing figures (SVG) |
 | `figures/` | the generated figures the manuscript embeds |
 | [`study/`](study/README.md) | the ready-to-run A/B study kit for Ch.17 (pre-registration, lessons, assessments, power + analysis scripts) |
+| [`two_sides_and_an_edge.md`](two_sides_and_an_edge.md) | **the companion unit, *Two Sides and an Edge*.** It covers flips, fixed points and the four kinds of paradox. It is a staircase from a coin in your pocket to Lawvere's diagonal and Kripke's third truth value, with exercises and answers. |
+| [`two_sides_checks.py`](two_sides_checks.py) | the companion unit's verification suite (48 checks) |
 
 ## The base and the towers
 
-The point of the book is a new way to teach higher mathematics. Its premise — *integers are shapes* — is the **base**, and every picture on it is the ground floor of a **tower**: the tetrahedron, octahedron and cube are the 3D floors of the only regular shapes that exist in every dimension; the turn *i* climbs ℝ → ℂ → ℍ → 𝕆; the cube's algebra Cl(3) climbs to Bott's eight-step clock; the solids' turnings climb to A₅ and the unsolvable quintic; filling their centres climbs to crystals, Kepler's packing and E₈; the tetrahedron's 1/3 climbs to the spherical harmonics; √2 climbs to the real line; the breath *e* climbs to Lie groups. **Chapter 18** points up each tower — and shows that every tower is also a **coin**: a flip with two sides and an edge, where its paradox lives (√2, which no fraction reaches; *i*, which no real number is). Mathematics named those edges rather than resolving them, and the book's way is the same: classify the paradox, keep both sides. The companion repository, [`trinity-infinity-geometry`](https://github.com/TiredofSleep/trinity-infinity-geometry), maps the base and the towers floor by floor, with a script for every floor that can be computed.
+The point of the book is a new way to teach higher mathematics. Its premise — *integers are shapes* — is the **base**, and every picture on it is the ground floor of a **tower**: the tetrahedron, octahedron and cube are the 3D floors of the only regular shapes that exist in every dimension; the turn *i* climbs ℝ → ℂ → ℍ → 𝕆; the cube's algebra Cl(3) climbs to Bott's eight-step clock; the solids' turnings climb to A₅ and the unsolvable quintic; filling their centres climbs to crystals, Kepler's packing and E₈; the tetrahedron's 1/3 climbs to the spherical harmonics; √2 climbs to the real line; the breath *e* climbs to Lie groups. The companion unit, **[*Two Sides and an Edge*](two_sides_and_an_edge.md)**, turns the pictures over. It asks of every flip what it leaves alone, and sorts paradoxes into four kinds — classified, not resolved. **Chapter 18** points up each tower — and shows that every tower is also a **coin**: a flip with two sides and an edge, where its paradox lives (√2, which no fraction reaches; *i*, which no real number is). Mathematics named those edges rather than resolving them, and the book's way is the same: classify the paradox, keep both sides. The companion repository, [`trinity-infinity-geometry`](https://github.com/TiredofSleep/trinity-infinity-geometry), maps the base and the towers floor by floor, with a script for every floor that can be computed.
 
 ## The wall (the discipline that keeps it honest)
 

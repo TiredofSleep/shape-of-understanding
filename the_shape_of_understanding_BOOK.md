@@ -241,6 +241,8 @@ floor of a tower of higher mathematics, and the last chapter (Chapter 18) points
   honest failures, how to test it as teaching — and where the towers go: the higher
   mathematics each picture points up to.
 - **Coda.** *Increasingly round, never measurably round.*
+- **Companion unit — *Two Sides and an Edge*** (a separate file, `two_sides_and_an_edge.md`). The
+  same pictures turned over: flips, the things they leave alone, and the four kinds of paradox.
 - **Appendix A.** The verification scripts. Every mathematical claim in the book is
   reproduced by running them.
 
@@ -1177,6 +1179,12 @@ finished rotation, and every rotation of space arises this way (verified) — th
 > Galois, Kepler and Hales, and Viazovska — but a learner standing on it can see where each one
 > goes. The towers are what you climb. Their edges are what you point toward — as the Coda will
 > put it, *you can only point toward it, and measure off of it.*
+
+> **Next: *Two Sides and an Edge*.** This book climbs. Its companion unit turns the same pictures
+> over. A flip is a move that, done twice, changes nothing. Ask of any flip *what does it leave
+> alone?*, and you find the place where paradoxes live — the √2 no fraction reaches, the *i* the real
+> line is missing, the Liar that "true and false" cannot hold. The unit sorts them into four kinds, and
+> checks every step (`two_sides_and_an_edge.md`, with `two_sides_checks.py`).
 
 ## Conclusion — The shape of understanding
 
