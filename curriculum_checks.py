@@ -92,6 +92,19 @@ show("row 4 = the tetrahedron's parts", f"{[_comb(4,k) for k in range(5)]} = emp
 assert [_comb(3, k) for k in range(4)] == [1, 3, 3, 1] and [_comb(4, k) for k in range(5)] == [1, 4, 6, 4, 1]
 print("  -> simplex sub-pieces and Clifford grades are the SAME binomials -- Pascal; the doubling is the row sum.")
 
+banner("Ch.2.4 -- the edge of building: the last lift, the fold, the gap (one 1/3, three faces)")
+show("the tetrahedron is the LAST buildable equal-shape", "4 equal points fit in 3D; 5 equal points (the 4-simplex) need 4D -- unbuildable")
+_V = np.array(list(itertools.product([0, 1], [0, 1], [0, 1])), float)
+_dists = sorted(set(round(float(np.linalg.norm(_V[i] - _V[j])), 6) for i, j in combinations(range(8), 2)))
+show("the buildable cube is a FOLD (three distances, not one)", f"cube distances = {_dists} = 1, sqrt2, sqrt3")
+assert len(_dists) == 3 and abs(_dists[0]-1) < 1e-6 and abs(_dists[1]-2**0.5) < 1e-6 and abs(_dists[2]-3**0.5) < 1e-6
+_dih = np.degrees(np.arccos(1/3))
+show("regular tetrahedra do NOT tile 3D", f"dihedral = arccos(1/3) = {_dih:.2f} deg; 360/{_dih:.2f} = {360/_dih:.3f} (not integer) -> a {360-5*_dih:.2f} deg gap")
+assert abs(_dih - 70.5288) < 1e-3 and 5.0 < 360/_dih < 5.2
+show("one 1/3, three faces", "vertex cos=-1/3 (lift); body-diagonal cos^2=1/3 (fold); dihedral arccos(1/3) (gap)")
+assert abs(np.arccos(-1/3) - np.radians(109.4712)) < 1e-3 and abs((1/np.sqrt(3))**2 - 1/3) < 1e-9
+print("  -> you can build the whole real world in 3D, but you stay in the fold; the 1/3 keeps you there.")
+
 banner("Ch.1.2 -- the break at five: the crystallographic restriction")
 # A lattice may rotate only by orders n with 2cos(2pi/n) an integer: 1,2,3,4,6.
 def integer_trace(n):

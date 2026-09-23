@@ -538,6 +538,43 @@ the other by dimensions. The doubling is the row's sum; the grades are the row i
 child who builds Pascal's triangle holds, in one pattern, the count behind **both** builds
 (verified).
 
+**2.4 The edge of building: the last lift, the fold, and the gap.** The two builds have an
+*edge* — a place where **building** stops and only **imagining** goes on — and the same
+number, 1/3, guards it three times over.
+
+**The last lift you can hold.** The fourth gumdrop rising (§2.1) is special beyond being the
+first to leave the table: it is the *last* lift you can build. Try a **fifth** gumdrop, equal
+to all four. It would need a fifth toothpick pointing at right angles to the other four — and
+there is nowhere in the room to point it. Five equal points form the **4-simplex**, and it
+needs a *fourth* dimension; six need a fifth; and so on up the ladder of §1.1, which never
+stops. These shapes are real and forced, but from the fifth gumdrop on they are
+**unbuildable** — you can only reason toward them. *The tetrahedron is the last door you can
+walk through and still see the room* — the boundary between building and imagining.
+
+**The cube you can build is a fold.** You *can* build a cube — eight gumdrops, twelve
+toothpicks (§2.2). But look closely: its gumdrops are **not** all the same distance apart. It
+has **three** distances — the edge (1), the face-diagonal (√2), and the body-diagonal (√3)
+(verified). A cube whose eight points were *truly* all equidistant would be the **7-simplex**,
+and it needs **seven dimensions.** So the buildable cube "gave up" equal distance to fit into
+three dimensions — it is a **fold** of an unbuildable equal-distance truth, one true distance
+creased into three.
+
+**And the gap that won't close.** Try to fill space with regular tetrahedra the way cubes
+fill it. You cannot. The angle along a tetrahedron's edge (its *dihedral* angle) is
+**arccos(1/3) = 70.53°**, and 360° / 70.53° = **5.10** — not a whole number. Fit five
+tetrahedra around an edge and a **7.35° gap** is left over (verified). Regular tetrahedra do
+not tile space.
+
+**One number, three faces.** The 1/3 you first met as the tetrahedron's lift is the *same*
+1/3 in all three places:
+- as the **vertex angle** (cos = −1/3) it *forces the lift*;
+- as the **body-diagonal** (cos² = 1/3) it is the deepest crease of the *fold*;
+- as the **dihedral angle** (arccos 1/3) it is the *gap* that won't close.
+
+You can stay in three dimensions and build the whole real world — crystals, the way atoms
+stack, everything you can hold — but you stay *in the fold*, and the 1/3 is what keeps you
+there.
+
 **The foundation, in one breath.** Four ideas now stand together and generate the rest of
 the book. First, the void (0) is the point nearest to all points at once — the fullest
 position, not the empty one — and it is what the points measure their equality *against*
