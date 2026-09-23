@@ -988,32 +988,50 @@ one mind, so that mathematics is experienced as a structure rather than a stack.
 
 ## Chapter 16 — Honest failures (pictures tried and discarded)
 
-Kept so the vocabulary stays trustworthy:
-- **"The recurring 1/3 is a universal residue of subtraction."** False. 1/(N−1) = 1/3
-  *only at N = 4*. The 1/3 is the tetrahedron's signature; taught correctly as *4 − 1 = 3*.
-- **"The breath produces physical energy or the fundamental constants."** False. The
-  breath is *structural* growth; it is never energy from nothing and never a physical
-  magnitude. The picture teaches the *shape* of self-proportional growth, nothing more.
-- **"The golden ratio is everywhere in nature and art."** Overstated. φ is forced only
-  where growth is *self-similar and additive* (§3.1) — phyllotaxis, the pentagon, the
-  Fibonacci recursion. Many celebrated sightings (the Parthenon, the "ideal" face, most
-  spirals labelled "golden") are retrofitted or simply wrong [Markowsky 1992]. The picture
-  is kept for the mechanism, not the mystique.
-- **"Multiplying the first primes and adding 1 always gives a prime."** False, and a classic
-  slip in reading Euclid (§12.1). The number *P* need only have a *new prime factor*, not be
-  prime itself: 2·3·5·7·11·13 + 1 = 30031 = 59 × 509. The proof needs a new *factor*, which
-  it always has; it never needs *P* to be prime.
-- **"Adding a point doubles the edges (or the faces)."** False in general, and a tempting
-  trap from the very first lift (§1.1b), where the sticks *do* double (3 → 6) and the faces
-  quadruple (1 → 4). Those multipliers shrink at every later step (edges next go ×1⅔). The
-  count that doubles *every* time is the **total** number of sub-pieces, 2ᴺ — the yes/no on
-  the new point. Taught correctly as *the whole doubles, not any one slice of it.*
-- **"Every physical or computational structure is literally the same geometry."** Not a
-  teaching claim. The convergence of structure across domains — for instance, the
-  observed alignment of representations in independently trained neural networks [Huh et
-  al. 2024] — is real *evidence that shared structure exists*, and it motivates the
-  search; but the specific decoding must be earned lesson by lesson, and this book teaches
-  only the pictures that have been checked.
+A picture is kept only if following it lands on the *real* theorem. These are the ones that
+did not — recorded, because a discarded picture is not a deletion. Looked at honestly, each
+false picture leaves a **true, narrower picture** underneath; the failure is a *boundary*, and
+the boundary tells you where the real thing lives. So each is given as *what dies* → *what
+survives.*
+
+- **"The recurring 1/3 is a universal residue"** — or worse, *"the 1/3 shows up in the laws of
+  physics."* **Dies:** the universality. 1/(N−1) = 1/3 *only at N = 4*, and every attempt to
+  find the 1/3 in a physical law (a force, a fluid, a charge) misses. **Survives:** the 1/3 is
+  a **geometric** number — the tetrahedron's signature, the same 1/3 that lifts the fourth
+  point, creases the cube's deepest diagonal, and opens the tetrahedra's tiling gap (§2.4). It
+  is a fact about *shape and counting*, one level **beneath** physics — a floor physics stands
+  on, not a constant that appears *in* physics. That is exactly why it is exact in geometry and
+  vanishes in every force law.
+- **"The breath produces physical energy, or the fundamental constants."** **Dies:** the reach
+  into physics. **Survives:** the breath teaches the *shape* of self-proportional growth (§1.4)
+  — real, and only that; never energy from nothing, never a physical magnitude.
+- **"The golden ratio is everywhere in nature and art."** **Dies:** the ubiquity (the
+  Parthenon, the "ideal" face, most "golden" spirals are retrofitted or wrong [Markowsky
+  1992]). **Survives:** φ is forced exactly where growth is *self-similar and additive* (§3.1)
+  — phyllotaxis, the pentagon, the Fibonacci recursion. Kept for the mechanism, not the
+  mystique.
+- **"Adding a point doubles the edges (or the faces)."** **Dies:** the claim about any *one*
+  slice — the sticks double (3→6) and faces quadruple (1→4) only at the first lift, then those
+  multipliers shrink (§1.1b). **Survives:** the **total** count of sub-pieces, 2ᴺ, doubles
+  *every* time (the yes/no on the new point). The whole doubles; no single part is guaranteed to.
+- **"Multiplying the first primes and adding 1 always gives a prime."** **Dies:** the "is a
+  prime." **Survives:** Euclid's actual claim — *P* always has a **new prime factor**, even
+  when *P* is composite (2·3·5·7·11·13 + 1 = 30031 = 59×509). The proof needs a new *factor*,
+  which it always has (§12.1).
+- **"Every physical or computational structure is literally the same geometry."** **Dies:** the
+  "literally" — not a teaching claim. **Survives:** the *evidence that shared structure exists*
+  — for instance the alignment of representations in independently trained neural networks [Huh
+  et al. 2024] — which motivates the search; but each decoding must be earned lesson by lesson,
+  and this book teaches only the pictures that have been checked.
+
+**Why the failures are a map, not a list of mistakes.** Look at what survives each death: the
+universal-1/3 dies but leaves the *geometric* 1/3; golden-ratio-everywhere dies but leaves
+*self-similar additive growth*; edges-double dies but leaves the *total* doubling. Each false
+picture turns out to be a *true* picture with the wrong quantifier, the wrong home, or the
+wrong reach — and naming exactly what died tells you exactly where the real picture lives. That
+is what makes the kept pictures trustworthy: they are the ones checked against these same
+failures and left standing. A curriculum with no honest failures is not being honest; it is
+only unchecked.
 
 ## Chapter 17 — How to test this book
 
