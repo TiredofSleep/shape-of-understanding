@@ -24,6 +24,13 @@ It is a work of **pedagogy**. Its claims are testable *as pedagogy* — whether 
 
 ![Same gumdrops, two builds: equal toothpicks lift the shape into a tetrahedron; perpendicular toothpicks double it into a cube, whose algebra is Cl(3).](figures/fig_two_builds.svg)
 
+## Toward a series
+
+The book, its companion unit, the flagship's base and towers, and the essay *What Survived* are being
+organized into a series of four books. Each book is built on the author's own intuitions, each made
+exact and checked. See [`series/SERIES_PLAN.md`](series/SERIES_PLAN.md) and
+[`series/TREASURE_MAP.md`](series/TREASURE_MAP.md).
+
 ## Run the checks
 
 Every computable assertion in the book is reproduced by two scripts (NumPy/SymPy/SciPy); the theorems at the tops of the towers (Ch. 18) are cited:
