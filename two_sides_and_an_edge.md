@@ -201,6 +201,8 @@ octahedron's three axes (verified):
 | *z* → 1/*z* | 1 and −1 | finite and infinite: it swaps 0 with ∞ |
 | *z* → −1/*z* | *i* and −*i* | both at once |
 
+![The ball of numbers: 0 and ∞ at the poles, 1, i, −1 and −i around the equator, at the six corners of an octahedron. Each flip is a half-turn about one of its three axes; the centre, kept by all three, is not a number.](figures/fig_three_coins.svg)
+
 Look at the last row. On the real number line, the flip *x* → −1/*x* swaps the positive numbers with
 the negative ones, and it keeps no number at all. To be kept, a number would need *x* = −1/*x*, that
 is, *x*² = −1, and no real number does that (verified). The flip's edge is off the line: it is *i*.

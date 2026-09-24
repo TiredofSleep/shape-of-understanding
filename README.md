@@ -42,7 +42,7 @@ python curriculum_checks.py    # every lesson (91 checks): the equidistance ladd
 python two_sides_checks.py     # the companion unit, Two Sides and an Edge (48 checks)
 python verify_forced_chain.py  # the geometric core: simplices, the tetrahedral 1/3, the cube = Cl(3),
                                # the two shadows
-python make_figures.py         # (re)generate the thirteen figures into figures/*.svg
+python make_figures.py         # (re)generate the figures into figures/*.svg (13 + 1 for the unit)
 ```
 
 ## Files
@@ -53,7 +53,7 @@ python make_figures.py         # (re)generate the thirteen figures into figures/
 | [`the_shape_of_understanding.md`](the_shape_of_understanding.md) | the shorter companion paper (the 9-lesson journal-article version it grew from) |
 | [`curriculum_checks.py`](curriculum_checks.py) | the per-lesson verification suite (91 checks) |
 | [`verify_forced_chain.py`](verify_forced_chain.py) | the geometric-core verifier |
-| [`make_figures.py`](make_figures.py) | generates the thirteen load-bearing figures (SVG) |
+| [`make_figures.py`](make_figures.py) | generates the figures (SVG): thirteen for the book, and one for the companion unit |
 | `figures/` | the generated figures the manuscript embeds |
 | [`study/`](study/README.md) | the ready-to-run A/B study kit for Ch.17 (pre-registration, lessons, assessments, power + analysis scripts) |
 | [`two_sides_and_an_edge.md`](two_sides_and_an_edge.md) | **the companion unit, *Two Sides and an Edge*.** It covers flips, fixed points and the four kinds of paradox. It is a staircase from a coin in your pocket to Lawvere's diagonal and Kripke's third truth value, with exercises and answers. |

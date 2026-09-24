@@ -305,12 +305,58 @@ def fig_pythagoras():
                  fontsize=10)
     save(fig, "fig_pythagoras.svg")
 
+# 14 -- (companion unit, Ch. 3) three coins on one ball: the half-turns about the octahedron's axes
+def fig_three_coins():
+    from matplotlib.patches import Circle, Arc
+    fig, ax = plt.subplots(figsize=(9.2, 4.6))
+    R, tilt, yaw = 1.0, 0.32, np.radians(34)
+
+    def pt(x, y, z):   # z up, y toward the viewer; 1, i, -1, -i run counterclockwise seen from infinity
+        x, y = x * np.cos(yaw) - y * np.sin(yaw), x * np.sin(yaw) + y * np.cos(yaw)
+        return np.array([R * x, R * (z * np.cos(tilt) - y * np.sin(tilt))]), y
+
+    ax.add_patch(Circle((0, 0), R, facecolor="#f6f8fa", edgecolor=MUT, lw=1.2))
+    ry = 2 * R * np.sin(tilt)
+    ax.add_patch(Arc((0, 0), 2 * R, ry, theta1=180, theta2=360, color=MUT, lw=1.0))
+    ax.add_patch(Arc((0, 0), 2 * R, ry, theta1=0, theta2=180, color=MUT, lw=1.0, ls="--"))
+    corners = {"∞": (0, 0, 1), "0": (0, 0, -1), "1": (1, 0, 0), "−1": (-1, 0, 0),
+               "i": (0, -1, 0), "−i": (0, 1, 0)}
+    P = {k: pt(*v)[0] for k, v in corners.items()}
+    names = list(corners)
+    for a_ in range(6):
+        for b_ in range(a_ + 1, 6):
+            if np.dot(corners[names[a_]], corners[names[b_]]) == 0:
+                ax.plot(*zip(P[names[a_]], P[names[b_]]), c=INK, lw=0.8, alpha=0.18)
+    cols = (ACC, ACC2, "#1e8449")
+    for (u, v), c in zip((("∞", "0"), ("−1", "1"), ("−i", "i")), cols):
+        ax.plot(*zip(P[u], P[v]), c=c, lw=2.4, solid_capstyle="round")
+        for k in (u, v):
+            ax.scatter(*P[k], s=70, c=c, edgecolors="white", linewidths=1.2, zorder=3)
+            d = P[k] / (np.linalg.norm(P[k]) or 1)
+            ax.text(*(P[k] + 0.13 * d + np.array([0, -0.02])), k, ha="center", va="center", fontsize=12,
+                    style="italic" if "i" in k else "normal", color=INK)
+    ax.scatter([0], [0], s=40, facecolors="white", edgecolors=INK, zorder=4)
+    rows = [("z → −z", "positive and negative", "keeps 0 and ∞"),
+            ("z → 1/z", "finite and infinite", "keeps 1 and −1"),
+            ("z → −1/z", "both at once", "keeps i and −i: no real number")]
+    for k, ((f, coin, keep), c) in enumerate(zip(rows, cols)):
+        y = 0.72 - k * 0.5
+        ax.add_patch(plt.Rectangle((1.45, y - 0.05), 0.09, 0.09, color=c))
+        ax.text(1.62, y, f"{f}   ({coin})", fontsize=10.5, va="center", color=INK, fontweight="bold")
+        ax.text(1.62, y - 0.17, f"its edge: {keep}", fontsize=9.5, va="center", color=INK)
+    ax.text(1.45, -0.86, "The centre (open dot) is kept by all three:\nthe full middle, which no number occupies.",
+            fontsize=9, color=MUT, va="center")
+    ax.set_xlim(-1.25, 4.1); ax.set_ylim(-1.2, 1.25); ax.set_aspect("equal"); ax.axis("off")
+    ax.set_title("Three coins on one ball: 0, ∞, 1, −1, i, −i sit at the corners of an octahedron,\n"
+                 "and each coin is a half-turn about one of its axes", fontsize=10.5)
+    save(fig, "fig_three_coins.svg")
+
 if __name__ == "__main__":
     print("generating figures ->", OUT)
     for f in (fig_ladder, fig_equidistance, fig_two_shadows, fig_eigen,
               fig_fourier, fig_void, fig_golden, fig_crystallographic,
               fig_doubling, fig_two_builds, fig_cube_grades, fig_staircase,
-              fig_pythagoras):
+              fig_pythagoras, fig_three_coins):
         try:
             f()
         except Exception as e:  # keep going; report which failed
