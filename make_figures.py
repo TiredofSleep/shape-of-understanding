@@ -17,11 +17,12 @@ from mpl_toolkits.mplot3d import Axes3D  # noqa: F401
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "figures")
 os.makedirs(OUT, exist_ok=True)
 INK, ACC, ACC2, MUT = "#1a1a1a", "#c0392b", "#2471a3", "#7f8c8d"
+plt.rcParams["svg.hashsalt"] = "shape-of-understanding"   # the same SVG every run, so git sees only real changes
 
 def save(fig, name):
     # a white page, not a transparent one, so the figures read the same in light and dark themes
     fig.savefig(os.path.join(OUT, name), format="svg", bbox_inches="tight", pad_inches=0.18,
-                facecolor="white", transparent=False)
+                facecolor="white", transparent=False, metadata={"Date": None})
     plt.close(fig)
     print("  wrote figures/" + name)
 
