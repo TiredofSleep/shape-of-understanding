@@ -11,6 +11,8 @@ It is a work of **pedagogy**. Its claims are testable *as pedagogy* — whether 
 
 **It is built as a staircase.** It starts so simply a curious ten-year-old can begin — with gumdrops, toothpicks, shadows, and spinning tops (**Part Zero**) — and climbs, one checked step at a time, to genuine undergraduate mathematics (eigenvalues, the Fourier transform, groups, the Clifford algebra of space, built from candy) — and its last chapter points up the **towers** of higher mathematics that rise from there. Every step rests on the one below; a glossary of the grown-up words (**Appendix B**) lets a reader look up any real name.
 
+![The staircase: six steps, Part Zero to Part Five, rising from age ten to university. Gumdrops and six pictures; the grammar and Cl(3) from candy; e, π and primes; √2, eigenvalues, Fourier and groups; magic squares and dimension-doubling; one model and how to test it.](figures/fig_staircase.svg)
+
 ## The six primitives
 
 1. **Integers are shapes** — *n* mutually-equidistant points force the (n−1)-simplex; the dimensional ladder is the ladder of *simultaneous equality* (three is the last count that stays flat).
@@ -19,6 +21,8 @@ It is a work of **pedagogy**. Its claims are testable *as pedagogy* — whether 
 4. **Growth is a breath** — `e` is the rate of self-proportional growth.
 5. **The cube casts two shadows** — a square (face view) and a hexagon (diagonal view), related by `cos²(1,1,1) = 1/3` — the tetrahedron's signature, `1/(N−1)` at N=4.
 6. **Count versus measure** — whole things are counted, continuous things measured; where they cannot be reconciled (√2) is where the deepest difficulties live.
+
+![Same gumdrops, two builds: equal toothpicks lift the shape into a tetrahedron; perpendicular toothpicks double it into a cube, whose algebra is Cl(3).](figures/fig_two_builds.svg)
 
 ## Run the checks
 
@@ -38,7 +42,7 @@ python curriculum_checks.py    # every lesson (91 checks): the equidistance ladd
 python two_sides_checks.py     # the companion unit, Two Sides and an Edge (48 checks)
 python verify_forced_chain.py  # the geometric core: simplices, the tetrahedral 1/3, the cube = Cl(3),
                                # the two shadows
-python make_figures.py         # (re)generate the twelve figures into figures/*.svg
+python make_figures.py         # (re)generate the thirteen figures into figures/*.svg
 ```
 
 ## Files
@@ -49,7 +53,7 @@ python make_figures.py         # (re)generate the twelve figures into figures/*.
 | [`the_shape_of_understanding.md`](the_shape_of_understanding.md) | the shorter companion paper (the 9-lesson journal-article version it grew from) |
 | [`curriculum_checks.py`](curriculum_checks.py) | the per-lesson verification suite (91 checks) |
 | [`verify_forced_chain.py`](verify_forced_chain.py) | the geometric-core verifier |
-| [`make_figures.py`](make_figures.py) | generates the twelve load-bearing figures (SVG) |
+| [`make_figures.py`](make_figures.py) | generates the thirteen load-bearing figures (SVG) |
 | `figures/` | the generated figures the manuscript embeds |
 | [`study/`](study/README.md) | the ready-to-run A/B study kit for Ch.17 (pre-registration, lessons, assessments, power + analysis scripts) |
 | [`two_sides_and_an_edge.md`](two_sides_and_an_edge.md) | **the companion unit, *Two Sides and an Edge*.** It covers flips, fixed points and the four kinds of paradox. It is a staircase from a coin in your pocket to Lawvere's diagonal and Kripke's third truth value, with exercises and answers. |

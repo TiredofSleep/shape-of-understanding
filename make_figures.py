@@ -19,7 +19,9 @@ os.makedirs(OUT, exist_ok=True)
 INK, ACC, ACC2, MUT = "#1a1a1a", "#c0392b", "#2471a3", "#7f8c8d"
 
 def save(fig, name):
-    fig.savefig(os.path.join(OUT, name), format="svg", bbox_inches="tight", transparent=True)
+    # a white page, not a transparent one, so the figures read the same in light and dark themes
+    fig.savefig(os.path.join(OUT, name), format="svg", bbox_inches="tight", pad_inches=0.18,
+                facecolor="white", transparent=False)
     plt.close(fig)
     print("  wrote figures/" + name)
 
@@ -264,13 +266,13 @@ def fig_staircase():
     cols = [(0.86 - 0.08 * i / 5, 0.91 - 0.04 * i / 5, 0.97) for i in range(6)]
     ax.bar(range(6), heights, width=1.0, color=cols, edgecolor=INK, align="edge", zorder=2)
     for i, (n, d, h) in enumerate(zip(names, details, heights)):
-        ax.text(i + 0.5, h - 0.12, n, ha="center", va="top", fontsize=9, fontweight="bold", color=INK)
-        ax.text(i + 0.5, 0.12, d, ha="center", va="bottom", fontsize=6.6, color=MUT)
-    ax.annotate("", xy=(6.15, 6.45), xytext=(-0.15, 0.2),
+        ax.text(i + 0.5, h - 0.14, n, ha="center", va="top", fontsize=9, fontweight="bold", color=INK)
+        ax.text(i + 0.5, -0.15, d, ha="center", va="top", fontsize=7.4, color=MUT)
+    ax.annotate("", xy=(5.9, 7.35), xytext=(-0.1, 1.55),
                 arrowprops=dict(arrowstyle="->", color=ACC, lw=1.6), zorder=3)
-    ax.text(-0.15, 6.15, "university", color=ACC, fontsize=8, ha="left")
-    ax.text(-0.15, 0.4, "age ten", color=ACC, fontsize=8, ha="left")
-    ax.set_xlim(-0.5, 6.9); ax.set_ylim(0, 7); ax.axis("off")
+    ax.text(-0.1, 1.4, "age ten", color=ACC, fontsize=8.5, ha="left", va="top")
+    ax.text(5.75, 7.45, "university", color=ACC, fontsize=8.5, ha="right", va="bottom")
+    ax.set_xlim(-0.3, 6.3); ax.set_ylim(-1.2, 7.9); ax.axis("off")
     ax.set_title("The staircase — start with gumdrops, arrive at undergraduate mathematics;\n"
                  "every step rests on the one below", fontsize=10)
     save(fig, "fig_staircase.svg")

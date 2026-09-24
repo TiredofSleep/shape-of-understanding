@@ -1429,6 +1429,6 @@ figures, extension lessons (the doubling, Pascal's triangle, Euclid's endless pr
 logarithm, the derivative, π, the golden ratio, the quaternions), exercises, misconception
 boxes, a grown-up-words glossary (Appendix B), and a concrete A/B protocol (Ch. 17). Every
 mathematical assertion is reproduced by the appendix scripts (`verify_forced_chain.py`, and
-`curriculum_checks.py`, which prints ALL LESSON CHECKS PASS across 61 checks), and the twelve
+`curriculum_checks.py`, which prints ALL LESSON CHECKS PASS across 91 checks), and the thirteen
 load-bearing figures are drawn in `figures/` by `make_figures.py`. Increasingly round; never
 measurably round.*
