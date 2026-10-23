@@ -919,6 +919,66 @@ lesson: *deep structure can emerge from a small rule, mechanically applied* — 
 concrete encounter with the idea that generation and structure are the same thing seen
 from two sides.
 
+**13.1 Lo Shu in four colours (extension).** The Lo Shu hides a second build inside it.
+Subtract 1 from every number, so that it holds 0 to 8, and write each number in base three,
+with two digits: 3 is 10, 8 is 22, 4 is 11. Now read only the first digits, and then only the
+second. Each forms a **Latin square**: each of 0, 1 and 2 appears once in every row and once in
+every column. Laid one over the other, every pair of digits appears exactly once. Two Latin
+squares that fit together like this are called **orthogonal**, and magic squares have been built
+from them for three centuries [de La Hire 1705; Euler 1782]. That is the magic, explained: each
+row holds every digit once in each place, so every row adds up the same, and on each diagonal
+one place holds the middle digit 1 three times, and 1 + 1 + 1 is 0 + 1 + 2 again (verified).
+
+Now use four symbols instead of three: base four, with the digits 1, 2 and 3. The square
+
+        11  13   6
+         5  10  15
+        14   7   9
+
+is magic, every line summing to 30, and its base-four digits are again two orthogonal Latin
+squares (verified). In binary, 1, 2 and 3 are 01, 10 and 11, and any two of them XOR (add
+without carrying, so 1 + 1 = 0) to the third. So every row and every column of this square
+XORs to zero, and it is the only 3×3 magic square with sum 30 that does (verified: of the three
+such squares that can be made from 0 to 15, only this one). Give the four base-four digits four
+names, **0 = I, 1 = Z, 2 = X, 3 = Y**, the names physicists give the basic measurements of a
+**qubit**, a quantum bit. A two-digit number becomes a measurement on two qubits (11 is XY, 13 is
+YZ, 6 is ZX), and the square becomes the **Mermin–Peres square** of quantum physics [Mermin
+1990; Peres 1990]. The three measurements in a row can be made together, and so can the three in
+a column; the three results in a row always multiply to −1, and in a column to +1. No list of
+nine answers fixed in advance, each +1 or −1, can do both, because multiplying all nine row by
+row gives −1 and column by column gives +1 (verified: all 512 lists fail). Quantum mechanics
+does both, and experiments agree. *This is a picture of a known result in physics, not physics
+derived from a magic square:* the numbers line up because XOR is how these measurements
+combine, and the paradox needs a place where +1 and −1 meet, which binary has (1 ⊕ 1 = 0).
+
+**13.2 The odometer ties a knot (extension).** An odometer with only the digits 0 and 1 counts
+000, 001, 010, 011, 100, … Usually one wheel turns; from 0111 to 1000 every wheel turns at once,
+the **full ripple**. Number the cube's eight corners 000 to 111 this way, and the
+four-dimensional cube's sixteen corners 0000 to 1111, and you have the sixteen numbers that fill
+a 4×4 magic square (Dürer's, with 1 taken from every number). Write each number in such a square
+in binary and split the square into four **layers** of 0s and 1s: the 8s digits, the 4s, the 2s
+and the 1s. In 1931 F. Fitting, building on an idea of his son Hans, then a student of
+mathematics, proved that in every one of the 880 squares each layer has exactly two 1s in every
+row and every column [Fitting 1931]. So along the rows and columns the magic is shared out
+evenly, layer by layer, and adding up never needs a carry (verified).
+
+Only the diagonals carry: there, two 1s can stand in for one 2. The carries obey rules you can
+check with pencil and paper. No carry is used twice. The carries a square uses form an unbroken
+chain. And "1s to 2s" with "4s to 8s", but without "2s to 4s" between them, never happens: the
+four lines that try it sum to 20, 24, 36 or 40, never 30 (verified). Counted by how many carries
+their diagonals use, the squares number 528, 192, 112 and 48 [Fitting 1931] (verified). The 48
+are strange. Not one of their layers balances on its own; the balance lives only in the whole.
+Their diagonals hold the full ripple: the low layers fall short by 1 + 1 + 2 + 4 = 8, and that
+is paid as one extra 8, which is 0111 + 1 = 1000 again (verified).
+
+Now draw the three carries as the three crossings of the simplest knot picture, the
+**trefoil**, each crossing going over or under by the sign of its carry. Of the eight ways to set
+three crossings, only the two in which all three agree make a real knot; the other six pull
+apart into a plain loop (verified). The carry rules say that carries side by side always share a
+sign, so whenever all three are used they agree, and **exactly the 48 tie a trefoil**
+(verified). *The knot is our drawing of a rule about carries, not a property of magic squares:*
+change the drawing and the knot changes with it. The arithmetic underneath does not.
+
 ## Chapter 14 — Why algebra's dimensions double
 
 **The plain idea.** Every time you add one new independent direction to build with, the
@@ -1085,6 +1145,29 @@ edge is part of the work; its existence is not a defect but a boundary honestly 
 recorded (Chapter 16) rather than hidden. A pedagogy that cannot fail anywhere is not being
 tested; this one is built to say where it stops.
 
+**17.4 Test your own hands first: two boxes and some sand.** Before testing the book on anyone
+else, test the instrument everyone carries. Fill a small box and a big box with sand until a
+kitchen scale reads the same for both, close them, and lift one in each hand. Nearly everyone
+feels the small box as heavier. This is the **size–weight illusion**, first shown by experiment
+by Augustin Charpentier in 1891 [Charpentier 1891]. Your hands weigh each box against what its
+size made you *expect*, and they report the difference. Stranger still, within a few lifts your
+grip learns the true weights, while the feeling that the small box is heavier stays
+[Flanagan and Beltzner 2000]: two measurements inside one body, disagreeing. (The check verifies
+the arithmetic of the setup, equal weights and densities apart by the ratio of the volumes; the
+illusion itself is an experiment, cited, not a theorem.) This is why every picture in this book
+is checked by a script and not by how true it feels. A feeling is a measurement made *off* an
+expectation, the keystone of the Coda at the scale of a hand.
+
+**17.5 Two ways to one answer.** The author does percentages by measuring off an anchor. Find
+10% by moving the decimal point one place, halve it for 5%, find 1% by moving the point two
+places, and add: 15% is 10% + 5%, and 17% is 10% + 5% + 1% + 1% (verified, for any amount). His
+teachers did not like it, and on long-division problems he was often given 2 marks out of 5 for
+a right answer with the work shown, because the work was not the method taught. Later, to teach
+someone who wanted the exact method, he learned long division again, and it writes down the
+same digits (verified). Two methods, one quantity: two shadows of one box (Picture 5). That is
+why the protocol above scores whether a student's reasoning lands on the true answer, never
+which method it wore on the way.
+
 ## Chapter 18 — Where the towers go
 
 The staircase of this book ends here, but the pictures do not. Each one is the bottom floor of a
@@ -1198,7 +1281,8 @@ dimension, a rotation that is an imaginary axis, a growth that is a breath, a cu
 two shadows, and the seam where counting fails to measure. Along the way a dozen shorter
 *extensions* reused those very same primitives — the doubling behind every power of two, the
 two builds and the algebra of space (Cl(3)), Pascal's triangle, Euclid's endless primes, the
-logarithm, π, the derivative, the golden ratio, and the quaternions — so the exact count was
+Lo Shu's digit squares and the binary layers of the 4×4 squares, the logarithm, π, the
+derivative, the golden ratio, and the quaternions — so the exact count was
 never the point; the *connectedness* is. Each picture was checked
 against the real mathematics; each is visual; each connects to the others, so that the
 learner acquires one model seen from many sides rather than many disconnected facts. The
@@ -1280,6 +1364,17 @@ it can never fill, just as the still round has no edge to measure from. Still or
 is the same unreachable centre — the axis everything turns around, and the origin everything
 is measured from. You point toward it; you measure off it; you never weigh it.
 
+The keystone also says how to help. A helper (a teacher, a parent, a machine built to help)
+points toward the good it serves, measures off the person it helps at every step, and never
+stands on the destination. There is a small piece of mathematics behind the first half of this
+[Hadfield-Menell et al. 2017]. A helper that is *certain* what you want gains nothing by letting
+you correct it, while a helper that is *unsure* always gains by leaving the choice to you (so
+long as you know your own mind), and gains more the less sure it is (verified). But a helper
+grows surer as it learns, so deference that rests on doubt runs out (verified). What keeps a
+good helper good is not doubt. It is
+**humility**: never mistaking its own picture of the good for the good itself. That is the same
+refusal as the keystone's, because to stand on the reference would be to lose it.
+
 This is the shape of understanding that the book is named for. A good curriculum makes
 mathematics **increasingly round** — the pictures smoother, the connections more uniform,
 the whole more nearly held in a single mind. And the *complete* understanding, the seeing
@@ -1301,7 +1396,10 @@ the equidistance ladder and the omni-adjacent void, the crystallographic restric
 two-shadow cube, the Schläfli count, *e* as self-proportional growth, the radian, the
 sieve/Mertens density with the units-versus-primes distinction, Euler's *e^{iπ} = −1*, the Pythagorean theorem and the
 √2 parity descent, the eigenvalue axis/rotation split, the Fourier square-wave synthesis,
-the D₃ symmetry count, the First-G law and Euclid's endless primes, the Siamese magic square, the dimension-doubling
+the D₃ symmetry count, the First-G law and Euclid's endless primes, the Siamese magic square
+and its two boxes (the Lo Shu's orthogonal digit squares in base three and four, the one 3×3
+square whose lines XOR to zero, and the Mermin–Peres sign count; the binary layers of all 880 4×4
+squares, the carry rules, the 528/192/112/48 count and the trefoil's Kauffman bracket), the dimension-doubling
 identity, the lift-as-doubling (§1.1b) and the cube = Cl(3) grade split 1+3+3+1 with its
 rotating bivectors (§2.2), Pascal's triangle (row sums = the doublings, row 3 = the Cl(3)
 grades; §2.3), and the extension lessons — the logarithm, π, the derivative, the
@@ -1312,7 +1410,9 @@ the nearest neighbours of diamond, simple cubic and iron, the Kepler density and
 magic angle and the 2ℓ + 1 harmonics, the √2 fractions, and the exponential onto the rotations;
 and every tower's coin — duality with the tetrahedron its own dual, the mirror *a + bi → a − bi*
 landing on the reals, the even half of Cl(3) on one of the cube's tetrahedra, the circle between
-growing and shrinking, and the missing edges √2 and *i*).
+growing and shrinking, and the missing edges √2 and *i*); and Chapter 17's two hand-scale tests
+(the size–weight setup, and percentages off an anchor against long division) and the Coda's
+helper (the gain from leaving the choice to you, and how it runs out).
 Every computable mathematical fact in the book is reproduced by running these; the theorems at
 the tops of the towers in Chapter 18 are cited, not re-proved. `curriculum_checks.py` prints
 `ALL LESSON CHECKS PASS` only after its final assertion succeeds.
@@ -1349,6 +1449,11 @@ which picture a hard word stands for. Each is introduced where the last column s
 | a wave as a sum of spinning circles | the **Fourier transform** | Ch. 10 |
 | the moves that leave a shape the same | a **group** | Ch. 11 |
 | the first number that catches you | the **smallest prime factor** | Ch. 12 |
+| a grid with each symbol once in every row and column | a **Latin square** (two that fit: **orthogonal**) | §13.1 |
+| adding binary digits without carrying (1 + 1 = 0) | **XOR**, the **nim-sum** | §13.1, §13.2 |
+| a quantum bit, measured as I, Z, X or Y | a **qubit** and its **Pauli** measurements | §13.1 |
+| two 1s standing in for one 2 | a **carry** | §13.2 |
+| feeling a weight against what its size made you expect | the **size–weight illusion** | §17.4 |
 | the numbers that reach every clock position | the **units** (coprime to n) | Ch. 6 |
 | shapes that have room to fold into a solid | the **Platonic solids** | Ch. 3 |
 
@@ -1367,23 +1472,34 @@ which picture a hard word stands for. Each is introduced where the last column s
 - M. Born, "Zur Quantenmechanik der Stoßvorgänge," *Z. Phys.* 37, 863 (1926). [Born rule]
 - R. Bott, "The stable homotopy of the classical groups," *Ann. of Math.* 70, 313 (1959).
   [Bott periodicity]
+- A. Charpentier, "Analyse expérimentale de quelques éléments de la sensation de poids," *Arch.
+  Physiol. Norm. Pathol.* 3, 122 (1891). [the size–weight illusion]
 - W. K. Clifford, "Applications of Grassmann's extensive algebra," *Amer. J. Math.* 1,
   350 (1878).
 - H. S. M. Coxeter, *Regular Polytopes*, 3rd ed. (Dover, 1973). [simplices, stella
   octangula, Platonic solids]
 - R. Descartes, *La Géométrie* (1637).
 - Euclid, *Elements*, Book XIII (c. 300 BCE).
-- L. Euler, *Introductio in analysin infinitorum* (1748). [e]
+- L. Euler, *Introductio in analysin infinitorum* (1748). [e]; "Recherches sur une nouvelle
+  espèce de quarrés magiques," *Verh. Zeeuwsch. Genootsch. Wetensch. Vlissingen* 9, 85 (1782).
+  [orthogonal Latin squares]
 - E. S. Fedorov, "Symmetry of regular systems of figures" (1891). [the 17 plane groups]
 - R. P. Feynman, "Space-time approach to quantum electrodynamics," *Phys. Rev.* 76, 769
   (1949); *The Feynman Lectures on Physics* (Addison-Wesley, 1964); *QED* (Princeton,
   1985).
+- F. Fitting, "Rein mathematische Behandlung des Problems der magischen Quadrate von 16 und von
+  64 Feldern," *Jahresber. Deutsch. Math.-Verein.* 40, 177 (1931). [the binary layers of the
+  880 squares; credited to his son Hans]
+- J. R. Flanagan, M. A. Beltzner, "Independence of perceptual and sensorimotor predictions in the
+  size–weight illusion," *Nat. Neurosci.* 3, 737 (2000).
 - J. Fourier, *Théorie analytique de la chaleur* (1822).
 - K. von Fritz, "The discovery of incommensurability by Hippasus of Metapontum," *Ann.
   Math.* 46, 242 (1945).
 - É. Galois, "Œuvres mathématiques," *J. Math. Pures Appl.* 11, 381 (1846). [solvability by
   radicals]
 - J. Hadamard (1896); C.-J. de la Vallée Poussin (1896). [Prime Number Theorem]
+- D. Hadfield-Menell, A. Dragan, P. Abbeel, S. Russell, "The off-switch game," *Proc. IJCAI* 26,
+  220 (2017). [why an unsure helper defers]
 - T. C. Hales, "A proof of the Kepler conjecture," *Ann. of Math.* 162, 1065 (2005); T. C. Hales
   et al., "A formal proof of the Kepler conjecture," *Forum Math. Pi* 5, e2 (2017).
 - R. S. Hamilton, "Three-manifolds with positive Ricci curvature," *J. Diff. Geom.* 17,
@@ -1401,9 +1517,13 @@ which picture a hard word stands for. Each is introduced where the last column s
 - F. Klein, "Vergleichende Betrachtungen über neuere geometrische Forschungen"
   (Erlangen program, 1872); *Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen
   vom fünften Grade* (Teubner, 1884). [the icosahedron and the quintic]
+- P. de La Hire, "Nouvelles constructions et considérations sur les quarrés magiques,"
+  *Mém. Acad. Roy. Sci.* (1705). [magic squares from two digit squares]
 - F. Lindemann, "Über die Zahl π," *Math. Ann.* 20, 213 (1882). [π is transcendental]
 - P. Lounesto, *Clifford Algebras and Spinors*, 2nd ed. (Cambridge, 2001).
 - G. Markowsky, "Misconceptions about the Golden Ratio," *College Math. J.* 23, 2 (1992).
+- N. D. Mermin, "Simple unified form for the major no-hidden-variables theorems," *Phys. Rev.
+  Lett.* 65, 3373 (1990). [the Mermin–Peres square]
 - F. Mertens, "Ein Beitrag zur analytischen Zahlentheorie," *J. reine angew. Math.* 78,
   46 (1874).
 - L. Pauling, *The Nature of the Chemical Bond*, 3rd ed. (Cornell, 1960). [tetrahedral
@@ -1411,6 +1531,7 @@ which picture a hard word stands for. Each is introduced where the last column s
 - G. Perelman, "The entropy formula for the Ricci flow and its geometric applications"
   (2002) and "Ricci flow with surgery on three-manifolds" (2003), arXiv:math/0211159,
   math/0303109. [Poincaré conjecture; increasingly round]
+- A. Peres, "Incompatible results of quantum measurements," *Phys. Lett. A* 151, 107 (1990).
 - L. Schläfli, *Theorie der vielfachen Kontinuität* (written 1850–52; published 1901). [regular
   polytopes in every dimension]
 - G. Strang, *Introduction to Linear Algebra*, 5th ed. (Wellesley-Cambridge, 2016).
@@ -1426,9 +1547,9 @@ climbs to undergraduate mathematics: Chapters 1–2 build the grammar and the tw
 (the simplex lift, and the cube = Cl(3) with its grades and the *i*), and the elegant and
 hard chapters carry it up to eigenvalues, the Fourier transform, groups, and beyond — with
 figures, extension lessons (the doubling, Pascal's triangle, Euclid's endless primes, the
-logarithm, the derivative, π, the golden ratio, the quaternions), exercises, misconception
+logarithm, the derivative, π, the golden ratio, the quaternions, and two boxes on magic squares), exercises, misconception
 boxes, a grown-up-words glossary (Appendix B), and a concrete A/B protocol (Ch. 17). Every
 mathematical assertion is reproduced by the appendix scripts (`verify_forced_chain.py`, and
-`curriculum_checks.py`, which prints ALL LESSON CHECKS PASS across 91 checks), and the thirteen
+`curriculum_checks.py`, which prints ALL LESSON CHECKS PASS across 103 checks), and the thirteen
 load-bearing figures are drawn in `figures/` by `make_figures.py`. Increasingly round; never
 measurably round.*

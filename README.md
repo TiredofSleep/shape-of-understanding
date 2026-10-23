@@ -36,16 +36,19 @@ exact and checked. See [`series/SERIES_PLAN.md`](series/SERIES_PLAN.md) and
 Every computable assertion in the book is reproduced by two scripts (NumPy/SymPy/SciPy); the theorems at the tops of the towers (Ch. 18) are cited:
 
 ```bash
-python curriculum_checks.py    # every lesson (91 checks): the equidistance ladder & the void,
+python curriculum_checks.py    # every lesson (103 checks): the equidistance ladder & the void,
                                # the lift-as-doubling, the two builds & Cl(3) grades (1+3+3+1,
                                # bivectors² = −1), Pascal's triangle, the Schläfli count, Mertens
                                # density, eigenvalue axis-vs-rotation, Fourier, D₃, √2 descent,
-                               # First-G & Euclid's endless primes, Siamese squares, dimension-
+                               # First-G & Euclid's endless primes, Siamese squares & the two
+                               # magic-square boxes (the Lo Shu's digit squares, the Mermin-Peres
+                               # square, Fitting's binary layers & the trefoil), dimension-
                                # doubling, the extensions (log, π, derivative, golden ratio, quaternions),
                                # and Ch. 18's first floors of the towers (regular polytopes in every
                                # dimension, octonions & the sedenion zero divisor, A₅ simple, the
                                # double cover, crystals & E₈, the magic angle & 2l+1, exp onto SO(3),
-                               # and each tower's coin: two sides and an edge)
+                               # and each tower's coin: two sides and an edge), Ch. 17's two
+                               # hand-scale tests, and the Coda's helper
 python two_sides_checks.py     # the companion unit, Two Sides and an Edge (48 checks)
 python verify_forced_chain.py  # the geometric core: simplices, the tetrahedral 1/3, the cube = Cl(3),
                                # the two shadows
@@ -58,7 +61,7 @@ python make_figures.py         # (re)generate the figures into figures/*.svg (13
 |---|---|
 | [`the_shape_of_understanding_BOOK.md`](the_shape_of_understanding_BOOK.md) | the full manuscript — a **Part Zero** for the youngest reader, then 5 parts / 18 chapters climbing to undergrad and pointing up the towers of higher mathematics, coda, appendices A (scripts) & B (grown-up-words glossary), references |
 | [`the_shape_of_understanding.md`](the_shape_of_understanding.md) | the shorter companion paper (the 9-lesson journal-article version it grew from) |
-| [`curriculum_checks.py`](curriculum_checks.py) | the per-lesson verification suite (91 checks) |
+| [`curriculum_checks.py`](curriculum_checks.py) | the per-lesson verification suite (103 checks) |
 | [`verify_forced_chain.py`](verify_forced_chain.py) | the geometric-core verifier |
 | [`make_figures.py`](make_figures.py) | generates the figures (SVG): thirteen for the book, and one for the companion unit |
 | `figures/` | the generated figures the manuscript embeds |

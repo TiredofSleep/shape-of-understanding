@@ -1,6 +1,9 @@
 # Draft: two boxes for Chapter 13 (for the author's read)
 
-**Status:** draft, 2026-10-22. These are not in the book. If the author wants them, they go after
+**Status: in the book since 2026-10-23,** as §13.1 and §13.2 of `the_shape_of_understanding_BOOK.md`, with
+their checks in `curriculum_checks.py` (103 checks). The book is the live text; this draft is kept as the record.
+
+**Original status:** draft, 2026-10-22. These are not in the book. If the author wants them, they go after
 Chapter 13's paragraph as 13.1 and 13.2. Their checks are in
 [`ch13_boxes_checks.py`](ch13_boxes_checks.py) and would then move into `curriculum_checks.py`, and the
 book's "91 checks" would be updated. They come from the handoff of 2026-10-22: the magic-square work in

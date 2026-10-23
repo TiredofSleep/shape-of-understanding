@@ -281,6 +281,143 @@ for n in [3, 5, 7]:
     assert ok
 print("  -> generation and structure are the same thing seen from two sides.")
 
+def _dihedral(G):
+    out, B = [], tuple(map(tuple, G))
+    for _ in range(4):
+        B = tuple(zip(*B[::-1])); out += [B, tuple(zip(*B))]
+    return out
+
+banner("Ch.13.1 -- Lo Shu in four colours: base three, base four, the Mermin-Peres square")
+def _ch13_lo_shu():
+    lines3 = lambda G: ([list(r) for r in G] + [[G[i][j] for i in range(3)] for j in range(3)]
+                        + [[G[i][i] for i in range(3)], [G[i][2 - i] for i in range(3)]])
+    latin = lambda M, sy: all(sorted(r) == sy for r in M) and all(sorted(c) == sy for c in zip(*M))
+    L0 = [[v - 1 for v in r] for r in [[4, 9, 2], [3, 5, 7], [8, 1, 6]]]
+    hi, lo = [[v // 3 for v in r] for r in L0], [[v % 3 for v in r] for r in L0]
+    assert latin(hi, [0, 1, 2]) and latin(lo, [0, 1, 2])
+    assert len({(hi[i][j], lo[i][j]) for i in range(3) for j in range(3)}) == 9
+    assert all(sum(l) == 12 for l in lines3(L0))
+    for cells in ([(0, 0), (1, 1), (2, 2)], [(0, 2), (1, 1), (2, 0)]):
+        places = [[hi[i][j] for i, j in cells], [lo[i][j] for i, j in cells]]
+        assert [1, 1, 1] in places and sorted(places[1 - places.index([1, 1, 1])]) == [0, 1, 2]
+    show("the Lo Shu minus 1, in base three", f"first digits {hi}, second {lo}: two orthogonal Latin "
+         "squares; on each diagonal one place holds 1, 1, 1")
+    G = [[11, 13, 6], [5, 10, 15], [14, 7, 9]]
+    hi4, lo4 = [[v // 4 for v in r] for r in G], [[v % 4 for v in r] for r in G]
+    assert all(sum(l) == 30 for l in lines3(G)) and latin(hi4, [1, 2, 3]) and latin(lo4, [1, 2, 3])
+    assert len({(hi4[i][j], lo4[i][j]) for i in range(3) for j in range(3)}) == 9
+    rc = [list(r) for r in G] + [[G[i][j] for i in range(3)] for j in range(3)]
+    assert 1 ^ 2 == 3 and all(l[0] ^ l[1] ^ l[2] == 0 for l in rc)
+    show("11 13 6 / 5 10 15 / 14 7 9", "magic (sum 30); base-four digits are orthogonal Latin squares on {1,2,3}; "
+         "every row and column XORs to 0")
+    found = set()                                # all 3x3 magic squares, sum 30, distinct entries 0..15
+    for a, b in permutations([v for v in range(16) if v != 10], 2):
+        c = 30 - a - b; g, h, i_ = 20 - c, 20 - b, 20 - a; d = 30 - a - g; f = 20 - d
+        S = [[a, b, c], [d, 10, f], [g, h, i_]]
+        vals = [v for r in S for v in r]
+        if all(0 <= v <= 15 for v in vals) and len(set(vals)) == 9 and all(sum(l) == 30 for l in lines3(S)):
+            found.add(min(_dihedral(S)))
+    xor0 = [S for S in found if all(l[0] ^ l[1] ^ l[2] == 0
+            for l in [list(r) for r in S] + [[S[i][j] for i in range(3)] for j in range(3)])]
+    show(f"all {len(found)} magic 3x3 squares with sum 30 from 0-15", "only this one has every row and column XOR to 0")
+    assert len(found) == 3 and xor0 == [min(_dihedral(G))]
+    P = {0: np.eye(2), 1: np.diag([1, -1]), 2: np.array([[0, 1], [1, 0]]), 3: np.array([[0, -1j], [1j, 0]])}
+    ops = [[np.kron(P[v // 4], P[v % 4]) for v in r] for r in G]
+    assert [" ".join("IZXY"[v // 4] + "IZXY"[v % 4] for v in r) for r in G] == ["XY YZ ZX", "ZZ XX YY", "YX ZY XZ"]
+    signs = []
+    for line in [[(i, 0), (i, 1), (i, 2)] for i in range(3)] + [[(0, j), (1, j), (2, j)] for j in range(3)]:
+        Ms = [ops[i][j] for i, j in line]
+        assert all(np.allclose(A @ B, B @ A) for A in Ms for B in Ms)
+        prod = Ms[0] @ Ms[1] @ Ms[2]; s = int(round(prod[0, 0].real))
+        assert np.allclose(prod, s * np.eye(4)); signs.append(s)
+    assert signs == [-1, -1, -1, 1, 1, 1]
+    assert not any(all(np.prod(v[3 * i:3 * i + 3]) == signs[i] for i in range(3))
+                   and all(np.prod(v[j::3]) == signs[3 + j] for j in range(3))
+                   for v in itertools.product((1, -1), repeat=9))
+    show("read 0 = I, 1 = Z, 2 = X, 3 = Y: the Mermin-Peres square", "rows multiply to -1, columns to +1; "
+         "all 512 preset lists of +-1 answers fail")
+_ch13_lo_shu()
+print("  -> a picture of a known physics result, fenced: XOR is how the measurements combine.")
+
+banner("Ch.13.2 -- the odometer ties a knot: binary layers, carries, the 48, the trefoil")
+def _ch13_odometer():
+    from collections import Counter
+    subs = [frozenset(c) for c in combinations(range(16), 4) if sum(c) == 30]
+    parts = []
+    def rec(rem, chosen):
+        if not rem:
+            parts.append(tuple(chosen)); return
+        m = min(rem)
+        for s in subs:
+            if m in s and s <= rem:
+                rec(rem - s, chosen + [s])
+    rec(frozenset(range(16)), [])
+    sq = set()
+    for R in parts:
+        for C in parts:
+            if all(len(r & c) == 1 for r in R for c in C):
+                cell = [[next(iter(r & c)) for c in C] for r in R]
+                for rp in permutations(range(4)):
+                    for cp in permutations(range(4)):
+                        A = tuple(tuple(cell[rp[i]][cp[j]] for j in range(4)) for i in range(4))
+                        if sum(A[i][i] for i in range(4)) == 30 and sum(A[i][3 - i] for i in range(4)) == 30:
+                            sq.add(min(_dihedral(A)))
+    assert len(sq) == 880 and 0b0111 + 1 == 0b1000
+    durer = tuple(tuple(v - 1 for v in r) for r in [[16, 3, 2, 13], [5, 10, 11, 8], [9, 6, 7, 12], [4, 15, 14, 1]])
+    assert min(_dihedral(durer)) in sq
+    counts = lambda vals: [sum((v >> k) & 1 for v in vals) for k in range(4)]
+    assert all(counts(A[i]) == [2] * 4 and counts([A[r][i] for r in range(4)]) == [2] * 4 for A in sq for i in range(4))
+    show("the 880 4x4 magic squares on 0-15 (Frenicle; Fitting 1931)",
+         "each binary layer has exactly two 1s in every row and every column: no carries there")
+    def carries(vals):
+        e = [c - 2 for c in counts(vals)]
+        t2 = -e[3]; t1 = 2 * t2 - e[2]; t0 = 2 * t1 - e[1]
+        assert e[0] == 2 * t0
+        return (t0, t1, t2)
+    tally, ok, whole = Counter(), True, []
+    for A in sq:
+        t = carries([A[i][i] for i in range(4)])
+        assert t == tuple(-x for x in carries([A[i][3 - i] for i in range(4)]))
+        used = [k for k in range(3) if t[k]]
+        ok &= all(abs(x) <= 1 for x in t) and (used == list(range(used[0], used[0] + len(used))) if used else True)
+        ok &= all(t[k] == t[k + 1] for k in range(2) if t[k] and t[k + 1])
+        tally[len(used)] += 1
+        if len(used) == 3:
+            whole.append(A)
+    sums = sorted({sum(v + b0 + 4 * b2 for v in (0, 2, 8, 10)) for b0 in (0, 1) for b2 in (0, 1)})
+    assert ok and sums == [20, 24, 36, 40] and [tally[n] for n in range(4)] == [528, 192, 112, 48]
+    show("the carry rules", "no carry used twice; an unbroken chain; side by side, one sign; 1s->2s with 4s->8s "
+         f"alone leaves lines summing to {sums}, never 30; squares by carries: 528, 192, 112, 48")
+    sig = {tuple(sorted([tuple(counts([A[i][i] for i in range(4)])), tuple(counts([A[i][3 - i] for i in range(4)]))]))
+           for A in whole}
+    assert sig == {((0, 1, 1, 3), (4, 3, 3, 1))}
+    PD = [(1, 5, 2, 4), (3, 1, 4, 6), (5, 3, 6, 2)]             # the standard trefoil diagram
+    def bracket(flips):                                          # Kauffman bracket, as {power of A: coefficient}
+        total = Counter()
+        for state in itertools.product((0, 1), repeat=3):
+            parent = {e: e for e in range(1, 7)}
+            def find(x):
+                while parent[x] != x:
+                    x = parent[x]
+                return x
+            for (a, b, c, d), s, f in zip(PD, state, flips):
+                for x, y in ([(a, b), (c, d)] if s ^ f == 0 else [(a, d), (b, c)]):
+                    parent[find(x)] = find(y)
+            term = Counter({3 - 2 * sum(state): 1})
+            for _ in range(len({find(e) for e in range(1, 7)}) - 1):
+                new = Counter()
+                for ex, cf in term.items():
+                    new[ex + 2] -= cf; new[ex - 2] -= cf
+                term = new
+            total.update(term)
+        return {ex: cf for ex, cf in total.items() if cf}
+    knotted = [f for f in itertools.product((0, 1), repeat=3) if len(bracket(f)) > 1]
+    assert knotted == [(0, 0, 0), (1, 1, 1)] and all(len(set(carries([A[i][i] for i in range(4)]))) == 1 for A in whole)
+    show("the trefoil", "of 8 ways to set three crossings only the 2 that all agree are knotted; the 48 squares that "
+         "use all three carries always agree: exactly the 48 tie a trefoil")
+_ch13_odometer()
+print("  -> the knot is a drawing of the carry rule; the arithmetic underneath is Fitting's.")
+
 banner("Ch.14 -- why algebra's dimensions double: 4^n = 2^(2n) = dim Cl(2n)")
 for n in range(1, 6):
     show(f"n={n}", f"4^n = {4**n} = 2^(2n) = dim Cl(2n); each new generator DOUBLES the algebra")
@@ -327,6 +464,35 @@ assert np.allclose(qI@qI, -np.eye(2)) and np.allclose(qJ@qJ, -np.eye(2)) and np.
 assert np.allclose(qI@qJ, qK) and np.allclose(qJ@qK, qI) and np.allclose(qK@qI, qJ)
 assert np.allclose(qI@qJ@qK, -np.eye(2)) and np.allclose(qJ@qI, -qK)
 print("  -> R (still), C (one rotation plane), H (three) -- the imaginary axis is the tower's first rung.")
+
+banner("Ch.17.4 -- two boxes and some sand: equal weights, different sizes")
+def _ch17_boxes():
+    g, m = 9.81, 0.500                         # the same 500 g of sand in each box (the scale reads equal)
+    small, big = 1.0e-3, 4.0e-3                # a 1-litre and a 4-litre box, m^3
+    show("the setup", f"both boxes weigh {m * g:.2f} N; densities {m / small:.0f} and {m / big:.0f} kg/m^3, "
+         f"apart by the volume ratio {big / small:.0f}")
+    assert np.isclose((m / small) / (m / big), big / small)
+_ch17_boxes()
+print("  -> the illusion itself is an experiment (Charpentier 1891; Flanagan and Beltzner 2000), cited, not a theorem.")
+
+banner("Ch.17.5 -- two ways to one answer: percentages off an anchor, and long division")
+def _ch17_percent():
+    from fractions import Fraction
+    rng = np.random.default_rng(17)
+    for x in rng.integers(1, 10 ** 6, size=200):
+        amount = Fraction(int(x), 100)
+        ten, one = amount / 10, amount / 100
+        assert ten + ten / 2 == amount * Fraction(15, 100) and ten + ten / 2 + one + one == amount * Fraction(17, 100)
+    show("15% = 10% + 5%, 17% = 10% + 5% + 1% + 1%", "exact for 200 random amounts: find 10%, halve it, find 1%, add")
+    for p, q in [(1, 7), (22, 7), (355, 113), (17, 40), (2, 5)]:
+        whole, r, digits = p // q, p % q, []
+        for _ in range(12):
+            r *= 10; digits.append(r // q); r %= q
+        approx = whole + sum(Fraction(d, 10 ** (k + 1)) for k, d in enumerate(digits))
+        assert 0 <= Fraction(p, q) - approx < Fraction(1, 10 ** 12)
+    show("long division", "its digits agree with the exact fraction to the last place written (1/7, 22/7, 355/113, 17/40, 2/5)")
+_ch17_percent()
+print("  -> two methods, one quantity: two shadows of one box.")
 
 # ======================================================================
 # PART FIVE -- CHAPTER 18: WHERE THE TOWERS GO (the base points up)
@@ -540,9 +706,29 @@ assert all(math.isqrt(2 * q * q) ** 2 != 2 * q * q for q in range(1, 5001))
 assert np.allclose(sorted(np.roots([1, 0, 1]), key=lambda c: c.imag), [-1j, 1j])
 print("  -> the towers are what you climb; their edges are what you point toward.")
 
+banner("Coda -- the keystone for helpers: leaving the choice to you is worth something only while unsure")
+def _coda_helper():
+    phi = lambda z: math.exp(-z * z / 2) / math.sqrt(2 * math.pi)
+    Q = lambda z: 0.5 * math.erfc(z / math.sqrt(2))              # upper normal tail, without cancellation
+    def gain(mu, s):                   # E[max(U,0)] - max(mu,0), U ~ N(mu, s^2): the value of letting you decide
+        a = abs(mu) / s if s else 0.0
+        return 0.0 if s == 0 else s * (phi(a) - a * Q(a))
+    for mu in (-1.0, -0.2, 0.0, 0.3, 1.0):
+        gs = [gain(mu, s) for s in np.linspace(0, 3, 61)]
+        assert gs[0] == 0 and all(x > 0 for x in gs[1:]) and all(b >= a - 1e-12 for a, b in zip(gs, gs[1:]))
+    show("a helper certain of what you want", "gains exactly 0 by letting you decide; an unsure one always gains, "
+         "and gains more the less sure it is [the off-switch game]")
+    c, mu = 0.05, 0.3
+    s_star = next(s for s in np.linspace(1e-4, 3, 30001) if gain(mu, s) > c)
+    assert 0 < s_star < 3 and gain(mu, s_star / 2) < c
+    show("deference that rests on doubt runs out", f"if asking costs {c}, it asks only while its uncertainty is above "
+         f"{s_star:.3f}; a helper that learns falls below that")
+_coda_helper()
+print("  -> what keeps a good helper good is not doubt but humility: its picture of the good is not the good.")
+
 # ======================================================================
 banner("ALL LESSON CHECKS PASS -- every picture matches the mathematics.")
-print("Parts One-Four plus the extension lessons are each reproduced above.")
+print("Parts One-Five, the extension lessons and the Coda's helper are each reproduced above.")
 print("Rejected pictures (the honest-failures chapter) are NOT asserted true here:")
 print("  '1/3 is a universal residue' (false: it is 1/(N-1) at N=4 only),")
 print("  'the breath makes energy' (false: structural growth only).")

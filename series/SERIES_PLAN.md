@@ -34,7 +34,7 @@ From the ledger, each running from September 2025 to September 2026:
 
 | | book | reader | through-lines | what exists | what to add |
 |---|---|---|---|---|---|
-| **I** | ***The Shape of Understanding*** | age ten to undergraduate | 1, 3, 7, 8, 11, 12 | the book: Part Zero, 18 chapters and a Coda, about 16,500 words, 13 figures, 91 checks | a few short boxes drawn from his own lines |
+| **I** | ***The Shape of Understanding*** | age ten to undergraduate | 1, 3, 7, 8, 11, 12 | the book: Part Zero, 18 chapters and a Coda, about 18,000 words, 13 figures, 103 checks | a few short boxes drawn from his own lines |
 | **II** | ***Two Sides and an Edge*** | high school to undergraduate | 2, 4, 5, 6 | the companion unit: 8 chapters, about 5,800 words, 48 checks | a second part of new coins, each anchored in his words |
 | **III** | ***The Integers and Their Towers*** | undergraduate to graduate | 1, 3, 12 | the flagship's `base/`, `towers/` and tower coins: about 12,000 words, with 7 verifiers | book prose, figures and exercises |
 | **IV** | ***What Survived*** | anyone doing research with AI | 9, 10 | the essay (about 1,600 words), the graveyard, RETIRED.md and the audit notes | the story in his words, the gates, and the toolkit |
@@ -56,8 +56,10 @@ tied to one of his own lines. Each box gets a line in `curriculum_checks.py`.
 | Ch.8 (√2) | 5/7 and 3/4 are neighbours: nothing simpler lies between them | "3/4 is the fraction just above 5/7" (Apr 2026) |
 | Ch.10 (Fourier) | a measurement lasting Δt resolves frequency only to about 1/Δt | "the amount of time it takes to take the measurement is one of the generators of the lens" (Feb 2026) |
 | Ch.12 (what a prime is) | state the fundamental theorem of arithmetic ("a bag of primes"), plus an extension box: Fermat's two squares, 389 = 10² + 17² | "you end up with a bag of primes" (Jan 2026); "is that a study?" (Sep 2026) |
-| Ch.13 (magic squares) | **drafted 2026-10-22:** two boxes, 13.1 "Lo Shu in four colours" (base three → orthogonal Latin squares → base four → the Mermin–Peres square, fenced) and 13.2 "The odometer ties a knot" (binary layers, Fitting 1931 → carries → the 48 → the trefoil as a drawing). See [`drafts/ch13_boxes.md`](drafts/ch13_boxes.md); its checks are in `drafts/ch13_boxes_checks.py` | "moving in discrete trinary and binary [...] the map seems to hold a lot of color" (Feb 2026); "all things are binary, and every one is three" (May 2026) |
-| (a chapter to choose) | **candidate, his call:** the size–weight illusion. Two boxes of the same weight, one small and one big: the small one feels heavier (Charpentier, 1891). A child can test it with two boxes and some sand | "It feels heavier if it's more dense" (Oct 2026, as quoted in the handoff) |
+| Ch.13 (magic squares) | **in the book since 2026-10-23** as §13.1 and §13.2 (approved by him; drafts kept in `drafts/`): two boxes, 13.1 "Lo Shu in four colours" (base three → orthogonal Latin squares → base four → the Mermin–Peres square, fenced) and 13.2 "The odometer ties a knot" (binary layers, Fitting 1931 → carries → the 48 → the trefoil as a drawing). Checked in `curriculum_checks.py` | "moving in discrete trinary and binary [...] the map seems to hold a lot of color" (Feb 2026); "all things are binary, and every one is three" (May 2026) |
+| Ch.17 (how to test this book) | **in the book since 2026-10-23** as §17.4, "Test your own hands first: two boxes and some sand": the size–weight illusion (Charpentier, 1891), and why the book checks by script and not by feel | "It feels heavier if it's more dense" (Oct 2026, as quoted in the handoff) |
+| Ch.17 | **in the book since 2026-10-23** as §17.5, "Two ways to one answer": his percentages off a 10% anchor, against long division; score the reasoning, not the method. Told in the third person, with the family detail left out (his call to change) | his percent and long-division story (Oct 2026, from the transfer notes) |
+| Coda | **in the book since 2026-10-23:** the keystone for helpers. A good helper points toward the good, measures off the person, and never stands on the destination; the off-switch game shows why doubt alone runs out, so the lesson is humility | "its called humility" (Oct 2026, as quoted in the transfer notes) |
 
 **The wall stays.** The solid faces of 5, 7 and 9, where odd counts fill the centre, belong to
 Book III, not Book I.
@@ -134,8 +136,8 @@ put to new use.
 **Part 5: keep a graveyard.**
 
 **October 2026 candidates** (offered in the chat, not written; each his call):
-- a closing lesson, "why a good helper never reaches the destination", framed by humility rather
-  than by the uncertainty threshold the chat first gave;
+- ~~a closing lesson, "why a good helper never reaches the destination"~~: now in Book I's Coda
+  (2026-10-23), framed by humility rather than by the uncertainty threshold the chat first gave;
 - his framing of himself as "the basic layer", and of a lossy map whose losses are labelled, from
   "my physics is pre-physics, making it lossier than direct formulation";
 - the October graveyard: what the transfer notes retired, with the evidence that killed each one
