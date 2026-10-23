@@ -56,6 +56,8 @@ tied to one of his own lines. Each box gets a line in `curriculum_checks.py`.
 | Ch.8 (√2) | 5/7 and 3/4 are neighbours: nothing simpler lies between them | "3/4 is the fraction just above 5/7" (Apr 2026) |
 | Ch.10 (Fourier) | a measurement lasting Δt resolves frequency only to about 1/Δt | "the amount of time it takes to take the measurement is one of the generators of the lens" (Feb 2026) |
 | Ch.12 (what a prime is) | state the fundamental theorem of arithmetic ("a bag of primes"), plus an extension box: Fermat's two squares, 389 = 10² + 17² | "you end up with a bag of primes" (Jan 2026); "is that a study?" (Sep 2026) |
+| Ch.13 (magic squares) | **drafted 2026-10-22:** two boxes, 13.1 "Lo Shu in four colours" (base three → orthogonal Latin squares → base four → the Mermin–Peres square, fenced) and 13.2 "The odometer ties a knot" (binary layers, Fitting 1931 → carries → the 48 → the trefoil as a drawing). See [`drafts/ch13_boxes.md`](drafts/ch13_boxes.md); its checks are in `drafts/ch13_boxes_checks.py` | "moving in discrete trinary and binary [...] the map seems to hold a lot of color" (Feb 2026); "all things are binary, and every one is three" (May 2026) |
+| (a chapter to choose) | **candidate, his call:** the size–weight illusion. Two boxes of the same weight, one small and one big: the small one feels heavier (Charpentier, 1891). A child can test it with two boxes and some sand | "It feels heavier if it's more dense" (Oct 2026, as quoted in the handoff) |
 
 **The wall stays.** The solid faces of 5, 7 and 9, where odd counts fill the centre, belong to
 Book III, not Book I.
@@ -79,6 +81,7 @@ checks:
 | **Reading's coin** | an ambiguous expression has two parse trees; the missing convention is the edge | "there is not one correct way, any way works as long as you are consistent" (Jun 2026) | standard |
 | **Wholes from parts** | 2 points fix a line and 3 fix a parabola; any 3 of 5 shares rebuild a secret | "1 equals 5 and 2 or 3 of those 5 equal 1 again" (Jan 2026) | standard |
 | **Algebra's coin** | reading a table the other way round pairs questions that are really the same question (the J61 closures) | "i never like to pick a side, i like to synthesize" (May 2026) | checked (ck J61) |
+| **Measurement's coin** (candidate, Oct 2026) | decoherence derives "wave, collide, distort"; "collapse" is not derived, and that gap is the measurement problem. The paradox is classified, not resolved | "Timesteps 1 wave 2 collide 3 distort 4 collapse" (Oct 2026, as quoted in the handoff) | standard |
 
 **The shape of the book is his:** "two distinct spines... one for each side of the coin... and maybe one
 for the edge" (Sep 2026).
@@ -129,6 +132,14 @@ put to new use.
 - checks on the stability of AI answers.
 
 **Part 5: keep a graveyard.**
+
+**October 2026 candidates** (offered in the chat, not written; each his call):
+- a closing lesson, "why a good helper never reaches the destination", framed by humility rather
+  than by the uncertainty threshold the chat first gave;
+- his framing of himself as "the basic layer", and of a lossy map whose losses are labelled, from
+  "my physics is pre-physics, making it lossier than direct formulation";
+- the October graveyard: what the transfer notes retired, with the evidence that killed each one
+  (flagship `GRAVEYARD.md`).
 
 **Personal matters are his call.** The ledger omits them. Faith appears only as he chooses to state it.
 
