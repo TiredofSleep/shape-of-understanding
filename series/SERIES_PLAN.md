@@ -35,7 +35,7 @@ From the ledger, each running from September 2025 to September 2026:
 | | book | reader | through-lines | what exists | what to add |
 |---|---|---|---|---|---|
 | **I** | ***The Shape of Understanding*** | age ten to undergraduate | 1, 3, 7, 8, 11, 12 | the book: Part Zero, 18 chapters and a Coda, about 18,000 words, 13 figures, 103 checks | a few short boxes drawn from his own lines |
-| **II** | ***Two Sides and an Edge*** | high school to undergraduate | 2, 4, 5, 6 | the companion unit: 8 chapters, about 5,800 words, 48 checks | a second part of new coins, each anchored in his words |
+| **II** | ***Two Sides and an Edge*** | high school to undergraduate | 2, 4, 5, 6 | the companion unit: Part One (8 chapters) and the start of Part Two (Chapter 9, measurement's coin), about 7,300 words, 56 checks | a second part of new coins, each anchored in his words |
 | **III** | ***The Integers and Their Towers*** | undergraduate to graduate | 1, 3, 12 | the flagship's `base/`, `towers/` and tower coins: about 12,000 words, with 7 verifiers | book prose, figures and exercises |
 | **IV** | ***What Survived*** | anyone doing research with AI | 9, 10 | the essay (about 1,600 words), the graveyard, RETIRED.md and the audit notes | the story in his words, the gates, and the toolkit |
 | (V) | *held:* an AI whose reasoning you can see | — | his AI themes (ledger §10–11) | the paused CK program | not now |
@@ -83,7 +83,7 @@ checks:
 | **Reading's coin** | an ambiguous expression has two parse trees; the missing convention is the edge | "there is not one correct way, any way works as long as you are consistent" (Jun 2026) | standard |
 | **Wholes from parts** | 2 points fix a line and 3 fix a parabola; any 3 of 5 shares rebuild a secret | "1 equals 5 and 2 or 3 of those 5 equal 1 again" (Jan 2026) | standard |
 | **Algebra's coin** | reading a table the other way round pairs questions that are really the same question (the J61 closures) | "i never like to pick a side, i like to synthesize" (May 2026) | checked (ck J61) |
-| **Measurement's coin** (candidate, Oct 2026) | decoherence derives "wave, collide, distort"; "collapse" is not derived, and that gap is the measurement problem. The paradox is classified, not resolved | "Timesteps 1 wave 2 collide 3 distort 4 collapse" (Oct 2026, as quoted in the handoff) | standard |
+| **Measurement's coin** (**in the unit since 2026-10-24** as Chapter 9, the first chapter of Part Two) | decoherence derives "wave, collide, distort"; "collapse" is not derived, and that gap is the measurement problem. The paradox is classified, not resolved | "Timesteps 1 wave 2 collide 3 distort 4 collapse" (Oct 2026, as quoted in the handoff) | checked (8 checks in `two_sides_checks.py`) |
 
 **The shape of the book is his:** "two distinct spines... one for each side of the coin... and maybe one
 for the edge" (Sep 2026).

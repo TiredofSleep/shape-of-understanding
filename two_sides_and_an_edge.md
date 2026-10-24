@@ -444,6 +444,106 @@ Every tower of the book's Chapter 18 carries a coin. One line each:
   zero: the odd rule, made of light (verified on a model chain; Jackiw and Rebbi, 1976; Su,
   Schrieffer and Heeger, 1979).
 
+---
+
+# Part Two — Coins in the world
+
+Part One found the coin inside mathematics. Part Two takes it outside. Each chapter starts from one
+of the author's own lines, finds the flip it points at, and checks every step. The physics in these
+chapters is standard and cited; what the coin adds is a way of sorting it.
+
+## Chapter 9 — Measurement's coin
+
+> *"Timesteps 1 wave 2 collide 3 distort 4 collapse"* — the author, October 2026
+
+Those four words are the standard story of how a quantum measurement happens, in the order it
+happens. The first three are now derived exactly. The fourth is not, and nobody knows yet whether it
+can be. This chapter finds the coin underneath and sorts the paradox that sits between step 3 and
+step 4.
+
+**9.1 The flip, and its edge.** A quantum bit, or **qubit**, can be 0 or 1, like the light switch of
+Part Zero. Call the flip that swaps them *X*: it turns 0 into 1 and 1 into 0, and done twice it
+changes nothing. On a switch, *X* has no edge. But a qubit has more states than 0 and 1. It can be in
+the **superposition** "0 and 1 at once", written (0 + 1)/√2, and *X* leaves that state exactly where
+it is (verified). The flip that has no edge on a switch has one on a qubit, and the edge is the
+wave: both sides at once. (The other mix, (0 − 1)/√2, is turned into its own negative, which is the
+same state.)
+
+**9.2 Step 1: wave.** Send a particle through two slits as the wave "left and right at once". Where
+the two halves meet again they interfere, and the stripes they make are perfectly sharp: the
+**visibility** of the interference is 1 (verified). In the language of 9.1, the particle sits on the
+edge of the flip that swaps left with right.
+
+**9.3 Step 2: collide.** Now let one air molecule bounce off the particle on its way. If it bounces a
+little differently off the left path than off the right, it carries away a faint record of which
+way the particle went. The two paths are now tied to two slightly different states of the molecule,
+and how alike those two records are, a number γ between 0 and 1, becomes the new visibility (verified).
+Nothing was measured on purpose. A collision did it.
+
+**9.4 Step 3: distort.** Each further collision multiplies the visibility by its own γ. After *N*
+collisions of the same kind the visibility is γ^*N*, which dies away like the breath run backward
+(the book's Chapter 4). With γ = 0.99 it is about 82% after 20 collisions and 37% after 100
+(verified). A dust grain in air meets so many molecules that its interference is gone in far less
+than a billionth of a billionth of a second [Joos and Zeh 1985]. This is **decoherence**, and it is
+ordinary quantum mechanics, worked out in full [Zurek 2003].
+
+**9.5 What the flip sees, and what it cannot.** Before the collisions, the particle sat on the
+flip's edge: the wave. After them, it is a **blur**, "left or right, half and half". And the flip
+leaves the blur alone too (verified). Every state along the way is one of the flip's fixed points,
+so decoherence never broke the symmetry between the two sides. What it erased is the single number
+that made the edge one state instead of a mixture: the **coherence**, which is exactly what the
+stripes measure. It slides the state from the edge to the middle of the flip's own fixed points
+(verified).
+
+**9.6 Step 4: collapse, the step nobody has derived.** Look at a single run, though, and you never
+see a blur. You see one outcome. The mathematics of steps 1 to 3 gives the odds — half and half, so
+that in 10,000 runs about 5,000 land each way (verified, on simulated runs) — but nothing in it
+picks the outcome of one run [Born 1926]. That missing step is the **measurement problem** [von
+Neumann 1932; Schlosshauer 2005]. Worse, the blur of step 3 is not even ordinary ignorance. It
+appears because the particle is now entangled with the molecules, and the particle and the molecules
+together are still one wave, with no outcome chosen anywhere: the whole stays perfectly sharp while
+its part looks blurred (verified).
+
+**9.7 The edge you can move but not remove.** Where does the wave end and the outcome begin? John von
+Neumann showed in 1932 that the boundary between the system and whatever measures it (the "cut")
+can be drawn anywhere along the chain: around the particle, around the detector, or around the
+detector and the person reading it. The odds come out the same wherever it is drawn (verified, for
+a particle, a detector and a reader). Decoherence explains why moving the cut changes nothing anyone
+can see: past the first few collisions the interference is already gone. But the cut cannot be
+removed. Somewhere the wave must give way to one outcome, and the mathematics does not say where.
+
+**9.8 Classifying it.** Read through Chapter 7's four kinds:
+- **Type I, not enough lenses?** Partly. The wave lens covers steps 1 to 3. The outcome lens (the
+  odds, and one result) covers step 4. Both are needed to describe a single run. But a Type I
+  paradox dissolves once both lenses are held, as Zeno's runner arrives, and this one does not: the
+  two lenses disagree about what exists between step 3 and step 4.
+- **Type II, what would settle it lies outside the family?** On some readings, yes. Collapse
+  theories add a small new physical process that picks the outcome [Ghirardi, Rimini and Weber
+  1986; Penrose 1996], and experiments are now testing them [Donadi et al. 2021]. On another
+  reading there is no step 4 at all: every outcome happens, each in its own branch, and the edge is
+  a point of view [Everett 1957].
+- **So it is classified, and honestly open.** Its two sides, the wave and the outcome, are both
+  kept. Its edge, the cut, can be moved but not removed. Which kind of paradox it finally is
+  depends on which completion of quantum mechanics is right, and that is still being decided by
+  experiment. Like the Unexpected Hanging, it is left open here, and in the field.
+
+| | measurement's coin |
+|---|---|
+| the flip | swap 0 and 1 (or left and right) |
+| its sides | the two outcomes |
+| its edge | the wave: both at once |
+| steps 1–3 | decoherence slides the state from the edge to the blur, along the flip's own fixed points |
+| step 4 | one run shows one side; the mathematics shows the blur |
+| the paradox | between step 3 and step 4: the cut that can be moved but not removed |
+
+> **Exercises.** (1) A particle meets three molecules with γ = 0.9, 0.8 and 0.5. What is the
+> visibility left? (2) A qubit is 1 for sure. Is it on the edge of *X*? (3) If you move von
+> Neumann's cut from the detector to the person reading it, do the odds of reading 1 change?
+>
+> **Misconception this fixes.** *"Decoherence solves the measurement problem."* It explains why the
+> stripes vanish and why the cut can be moved without anyone noticing. It does not pick the outcome
+> of a single run. Steps 1 to 3 are derived; step 4 is not.
+
 ## Closing — Classification, not resolution
 
 The book taught you to see a few shapes clearly, and to climb from them. This unit taught one
@@ -492,6 +592,10 @@ and that is a claim about teaching, to be tested by teaching.
   2. Neither answer is consistent; it is Type III, the Liar's engine.
   3. Counting only ever sees more steps. The question is the total length, which only a measuring
      lens sees.
+- **Chapter 9.**
+  1. 0.9 × 0.8 × 0.5 = 0.36.
+  2. No. *X* turns it into 0: it is one of the sides, not the edge.
+  3. No. The odds are the same wherever the cut is drawn; that is von Neumann's point.
 
 ## References
 
@@ -499,23 +603,35 @@ and that is a claim about teaching, to be tested by teaching.
   constructions géométriques* (Paris, 1806).
 - S. Banach and A. Tarski, "Sur la décomposition des ensembles de points en parties respectivement
   congruentes," *Fund. Math.* 6, 244 (1924).
+- M. Born, "Zur Quantenmechanik der Stoßvorgänge," *Z. Phys.* 37, 863 (1926).
 - G. Cantor, "Über eine elementare Frage der Mannigfaltigkeitslehre," *Jahresber. DMV* 1, 75 (1891).
 - H. S. M. Coxeter, *Regular Polytopes*, 3rd ed. (Dover, 1973).
 - R. Dedekind, *Stetigkeit und irrationale Zahlen* (1872).
+- S. Donadi, K. Piscicchia, C. Curceanu, L. Diósi, M. Laubenstein and A. Bassi, "Underground test of
+  gravity-related wave function collapse," *Nat. Phys.* 17, 74 (2021).
+- H. Everett, "'Relative state' formulation of quantum mechanics," *Rev. Mod. Phys.* 29, 454 (1957).
 - D. H. Fowler and E. R. Robson, "Square root approximations in Old Babylonian mathematics: YBC 7289
   in context," *Historia Math.* 25, 366 (1998).
+- G. C. Ghirardi, A. Rimini and T. Weber, "Unified dynamics for microscopic and macroscopic
+  systems," *Phys. Rev. D* 34, 470 (1986).
 - K. Gödel, "Über formal unentscheidbare Sätze der *Principia Mathematica* und verwandter Systeme I,"
   *Monatsh. Math. Phys.* 38, 173 (1931).
 - F. Hausdorff, *Grundzüge der Mengenlehre* (Veit, 1914).
 - R. Jackiw and C. Rebbi, "Solitons with fermion number ½," *Phys. Rev. D* 13, 3398 (1976).
+- E. Joos and H. D. Zeh, "The emergence of classical properties through interaction with the
+  environment," *Z. Phys. B* 59, 223 (1985).
 - J. Kepler, *Harmonices Mundi* (1619).
 - S. C. Kleene, *Introduction to Metamathematics* (North-Holland, 1952).
 - F. Klein, *Vorlesungen über das Ikosaeder* (Teubner, 1884).
 - S. Kripke, "Outline of a theory of truth," *J. Philos.* 72, 690 (1975).
 - F. W. Lawvere, "Diagonal arguments and cartesian closed categories," *Lecture Notes in Math.* 92,
   134 (1969).
+- J. von Neumann, *Mathematische Grundlagen der Quantenmechanik* (Springer, 1932).
 - D. J. O'Connor, "Pragmatic paradoxes," *Mind* 57, 358 (1948).
+- R. Penrose, "On gravity's role in quantum state reduction," *Gen. Rel. Grav.* 28, 581 (1996).
 - B. Russell, *The Principles of Mathematics* (Cambridge, 1903).
+- M. Schlosshauer, "Decoherence, the measurement problem, and interpretations of quantum
+  mechanics," *Rev. Mod. Phys.* 76, 1267 (2005).
 - B. R. Sanders and B. Mayes, "Paradox classification memo" (8 April 2026), unpublished; archived at
   github.com/TiredofSleep/ck.
 - W. P. Su, J. R. Schrieffer and A. J. Heeger, "Solitons in polyacetylene," *Phys. Rev. Lett.* 42,
@@ -524,3 +640,5 @@ and that is a claim about teaching, to be tested by teaching.
   Polish original 1933).
 - N. S. Yanofsky, "A universal approach to self-referential paradoxes, incompleteness and fixed
   points," *Bull. Symbolic Logic* 9, 362 (2003).
+- W. H. Zurek, "Decoherence, einselection, and the quantum origins of the classical," *Rev. Mod.
+  Phys.* 75, 715 (2003).

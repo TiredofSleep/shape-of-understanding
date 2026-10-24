@@ -49,7 +49,7 @@ python curriculum_checks.py    # every lesson (103 checks): the equidistance lad
                                # double cover, crystals & E₈, the magic angle & 2l+1, exp onto SO(3),
                                # and each tower's coin: two sides and an edge), Ch. 17's two
                                # hand-scale tests, and the Coda's helper
-python two_sides_checks.py     # the companion unit, Two Sides and an Edge (48 checks)
+python two_sides_checks.py     # the companion unit, Two Sides and an Edge (56 checks)
 python verify_forced_chain.py  # the geometric core: simplices, the tetrahedral 1/3, the cube = Cl(3),
                                # the two shadows
 python make_figures.py         # (re)generate the figures into figures/*.svg (13 + 1 for the unit)
@@ -66,8 +66,8 @@ python make_figures.py         # (re)generate the figures into figures/*.svg (13
 | [`make_figures.py`](make_figures.py) | generates the figures (SVG): thirteen for the book, and one for the companion unit |
 | `figures/` | the generated figures the manuscript embeds |
 | [`study/`](study/README.md) | the ready-to-run A/B study kit for Ch.17 (pre-registration, lessons, assessments, power + analysis scripts) |
-| [`two_sides_and_an_edge.md`](two_sides_and_an_edge.md) | **the companion unit, *Two Sides and an Edge*.** It covers flips, fixed points and the four kinds of paradox. It is a staircase from a coin in your pocket to Lawvere's diagonal and Kripke's third truth value, with exercises and answers. |
-| [`two_sides_checks.py`](two_sides_checks.py) | the companion unit's verification suite (48 checks) |
+| [`two_sides_and_an_edge.md`](two_sides_and_an_edge.md) | **the companion unit, *Two Sides and an Edge*.** It covers flips, fixed points and the four kinds of paradox, and its Part Two, *Coins in the world*, begins with measurement's coin. It is a staircase from a coin in your pocket to Lawvere's diagonal and Kripke's third truth value, with exercises and answers. |
+| [`two_sides_checks.py`](two_sides_checks.py) | the companion unit's verification suite (56 checks) |
 
 ## The base and the towers
 

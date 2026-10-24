@@ -469,4 +469,69 @@ show("8 light at a wall (a model chain whose bond pattern flips at its middle)",
 assert abs(Ew[zi]) < 1e-10 and sum(abs(Ew) < 1e-6) == 1 and psi[2 * m - 6:2 * m + 7].sum() > 0.95
 assert min(psi[0::2].sum(), psi[1::2].sum()) < 1e-20
 
+# ======================================================================
+banner("Chapter 9 -- measurement's coin: wave, collide, distort, collapse")
+X2 = np.array([[0, 1], [1, 0]], float)
+k0, k1 = np.array([1.0, 0.0]), np.array([0.0, 1.0])
+plus, minus = (k0 + k1) / np.sqrt(2), (k0 - k1) / np.sqrt(2)
+show("9.1 the flip X swaps 0 and 1, and keeps no state of a switch",
+     "but it keeps the wave (0 + 1)/sqrt2, and turns (0 - 1)/sqrt2 into its own negative")
+assert np.allclose(X2 @ k0, k1) and np.allclose(X2 @ k1, k0)
+assert np.allclose(X2 @ plus, plus) and np.allclose(X2 @ minus, -minus)
+
+
+def collide(gammas):
+    """The particle (left = 0, right = 1) as the wave, then one environment qubit per collision,
+    with <e_left|e_right> = gamma. Returns the joint state and the particle's own (reduced) state."""
+    psi = plus.copy()
+    for g in gammas:
+        eL, eR = np.array([1.0, 0.0]), np.array([g, np.sqrt(1 - g * g)])
+        M = psi.reshape(2, -1)                                   # rows: particle left, right
+        psi = np.concatenate([np.kron(M[0], eL), np.kron(M[1], eR)])
+    M = psi.reshape(2, -1)
+    return psi, M @ M.conj().T
+
+
+vis = lambda rho: 2 * abs(rho[0, 1])
+psi0, rho0 = collide([])
+show("9.2 step 1, wave: the stripes are perfectly sharp", "visibility 1")
+assert np.isclose(vis(rho0), 1)
+show("9.3 step 2, collide: one molecule whose two records overlap by gamma",
+     "leaves visibility gamma (gamma = 0.9, 0.5, 0.1)")
+assert all(np.isclose(vis(collide([g])[1]), g) for g in (0.9, 0.5, 0.1))
+show("9.4 step 3, distort: each collision multiplies the visibility by its gamma",
+     "checked on the full state for up to 8 collisions; gammas 0.9, 0.8, 0.5 leave 0.36; "
+     "gamma = 0.99 leaves 0.818 after 20 and 0.366 after 100")
+for n in range(1, 9):
+    gs = rng.uniform(0.3, 1.0, size=n)
+    assert np.isclose(vis(collide(gs)[1]), np.prod(gs))
+assert np.isclose(vis(collide([0.9, 0.8, 0.5])[1]), 0.36)
+assert np.isclose(0.99 ** 20, 0.818, atol=5e-4) and np.isclose(0.99 ** 100, 0.366, atol=5e-4)
+traj = [collide([0.7] * n)[1] for n in range(8)]
+show("9.5 the flip leaves every state along the way alone, and the blur 1/2 I too",
+     "while <X>, the coherence the stripes measure, slides from 1 (the edge) toward 0 (the middle)")
+assert all(np.allclose(X2 @ r @ X2, r) for r in traj) and np.allclose(X2 @ (np.eye(2) / 2) @ X2, np.eye(2) / 2)
+xs9 = [np.trace(X2 @ r).real for r in traj]
+assert np.isclose(xs9[0], 1) and all(b < a for a, b in zip(xs9, xs9[1:])) and xs9[-1] < 0.1
+runs = np.random.default_rng(9).random(10000) < 0.5
+show("9.6 step 4, collapse: the odds are half and half, and 10,000 simulated runs land",
+     f"{runs.sum()} one way and {10000 - runs.sum()} the other; nothing in the mathematics picks a single run")
+assert abs(runs.sum() - 5000) < 200
+psi5, rho5 = collide([0.6] * 5)
+show("9.6 the blur is not ignorance: the particle and the molecules together stay one pure wave",
+     f"purity of the whole {np.vdot(psi5, psi5).real ** 2:.3f}; of the particle alone "
+     f"{np.trace(rho5 @ rho5).real:.3f} = (1 + gamma^(2N))/2")
+assert np.isclose(np.trace(rho5 @ rho5).real, (1 + 0.6 ** 10) / 2) and np.isclose(np.vdot(psi5, psi5).real, 1)
+a9, b9 = np.sqrt(0.3), np.sqrt(0.7)
+state = np.kron(np.kron(a9 * k0 + b9 * k1, k0), k0)            # particle, detector, reader
+CNOT = lambda c, t: np.array([[1 if (j == (i ^ (((i >> (2 - c)) & 1) << (2 - t)))) else 0 for j in range(8)]
+                              for i in range(8)], float)
+after_detector = CNOT(0, 1) @ state
+after_reader = CNOT(1, 2) @ after_detector
+p1 = lambda psi, q: sum(abs(psi[i]) ** 2 for i in range(8) if (i >> (2 - q)) & 1)
+show("9.7 von Neumann's cut: draw it around the particle, the detector or the reader",
+     f"the odds of reading 1 are {p1(state, 0):.2f}, {p1(after_detector, 1):.2f}, {p1(after_reader, 2):.2f}: "
+     "the same wherever it is drawn")
+assert np.isclose(p1(state, 0), 0.7) and np.isclose(p1(after_detector, 1), 0.7) and np.isclose(p1(after_reader, 2), 0.7)
+
 banner(f"ALL {N_CHECKS} CHECKS PASS -- two sides and an edge, every verified line reproduced.")
