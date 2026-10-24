@@ -131,7 +131,10 @@ put to new use.
 - provenance hashes;
 - a conflict ledger;
 - a claim ledger;
-- checks on the stability of AI answers.
+- checks on the stability of AI answers;
+- the four-question test before digging into a paradox: name the two rules that collide, check each one on its own, see
+  whether the clash survives a second measurement or proof, and ask whether it is a clash or only a likeness
+  (from the October 2026 paradox map, flagship `lab/clock_and_paradox/`; the types are Quine's).
 
 **Part 5: keep a graveyard.**
 
