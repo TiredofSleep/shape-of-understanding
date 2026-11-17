@@ -132,6 +132,20 @@ show("centroid total distance to vertices", f"{tot(cen):.4f}  (a vertex: {tot(te
 r = _min(tot, np.array([0.3, 0.2, -0.1]))
 show("the point minimizing distance to all (numeric)", f"{np.round(r.x, 3)} = the origin -> omni-adjacent, not empty")
 assert tot(cen) < tot(tet[0]) and np.allclose(r.x, 0, atol=1e-3)
+# The centroid minimizes total SQUARED distance by definition; it minimizes total distance only when
+# symmetry forces it. A lopsided triangle is the case that would have caught the old wording.
+lop = np.array([[0, 0], [6, 0], [0, 1.]])
+lcen = lop.mean(0)
+ltot = lambda p: sum(np.linalg.norm(p - v) for v in lop)
+lsq = lambda p: sum(np.sum((p - v) ** 2) for v in lop)
+rmed = _min(ltot, lcen, method="Nelder-Mead", options={"xatol": 1e-10, "fatol": 1e-12, "maxiter": 20000})
+rsq = _min(lsq, np.array([3.0, 3.0]))
+show("by definition the centroid minimizes total SQUARED distance",
+     f"lopsided triangle (0,0),(6,0),(0,1): squared-distance minimizer {np.round(rsq.x, 4)} = centroid {np.round(lcen, 4)}")
+show("total distance is minimized by the centroid only when symmetry forces it",
+     f"same triangle: centroid total {ltot(lcen):.2f}, geometric median {np.round(rmed.x, 3)} total {rmed.fun:.2f}")
+assert np.allclose(rsq.x, lcen, atol=1e-4) and rmed.fun < ltot(lcen) - 1.0
+assert abs(ltot(lcen) - 8.15) < 0.005 and abs(rmed.fun - 6.88) < 0.005
 print("  -> the symbol for nothing marks the closest thing to being everything.")
 
 # ======================================================================
@@ -160,15 +174,20 @@ arclen = np.sum(np.linalg.norm(np.diff(pts, axis=0), axis=1))
 show("arc length on the unit circle equals the angle", f"theta={theta}, measured arc={arclen:.5f}")
 assert abs(arclen - theta) < 1e-3
 
-banner("Ch.6 -- why primes thin: the sieve density tracks 1/ln n (Mertens)")
+banner("Ch.6 -- why primes thin: the sieve density is 2e^(-gamma)/ln N (Mertens), above 1/ln N")
 from sympy import primerange
 def sieve_density(N):
     d = 1.0
     for p in primerange(2, int(np.sqrt(N)) + 1):
         d *= (1 - 1/p)
     return d
+MERTENS = 2 * math.exp(-float(np.euler_gamma))          # 2e^(-gamma) = 1.1229...
+ratios = []
 for N in [100, 10_000, 1_000_000]:
-    show(f"N={N}", f"sieve density {sieve_density(N):.4f}  vs 1/ln N {1/np.log(N):.4f}")
+    ratios.append(sieve_density(N) * np.log(N))
+    show(f"N={N}", f"sieve density {sieve_density(N):.4f}  vs 1/ln N {1/np.log(N):.4f}  (ratio {ratios[-1]:.4f})")
+show("the ratio does not tend to 1", f"it climbs toward 2e^(-gamma) = {MERTENS:.4f}: the sieve's product stays high forever")
+assert all(x > 1.04 for x in ratios) and abs(ratios[-1] - MERTENS) < 0.01
 # and: the numbers that REACH every clock position are the units, not the primes
 gen12 = [k for k in range(1, 12) if gcd(k, 12) == 1]
 primes12 = [k for k in range(2, 12) if all(k % d for d in range(2, k))]
@@ -179,6 +198,15 @@ assert gen12 == [1, 5, 7, 11] and set(gen12) != set(primes12)
 banner("Ch.7 -- why quantum mechanics is complex: evolution is rotation, rotation is i")
 show("a half turn is e^{i pi} = -1", f"|e^(i*pi) + 1| = {abs(np.exp(1j*np.pi) + 1):.2e}  (Euler; the turn is the i)")
 assert abs(np.exp(1j*np.pi) + 1) < 1e-12
+# Neither part alone is observable: a common phase turn moves the real and imaginary parts and changes no
+# probability; a RELATIVE phase between two amplitudes changes what interference shows.
+_psi = np.array([0.6 + 0.0j, 0.0 + 0.8j]); _g = np.exp(1j * 0.9)
+_both = lambda v: abs(v[0] + v[1]) ** 2 / 2                 # the probability after the two paths recombine
+assert not np.allclose((_g * _psi).real, _psi.real) and np.allclose(abs(_g * _psi) ** 2, abs(_psi) ** 2)
+assert np.isclose(_both(_g * _psi), _both(_psi)) and not np.isclose(_both(_psi * [1, _g]), _both(_psi))
+show("a common phase turn changes the real part, not one probability",
+     f"Re psi {np.round(_psi.real, 3)} -> {np.round((_g * _psi).real, 3)}; |psi|^2 stays {np.round(abs(_psi) ** 2, 3)}; "
+     f"a relative turn moves the interference {_both(_psi):.3f} -> {_both(_psi * [1, _g]):.3f}")
 
 # ======================================================================
 # PART THREE -- THE HARD LESSONS

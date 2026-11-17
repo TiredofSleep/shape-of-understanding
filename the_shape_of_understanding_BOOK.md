@@ -383,12 +383,16 @@ and the book returns to this seam repeatedly.
 
 **1.6b The void is the fullest point.** The reference the equidistant points measure from
 (§1.1) is their **centroid** — and the centroid is not an afterthought but the most
-remarkable point in the arrangement. It is, by definition, the point that **minimizes the
-total distance to all the points at once** — the location *nearest to everything
-simultaneously* (verified: for the tetrahedron the centroid's total distance to the
-vertices is 6.93, less than any vertex's 8.49, and the numerical minimizer lands exactly
-on it). Every vertex is far from most of the others; only the centre is *equally near to
-all of them*.
+remarkable point in the arrangement. By definition it is the average of the points, the
+point that minimizes the total *squared* distance to them. For equidistant points it does
+more: their symmetry makes it the point that **minimizes the total distance to all the
+points at once** — the location *nearest to everything simultaneously* (verified: for the
+tetrahedron the centroid's total distance to the vertices is 6.93, less than any vertex's
+8.49, and the numerical minimizer lands exactly on it). That second property belongs to the
+equal arrangement, not to every centroid. For the lopsided triangle (0, 0), (6, 0), (0, 1)
+the centroid's total distance is 8.15, while the point nearest to all three, the geometric
+median, has 6.88 (verified). Every vertex is far from most of the others; only the centre
+is *equally near to all of them*.
 
 This inverts the ordinary reading of zero. The void — the empty centre, the 0 — is not
 the *absence* of the points. It is the point **maximally near to all of them** — the one
@@ -597,8 +601,9 @@ stack, everything you can hold — but you stay *in the fold*, and the 1/3 is wh
 there.
 
 **The foundation, in one breath.** Four ideas now stand together and generate the rest of
-the book. First, the void (0) is the point nearest to all points at once — the fullest
-position, not the empty one — and it is what the points measure their equality *against*
+the book. First, the void (0), the centre of the equidistant points, is the point nearest
+to all of them at once — the fullest position, not the empty one — and it is what the
+points measure their equality *against*
 (§1.6b). Second, the dimensional ladder is the ladder of *simultaneous equality*: each
 dimension is the room for one more point to be equal to all the others, and three is the
 last that stays flat (§1.1). Third, the moment a fourth point insists on that equality it
@@ -722,10 +727,15 @@ must not blur this: 1 is a unit but not prime, and 2 and 3 *are* prime but not g
 **Primes** play the complementary role — a prime is a number that lets you *close* others
 early (the sieve, Chapter 12). As numbers grow, *more small factors
 become available to close them early* — to make them composite — so the survivors
-thin. Their density is the product over primes ∏(1 − 1/p), which by Mertens' theorem
-behaves like 1/ln n [Mertens 1874; the accompanying script confirms 0.229 vs 0.217 at
-N=100 and 0.081 vs 0.072 at N=10⁶]. This is the elementary shadow of the Prime Number
-Theorem [Hadamard 1896; de la Vallée Poussin 1896]. Prime rarity is taught as: *each new
+thin. Sieving out the multiples of every prime up to √N leaves, if the primes acted
+independently, the fraction ∏(1 − 1/p). By Mertens' theorem that product behaves like
+2e^(−γ)/ln N ≈ 1.12/ln N, where γ is Euler's constant [Mertens 1874]. The true density of
+the primes is 1/ln N, the Prime Number Theorem [Hadamard 1896; de la Vallée Poussin 1896].
+So the sieve's product has the right shape but stays high by the factor 2e^(−γ) ≈ 1.123
+forever: the primes do not act independently [the accompanying script finds 0.229 against
+1/ln N = 0.217 at N=100, and 0.081 against 0.072 at N=10⁶, ratios 1.05 and 1.12 climbing
+toward 1.123]. The product is the elementary shadow of the Prime Number Theorem, true in
+shape and off by a constant. Prime rarity is taught as: *each new
 prime is a new way to close numbers early; the uncloseable ones grow sparse.*
 
 > **Exercises.** (1) List the numbers coprime to 12 and confirm they are {1, 5, 7, 11}.
@@ -744,8 +754,10 @@ Because evolution is **rotation**, and rotation is *i* (§1.3). A quantum state'
 turns, *e^{-iEt/ħ}*; the amplitude — the real magnitude of that rotation — is what a
 measurement sees, through the Born rule |ψ|² [Born 1926]. Complex numbers are not a
 formal trick but the natural language of a thing that turns [Feynman 1965 makes the same
-point pictorially, "the arrow that rotates"]. The imaginary part is the flow, the phase;
-the real part is the observable.
+point pictorially, "the arrow that rotates"]. Neither the real part nor the imaginary part
+is observable on its own: turn every amplitude by the same constant phase and the two parts
+trade places, while every measurement stays the same. What a measurement sees is the
+magnitude, |ψ|², and, through interference, the *relative* phase between amplitudes.
 
 **7.1 The first rung of a tower (extension).** The imaginary axis is not the end of the
 story but the *first rung* of a short tower. One plane of rotation gives the **complex
@@ -767,9 +779,10 @@ more doubling reaches the octonions — and Chapter 18 points up it.)
 > phase *e^{−iEt/ħ}* to the complex eigenvalue of Chapter 9.
 >
 > **Misconception this fixes.** *"The imaginary part of the wavefunction is unphysical."* No
-> — it is the *phase*, the turning; interference between phases is exactly what experiments
-> measure. The complex number is the natural language of a thing that rotates, not a
-> bookkeeping trick.
+> more than the real part is. Alone, neither is physical, since a constant turn of phase
+> mixes them. Together they carry the *phase*, the turning, and interference between phases
+> is exactly what experiments measure. The complex number is the natural language of a thing
+> that rotates, not a bookkeeping trick.
 
 ---
 
@@ -1328,8 +1341,8 @@ unmeasurable, for measurement requires an edge to measure from and a distinction
 measure between, and on the perfect sphere every point is identical to every other. The
 perfect round is unmeasurable *because* it is perfectly without edge.
 
-This is the same nature the void wears in Chapter 1. The centre — the point nearest to
-all points at once (§1.6b) — cannot itself be measured, because it is the origin *from
+This is the same nature the void wears in Chapter 1. The centre of equidistant points —
+the point nearest to all of them at once (§1.6b) — cannot itself be measured, because it is the origin *from
 which* measurement is taken, not an object measured against something else. The fullest
 point and the edgeless limit are two faces of one thing: the position that is equally
 near to everything, and therefore has nothing to be distinguished *from*. Understanding
@@ -1550,6 +1563,6 @@ figures, extension lessons (the doubling, Pascal's triangle, Euclid's endless pr
 logarithm, the derivative, π, the golden ratio, the quaternions, and two boxes on magic squares), exercises, misconception
 boxes, a grown-up-words glossary (Appendix B), and a concrete A/B protocol (Ch. 17). Every
 mathematical assertion is reproduced by the appendix scripts (`verify_forced_chain.py`, and
-`curriculum_checks.py`, which prints ALL LESSON CHECKS PASS across 103 checks), and the thirteen
+`curriculum_checks.py`, which prints ALL LESSON CHECKS PASS across 107 checks), and the thirteen
 load-bearing figures are drawn in `figures/` by `make_figures.py`. Increasingly round; never
 measurably round.*

@@ -16,7 +16,7 @@ It is a work of **pedagogy**. Its claims are testable *as pedagogy* — whether 
 ## The six primitives
 
 1. **Integers are shapes** — *n* mutually-equidistant points force the (n−1)-simplex; the dimensional ladder is the ladder of *simultaneous equality* (three is the last count that stays flat).
-2. **The void is the fullest point** — the centroid is the point nearest to *all* points at once; the symbol for nothing marks the closest thing to being everything.
+2. **The void is the fullest point** — the centre of equidistant points is the point nearest to *all* of them at once (a centroid in general minimizes total *squared* distance; equal spacing makes it the nearest point as well); the symbol for nothing marks the closest thing to being everything.
 3. **Rotation is an imaginary axis** — multiplication by `e^{iθ}` turns the plane; the still centre is real, the turn is `i`.
 4. **Growth is a breath** — `e` is the rate of self-proportional growth.
 5. **The cube casts two shadows** — a square (face view) and a hexagon (diagonal view), related by `cos²(1,1,1) = 1/3` — the tetrahedron's signature, `1/(N−1)` at N=4.
@@ -36,7 +36,7 @@ exact and checked. See [`series/SERIES_PLAN.md`](series/SERIES_PLAN.md) and
 Every computable assertion in the book is reproduced by two scripts (NumPy/SymPy/SciPy); the theorems at the tops of the towers (Ch. 18) are cited:
 
 ```bash
-python curriculum_checks.py    # every lesson (103 checks): the equidistance ladder & the void,
+python curriculum_checks.py    # every lesson (107 checks): the equidistance ladder & the void,
                                # the lift-as-doubling, the two builds & Cl(3) grades (1+3+3+1,
                                # bivectors² = −1), Pascal's triangle, the Schläfli count, Mertens
                                # density, eigenvalue axis-vs-rotation, Fourier, D₃, √2 descent,
@@ -61,7 +61,7 @@ python make_figures.py         # (re)generate the figures into figures/*.svg (13
 |---|---|
 | [`the_shape_of_understanding_BOOK.md`](the_shape_of_understanding_BOOK.md) | the full manuscript — a **Part Zero** for the youngest reader, then 5 parts / 18 chapters climbing to undergrad and pointing up the towers of higher mathematics, coda, appendices A (scripts) & B (grown-up-words glossary), references |
 | [`the_shape_of_understanding.md`](the_shape_of_understanding.md) | the shorter companion paper (the 9-lesson journal-article version it grew from) |
-| [`curriculum_checks.py`](curriculum_checks.py) | the per-lesson verification suite (103 checks) |
+| [`curriculum_checks.py`](curriculum_checks.py) | the per-lesson verification suite (107 checks) |
 | [`verify_forced_chain.py`](verify_forced_chain.py) | the geometric-core verifier |
 | [`make_figures.py`](make_figures.py) | generates the figures (SVG): thirteen for the book, and one for the companion unit |
 | `figures/` | the generated figures the manuscript embeds |
